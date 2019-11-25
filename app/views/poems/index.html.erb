@@ -1,3 +1,12 @@
+<%= form_tag poems_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a poem or an author"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <% @poems.each do |poem| %>
   <div class="card-product">
     <div class="card-product-infos">
@@ -7,3 +16,4 @@
     </div>
   </div>
 <% end %>
+
