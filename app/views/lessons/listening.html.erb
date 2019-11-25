@@ -7,7 +7,7 @@
             Your browser does not support the
             <code>audio</code> element.
     </audio>
-<%= simple_form_for listening_lesson_path(@lesson),method: :patch do |f| %>
+<%= simple_form_for @lesson, url: listening_lesson_path(@lesson),method: :patch do |f| %>
 <%= f.input :listening_progression , input_html: {value:  '53'} %>
 <%= f.submit 'Next (listening)'%>
 <% end %>
