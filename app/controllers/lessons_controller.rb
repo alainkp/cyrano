@@ -1,8 +1,9 @@
 class LessonsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @lesson = Lesson.find(params[:id])
+    @recite = Recite.new
   end
 
   def create
