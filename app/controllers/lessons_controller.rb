@@ -23,8 +23,10 @@ class LessonsController < ApplicationController
   end
 
   def update_listening
-    @lesson.update(lesson_params)
-    recite = Recite.new()
+    current_progr = lesson_params[:listening_progression].to_i
+    @lesson.update(lesson_params) if current_progr > @lesson.listening_progression
+    # create a new recite intance for redirection
+    recite = Recite.new
     recite.lesson = @lesson
     recite.save
     redirect_to recite_path(recite)
