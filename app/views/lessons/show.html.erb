@@ -1,1 +1,9 @@
 <h1><%= @lesson.poem.title %></h1>
+
+<p>
+  <%= link_to 'read', reading_lesson_path(@lesson) %>|
+  <%= link_to 'listen', listening_lesson_path(@lesson) %>|
+  <%= simple_form_for [@lesson, @recite] do |f| %>
+    <%= f.submit 'recite', class: 'btn btn-tertiary-success' %>
+  <% end %>
+</p>
