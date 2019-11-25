@@ -1,0 +1,12 @@
+<h1> Salut, <%= current_user.first_name %> </h1>
+<h4> Tu es prête à apprendre ?</h4>
+
+<ul>
+  <% @lessons.each do |lesson| %>
+    <li> <%= lesson.poem.title %> </li>
+    <li> <%= lesson.poem.author_name %> </li>
+    <li> <%= lesson.reading_progression %> </li>
+  <% end %>
+</ul>
+
+<%= link_to "Go back to home", root_path %>
