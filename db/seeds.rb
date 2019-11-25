@@ -3,25 +3,25 @@ require 'nokogiri'
 
 USERS = [
   {
-    email: 'basile@cyrona.com',
+    email: 'basile@cyrano.com',
     password: 123456,
     first_name: 'Basile',
     last_name: 'QUINCHON'
   },
   {
-    email: 'medhi@cyrona.com',
+    email: 'mehdi@cyrano.com',
     password: 123456,
     first_name: 'Mehdi',
     last_name: 'SIJELMASSI'
   },
   {
-    email: 'antoine@cyrona.com',
+    email: 'antoine@cyrano.com',
     password: 123456,
     first_name: 'Antoine',
-    last_name: 'FILLER'
+    last_name: 'FILLET'
   },
   {
-    email: 'alain@cyrona.com',
+    email: 'alain@cyrano.com',
     password: 123456,
     first_name: 'Alain',
     last_name: 'KONG'
