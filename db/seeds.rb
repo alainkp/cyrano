@@ -19,10 +19,10 @@ def scrap_poems
     end
     poem = Poem.new(
       title: title,
-      url: poem_url,
       author_name: author,
       content: content,
-      audio: audio
+      audio_url: audio,
+      difficulty: rand(1..5)
     )
     poem.save!
     puts "Created #{poem.title} by #{poem.author_name}"
