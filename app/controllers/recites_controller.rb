@@ -1,0 +1,2 @@
+class RecitesController < ApplicationController
+end
