@@ -1,0 +1,9 @@
+<% @poems.each do |poem| %>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h2><%= link_to poem.title, poem_path(poem) %></h2>
+      <p><%= poem.author_name %></p>
+      <p><%= poem.difficulty %></p>
+    </div>
+  </div>
+<% end %>
