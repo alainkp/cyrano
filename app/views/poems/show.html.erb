@@ -1,0 +1,11 @@
+<div class="container bg-white mt-3">
+  <h1><%= @poem.title %></h1>
+  <h3><%= @poem.author_name %></h3>
+  <%= simple_form_for [@poem, @lesson] do |f| %>
+    <%= f.submit 'Start Lesson', class: 'btn btn-success' %>
+  <% end %>
+
+  <span><%= link_to 'Poems list', poems_path %> | </span>
+  <span><%= link_to 'Dashboard', dashboard_path %></span>
+</div>
+
