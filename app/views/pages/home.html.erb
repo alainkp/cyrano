@@ -4,12 +4,18 @@
 <p> SOUS TITRE </p> -->
 <div class="banner-cyrano d-flex justify-content-center flex-column">
   <div class="col-sm-12">
-    <div class="logo-cyrano d-flex justify-content-center align-items-center">
-      <%= image_tag "shakespeare.svg", alt: "alttext", width: '85px' %>
-      <h3>Cyrano</h3>
+    <div class="logo-cyrano d-flex flex-column justify-content-center align-items-center">
+      <%= image_tag "shakespeare.svg", alt: "alttext", width: '75px' %>
+      <h3 class=>Cyrano</h3>
     </div>
-    <p class="mb-5">What's my line</p>
-    <%= link_to "Start", dashboard_path, class: "start-button" %>
+    <div class="catch-phrase">
+      <p>What's my line ?</p>
+    </div>
+    <div class="start-button-bg">
+      <%= link_to dashboard_path do %>
+        <i class="fas fa-play"></i>
+      <% end %>
+    </div>
     <br>
   </div>
     <%= link_to "Components",components_path %>
