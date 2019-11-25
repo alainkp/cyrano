@@ -2,9 +2,9 @@
 <h3>poem text</h3>
 <p><%= @lesson.poem.content %></p>
 
-<%= simple_form_for lesson_recites_path(@lesson),method: :patch do |f| %>
-<%= f.input :reading_progression , input_html: {value:  '41'} %>
-<%= f.submit 'Next (listening)'%>
+<%= simple_form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
+  <%= f.input :reading_progression , input_html: {value:  '41'} %>
+  <%= f.submit 'Next (listening)'%>
 <% end %>
 
 <ul>
