@@ -2,7 +2,6 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:update_reading, :update_listening, :reading, :listening]
   skip_before_action :authenticate_user!, only: :show
 
-
   def show
     @lesson = Lesson.find(params[:id])
     @recite = Recite.new

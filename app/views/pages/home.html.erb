@@ -1,7 +1,17 @@
-<h1>BANNER</h1>
+<!-- <h1>BANNER</h1>
 <p> LOGO </p>
 <p> TITRE </p>
-<p> SOUS TITRE </p>
+<p> SOUS TITRE </p> -->
+<div class="banner-cyrano d-flex justify-content-center flex-column">
+  <div class="col-sm-12">
+    <div class="logo-cyrano d-flex justify-content-center align-items-center">
+      <%= image_tag "shakespeare.svg", alt: "alttext", width: '85px' %>
+      <h3>Cyrano</h3>
+    </div>
+    <p class="mb-5">What's my line</p>
+    <%= link_to "Start", dashboard_path, class: "start-button" %>
+    <br>
+  </div>
+    <%= link_to "Components",components_path %>
+</div>
 
-<%= link_to "Go to my dashboard", dashboard_path %>
-<%= link_to "Components",components_path %>
