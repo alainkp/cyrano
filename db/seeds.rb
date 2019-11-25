@@ -19,7 +19,7 @@ def scrap_poems
     end
     poem = Poem.new(
       title: title,
-      url: poem_url,
+      audio_url: poem_url,
       author_name: author,
       content: content,
       audio: audio
