@@ -1,0 +1,15 @@
+<h1>READING : <%= @lesson.poem.title %></h1>
+<h3>poem text</h3>
+<p><%= @lesson.poem.content %></p>
+
+<%= simple_form_for lesson_recites_path(@lesson),method: :patch do |f| %>
+<%= f.input :reading_progression , input_html: {value:  '41'} %>
+<%= f.submit 'Next (listening)'%>
+<% end %>
+
+<ul>
+  <li><%= link_to 'Next (listening)', listening_lesson_path(@lesson) %></li>
+  <li><%= link_to 'Accueil', poems_path %></li>
+</ul>
+
+
