@@ -21,7 +21,8 @@ def scrap_poems
       title: title,
       author_name: author,
       content: content,
-      audio_url: audio
+      audio_url: audio,
+      difficulty: rand(1..5)
     )
     poem.save!
     puts "Created #{poem.title} by #{poem.author_name}"
