@@ -1,0 +1,22 @@
+<div class="bottom-navbar">
+  <div class="container">
+    <div class="footer-icons">
+      <%= link_to root_path do %>
+      <div class="home-icon pt-3 pb-3 active">
+        <%= image_tag "home.svg", alt: "alttext", width: '40px' %>
+      </div>
+      <% end %>
+      <%= link_to poems_path do %>
+      <div class="search-icon pt-3 pb-3 active">
+        <%= image_tag "loupe.svg", alt: "alttext", width: '40px' %>
+      </div>
+      <% end %>
+      <!-- need to change the path to recordings -->
+      <%= link_to root_path do %>
+      <div class="list-icon pt-3 pb-3 active">
+        <%= image_tag "record.svg", alt: "alttext", width: '40px' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
