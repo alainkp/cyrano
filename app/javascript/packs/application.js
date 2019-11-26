@@ -5,8 +5,6 @@ import { createPoemArray } from "../components/poem_to_array.js";
 import { initAudio } from "../components/audio_timecode.js";
 import { lessonProgressBar, lessonShowProgression } from "../components/lessonProgressBar";
 
-speechToText();
-createPoemArray();
 initAudio();
 
 if (document.querySelector("#lessons-card")) {
@@ -14,4 +12,12 @@ if (document.querySelector("#lessons-card")) {
 }
 if (document.querySelector(".lesson-show-progression")) {
   lessonShowProgression();
+}
+
+if (document.getElementById('note-textarea')) {
+  speechToText();
+}
+
+if (document.querySelector('.hidden-poem')) {
+  createPoemArray();
 }
