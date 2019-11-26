@@ -28,7 +28,7 @@ ul {
 }
 
 .name-author {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-left: 20px;
 }
 
@@ -43,7 +43,7 @@ font-size: 18px;
 
 .app {
   display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  grid-template-columns: 0px 1fr 20px;
   overflow: scroll;
 }.app > * {
   grid-column: 2 / -2;
@@ -55,7 +55,7 @@ font-size: 18px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns:
-    repeat(6, calc(50% - 40px))
+    repeat(6, calc(40% - 60px))
     10px;
   grid-template-rows: minmax(150px, 1fr);
 }
