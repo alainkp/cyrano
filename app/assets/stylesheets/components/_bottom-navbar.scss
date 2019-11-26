@@ -1,0 +1,16 @@
+.footer-icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottom-navbar {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  position: sticky;
+  bottom: 0px;
+}
