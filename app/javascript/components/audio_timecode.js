@@ -2,9 +2,9 @@ import ProgressBar from "progressbar.js";
 const linearGradient = `
 <defs>
   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#8EDB73"/>
-    <stop offset="50%" stop-color="#81DA7B"/>
-    <stop offset="100%" stop-color="#57D296"/>
+    <stop offset="0%" stop-color="#00b09b"/>
+    <stop offset="50%" stop-color="#60BD70"/>
+    <stop offset="100%" stop-color="#96c93d"/>
   </linearGradient>
 </defs>`;
 const initAudioProgressBar = () => {
