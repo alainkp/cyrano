@@ -1,6 +1,6 @@
 import "bootstrap";
+import { speechToText } from "../components/speech_to_text.js";
 import { initAudio } from "../components/audio_timecode.js";
-// import { initAudioProgress } from "../components/audio_progress_bar.js";
 
+speechToText();
 initAudio();
-// initAudioProgress();
