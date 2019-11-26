@@ -1,11 +1,20 @@
 <div class="container bg-white mt-3">
   <h1><%= @poem.title %></h1>
   <h3><%= @poem.author_name %></h3>
-  <%= simple_form_for [@poem, @lesson] do |f| %>
-    <%= f.submit 'Start Lesson', class: 'btn btn-success' %>
+
+  <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>
+  <% if lesson %>
+      <%= link_to 'Resume lesson', lesson_path(lesson), class: "btn btn-primary"%>
+  <% else %>
+    <%= simple_form_for [@poem, @lesson] do |f| %>
+      <%= f.submit 'Start Lesson', class: 'btn btn-success' %>
+    <% end %>
   <% end %>
 
-  <span><%= link_to 'Poems list', poems_path %> | </span>
-  <span><%= link_to 'Dashboard', dashboard_path %></span>
+  <p>
+    <span><%= link_to 'Poems list', poems_path %> | </span>
+    <span><%= link_to 'Dashboard', dashboard_path %></span>
+  </p>
+
 </div>
 
