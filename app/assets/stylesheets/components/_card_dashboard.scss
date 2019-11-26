@@ -15,7 +15,7 @@ ul {
 }
 
 .card-description li {
-  font-size: 12px;
+  font-size: 20px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -33,7 +33,7 @@ ul {
 }
 
 .name-author li {
-font-size: 18px;
+font-size: 20px;
 }
 
 .progressions {
@@ -55,7 +55,7 @@ font-size: 18px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns:
-    repeat(6, calc(40% - 60px))
+    repeat(6, calc(30% - 40px))
     10px;
   grid-template-rows: minmax(150px, 1fr);
 }
