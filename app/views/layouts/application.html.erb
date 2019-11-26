@@ -12,7 +12,9 @@
   <body>
     <%#= render 'shared/navbar' %>
     <%#= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="sticky-footer">
+      <%= yield %>
+    </div>
     <% if !current_page?(root_path) %>
     <%= render "shared/bottom-navbar" %>
     <% end %>
