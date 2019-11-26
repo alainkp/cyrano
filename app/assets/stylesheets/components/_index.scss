@@ -3,6 +3,14 @@
 @import "avatar";
 @import "navbar";
 @import "poem-cards";
+@import "card_dashboard";
 @import "banner";
 @import "button";
 @import "searchbar";
+@import "poem-cards";
+@import "progress-bar-dashboard";
+@import "bottom-navbar";
+@import "lesson";
+.hidden {
+  display: none;
+}
