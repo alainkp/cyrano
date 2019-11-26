@@ -1,22 +1,25 @@
 <div class="bottom-navbar">
   <div class="container">
     <div class="footer-icons">
-      <%= link_to root_path do %>
-      <div class="home-icon pt-3 pb-3 active">
-        <%= image_tag "home.svg", alt: "alttext", width: '40px' %>
-      </div>
+      <div class="home-icon text-center">
+      <%= link_to dashboard_path do %>
+        <i class="fas fa-book"></i>
+        <p>My lessons</p>
       <% end %>
+      </div>
+      <div class="search-icon text-center">
       <%= link_to poems_path do %>
-      <div class="search-icon pt-3 pb-3 active">
-        <%= image_tag "loupe.svg", alt: "alttext", width: '40px' %>
-      </div>
+        <i class="fas fa-search"></i>
+        <p>Explore</p>
       <% end %>
+      </div>
       <!-- need to change the path to recordings -->
+      <div class="list-icon text-center">
       <%= link_to root_path do %>
-      <div class="list-icon pt-3 pb-3 active">
-        <%= image_tag "record.svg", alt: "alttext", width: '40px' %>
-      </div>
+        <i class="fas fa-microphone-alt"></i>
+        <p>My recordings</p>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
