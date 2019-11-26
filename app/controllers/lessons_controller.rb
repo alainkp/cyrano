@@ -2,7 +2,6 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:update_reading, :update_listening, :reading, :listening]
   skip_before_action :authenticate_user!, only: :show
 
-
   def show
     @lesson = Lesson.find(params[:id])
     @recite = Recite.new
@@ -24,8 +23,10 @@ class LessonsController < ApplicationController
   end
 
   def update_listening
-    @lesson.update(lesson_params)
-    recite = Recite.new()
+    current_progr = lesson_params[:listening_progression].to_i
+    @lesson.update(lesson_params) if current_progr > @lesson.listening_progression
+    # create a new recite intance for redirection
+    recite = Recite.new
     recite.lesson = @lesson
     recite.save
     redirect_to recite_path(recite)

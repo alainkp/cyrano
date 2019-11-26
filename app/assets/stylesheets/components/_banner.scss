@@ -1,0 +1,29 @@
+.banner-cyrano {
+  height: 100vh;
+  text-align: center;
+  background: rgb(252,245,176);
+  background: linear-gradient(180deg, rgba(252,245,176,0.9766281512605042) 6%, rgba(252,245,176,0.7609418767507002) 52%);
+  color: #555555;
+
+  p {
+    font-size: 1rem;
+    font-style: italic;
+    color: #55555595;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 0px;
+  }
+}
+
+.logo-cyrano {
+  position: relative;
+  top: -60px;
+}
+
+.catch-phrase {
+  position: relative;
+  top: -60px;
+}
