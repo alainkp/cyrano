@@ -1,9 +1,14 @@
 import "bootstrap";
-import {init_audio_timecode } from "../components/audio_timecode.js";
+import ProgressBar from "progressbar.js";
 import { speechToText } from "../components/speech_to_text.js";
 import { createPoemArray } from "../components/poem_to_array.js";
+import { initAudio } from "../components/audio_timecode.js";
+import { lessonProgressBar } from "../components/lessonProgressBar";
 
-init_audio_timecode();
 speechToText();
 createPoemArray();
+initAudio();
 
+if (document.querySelector("#lessons-card")) {
+  lessonProgressBar();
+}
