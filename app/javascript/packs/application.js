@@ -4,4 +4,3 @@ import { initAudio } from "../components/audio_timecode.js";
 
 speechToText();
 initAudio();
-

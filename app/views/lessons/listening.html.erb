@@ -1,13 +1,15 @@
 <h1>LISTENING : <%= @lesson.poem.title %></h1>
 <h3>poem audio</h3>
-<p><%= @lesson.poem.audio_url %></p>
 <audio id="listening-audio" controls src="<%= @lesson.poem.audio_url %>">
   Your browser does not support the audio element.
 </audio>
 
 <div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" ></div>
+  <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar" ></div>
 </div>
+
+<div id="audio-progress-bar"></div>
+
 <%= simple_form_for @lesson, url: listening_lesson_path(@lesson),method: :patch do |f| %>
 <%= f.input :listening_progression , input_html: {value:  @lesson.listening_progression} %>
 <%= f.submit 'Next (listening)'%>
