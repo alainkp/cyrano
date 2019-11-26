@@ -1,4 +1,12 @@
 import ProgressBar from "progressbar.js";
+const linearGradientCircle = `
+<defs>
+  <linearGradient id="gradientCircle" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#00b09b"/>
+    <stop offset="50%" stop-color="#60BD70"/>
+    <stop offset="100%" stop-color="#96c93d"/>
+  </linearGradient>
+</defs>`;
 
 const lessonProgressBar = () => {
   const lessonProgressBar = document.querySelectorAll('.reading-progression');
@@ -44,22 +52,22 @@ const lessonShowProgression = () => {
   progressCircles.forEach((progressCircle)=>{
     const progress = progressCircle.dataset.progression;
     const bar = new ProgressBar.Circle(progressCircle, {
-      strokeWidth: 6,
-      color: '#FFEA82',
+      strokeWidth: 4,
+      color: 'url(#gradientCircle)',
       trailColor: '#eee',
       trailWidth: 1,
       easing: 'easeInOut',
-      duration: 1000,
+      duration: 3000,
       svgStyle: null,
       text: {
         value: '',
         alignToBottom: false
       },
-      from: {color: '#ED6A5A'},
-      to: {color: '#1EDD88}'},
+      // from: {color: '#ED6A5A'},
+      // to: {color: '#1EDD88}'},
       // Set default step function for all animate calls
       step: (state, bar) => {
-        bar.path.setAttribute('stroke', state.color);
+        // bar.path.setAttribute('stroke', state.color);
         const value = progress;
         if (value === 0) {
           bar.setText('');
@@ -67,16 +75,29 @@ const lessonShowProgression = () => {
           bar.setText(`${value}%`);
         }
 
-        bar.text.style.color = state.color;
+        bar.text.style.color = '#60BD70';
       }
     });
-    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-    bar.text.style.fontSize = '2rem';
+    // bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    // bar.text.style.fontSize = '1Opx';
+    bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(progress,10)/100);  // Number from 0.0 to 1.0
   });
 }
 
+const lessonOverallProgress = () => {
+  const p = document.querySelector('.lesson-overall-progress-bar')
+  if (p) {
+    const progressCircles = document.querySelectorAll('.lesson-show-progression')
+    let overallProgression = 0;
+    progressCircles.forEach((progressCircle)=>{
+      overallProgression += Number.parseInt(progressCircle.dataset.progression,10);
+    });
+    p.style.width = `${overallProgression/3}%`;
+  }
+}
 
 
-export{ lessonProgressBar, lessonShowProgression }
+
+export{ lessonProgressBar, lessonShowProgression, lessonOverallProgress }
 
