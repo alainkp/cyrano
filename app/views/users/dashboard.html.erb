@@ -11,7 +11,7 @@
 <br>
 <h6> Mes poèmes :</h6>
 <div class="app">
-  <ul class="hs">
+  <div id="lessons-card" class="hs">
     <% @lessons.each do |lesson| %>
       <div class="card-poems bg-white mt-3">
         <div class="card-image">
@@ -19,21 +19,16 @@
         </div>
         <div class="card-description d-flex">
           <div class="name-author">
-            <li> <%= lesson.poem.title %> <br>
+            <%= lesson.poem.title %> <br>
             <%= lesson.poem.author_name %> <br>
           </div>
           <div class="progressions">
-            <div class="reading-progression">
-              <%= lesson.reading_progression %> </li>
-            </div>
-            <div class="reading-progression">
-              <%= lesson.listening_progression %> </li>
-            </div>
+            <div class="reading-progression" data-reading-progress=" <%= lesson.reading_progression %>"></div>
           </div>
         </div>
       </div>
     <% end %>
-  </ul>
+  </div>
 </div>
 
 
@@ -42,3 +37,8 @@
 
   </div>
 </div>
+
+
+<div class="reading-progression">
+              <%#= lesson.reading_progression %>
+            </div>
