@@ -13,6 +13,7 @@
 <div class="app">
   <div id="lessons-card" class="hs">
     <% @lessons.each do |lesson| %>
+    <%= link_to lesson_path(lesson) do %>
       <div class="card-poems bg-white mt-3">
         <div class="card-image">
           <img src="http://aroillustration.com/wp-content/uploads/2016/05/CorbeauetRenard-953x1024.jpg" />
@@ -27,6 +28,7 @@
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
