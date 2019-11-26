@@ -34,7 +34,7 @@ const speechToText = () => {
 
   noteTextarea.addEventListener('input', () => {
     noteContent = noteTextarea.innerText;
-  })
+  });
 };
 
 export { speechToText };
