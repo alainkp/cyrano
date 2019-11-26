@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_142334) do
+ActiveRecord::Schema.define(version: 2019_11_26_104337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lessons", force: :cascade do |t|
-    t.integer "reading_progression"
-    t.integer "listening_progression"
+    t.integer "reading_progression", default: 0
+    t.integer "listening_progression", default: 0
     t.bigint "user_id"
     t.bigint "poem_id"
     t.datetime "created_at", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_142334) do
   end
 
   create_table "recites", force: :cascade do |t|
-    t.integer "progression"
+    t.integer "progression", default: 0
     t.integer "duration"
     t.bigint "lesson_id"
     t.datetime "created_at", null: false
