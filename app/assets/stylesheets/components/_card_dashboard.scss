@@ -1,5 +1,6 @@
 ul {
-  list-style: none
+  list-style: none;
+  padding-left: 0px;
 }
 
 .card-poems {
@@ -7,7 +8,7 @@ ul {
 }
 
 .card-image img {
-  height: 40vh;
+  height: 20vh;
   width: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
@@ -24,5 +25,38 @@ ul {
 .card-description {
   justify-content: space-between;
   align-items: center;
+}
+
+.name-author {
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.name-author li {
+font-size: 18px;
+}
+
+.progressions {
+  padding-right: 20px;
+}
+
+
+.app {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  overflow: scroll;
+}.app > * {
+  grid-column: 2 / -2;
+}.app > .full {
+  grid-column: 1 / -1;
+}
+
+.hs {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns:
+    repeat(6, calc(50% - 40px))
+    10px;
+  grid-template-rows: minmax(150px, 1fr);
 }
 

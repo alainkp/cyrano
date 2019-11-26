@@ -1,26 +1,34 @@
 <div class="container">
 
 <h1> Salut, <%= current_user.first_name %> </h1>
-<h4> Tu es prête à apprendre ?</h4>
+<h4> Tu es prêt à apprendre ?</h4>
 
-<ul>
-  <% @lessons.each do |lesson| %>
-    <div class="card-poems bg-white mt-3">
-      <div class="card-image">
-        <img src="http://aroillustration.com/wp-content/uploads/2016/05/CorbeauetRenard-953x1024.jpg" />
-      </div>
-      <div class="card-description d-flex">
-        <div class="name-author">
-          <li> <%= lesson.poem.title %> <br>
-          <%= lesson.poem.author_name %> <br>
+<div class="app">
+  <ul class="hs">
+    <% @lessons.each do |lesson| %>
+      <div class="card-poems bg-white mt-3">
+        <div class="card-image">
+          <img src="http://aroillustration.com/wp-content/uploads/2016/05/CorbeauetRenard-953x1024.jpg" />
         </div>
-        <div class="reading-progression">
-          <%= lesson.reading_progression %> </li>
+        <div class="card-description d-flex">
+          <div class="name-author">
+            <li> <%= lesson.poem.title %> <br>
+            <%= lesson.poem.author_name %> <br>
+          </div>
+          <div class="progressions">
+            <div class="reading-progression">
+              <%= lesson.reading_progression %> </li>
+            </div>
+            <div class="reading-progression">
+              <%= lesson.listening_progression %> </li>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
+</div>
+
 
 <%= link_to "Go back to home", root_path %>
 <%= link_to "Go to all poems", poems_path %>
