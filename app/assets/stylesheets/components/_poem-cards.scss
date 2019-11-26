@@ -5,12 +5,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  padding: 5px;
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height: 80%;
+  width: 85px;
   object-fit: cover;
+  padding: 10px;
 }
 
 .card-product h2 {
@@ -23,10 +25,29 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   margin-top: 8px;
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 20px;
+  width: 100%;
 }
+.on {
+color: gray-dark;
+}
+
+.off {
+color: gray;
+}
+
+.card-container {
+  margin-top: 40px;
+}
+
+
+ .card-product-infos a {
+    color: gray;
+    text-decoration: none;
+    background-color: transparent;
+  }
