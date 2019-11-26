@@ -1,8 +1,15 @@
 <div class="container">
+  <div class="profile-avatar d-flex flex-column justify-content-center align-items-center pt-3 pb-3">
+    <%= image_tag "no-profile-pic.png", alt: "alttext", width: '75px' %>
+  </div>
 
-<h1> Salut, <%= current_user.first_name %> </h1>
-<h4> Tu es prêt à apprendre ?</h4>
-
+  <div class="header-introduction-dashboard d-flex flex-column justify-content-center align-items-center">
+    <h1> Salut, <%= current_user.first_name %> </h1>
+    <h4> De retour pour apprendre ?</h4>
+</div>
+<br>
+<br>
+<h6> Mes poèmes :</h6>
 <div class="app">
   <ul class="hs">
     <% @lessons.each do |lesson| %>
