@@ -38,11 +38,13 @@
           </div>
         </div>
       </div>
-      <div class="poem-author-list p-3">
+      <div class="shelf">
+      </div>
+      <div class="poem-author-list">
         <% author_poems = Poem.where(author_name: @poem.author_name) %>
         <% if author_poems.count > 0 %>
           <div class="author-poems-list">
-            <h3 class="border-bottom pb-1">Other poems by <%= @poem.author_name %></h3>
+            <h3 class="p-3">Other poems by <%= @poem.author_name %></h3>
             <ul>
               <% author_poems.each do |poem| %>
                 <% if poem != @poem %>

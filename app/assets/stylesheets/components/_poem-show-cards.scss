@@ -6,12 +6,11 @@
 
 .poem-show-cards {
   position: relative;
-  top: -100px
+  top: -95px;
 }
 
 .poem-description {
-  box-shadow: 0px 4px 16px rgba(0,0,0,0.2);
-  margin-bottom: 1rem;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
   background: #FFFFFF;
   padding: 1rem 1rem 0rem 1rem;
   border-radius: 0.2rem;
@@ -20,6 +19,10 @@
     font-size: 1.7rem;
     color: #555555;
   }
+}
+
+.poem-image::after {
+  transform: scaleY(-1);
 }
 
 .poem-infos__icons {
@@ -46,17 +49,15 @@
 .fa-feather-alt {
   padding: 0.3rem;
   border-radius: 50%;
-  background: #9dd8c8;
   margin-right: 0.5rem;
-  color: #555555;
+  color: #9dd8c8;
 }
 
 .fa-align-justify {
   padding: 0.3rem;
   border-radius: 50%;
-  background: #9dd8c8;
   margin-right: 0.5rem;
-  color: #555555;
+  color: #9dd8c8;
 }
 
 .fa-user-graduate.on {
@@ -64,7 +65,7 @@
 }
 
 .poem-author-list {
-  box-shadow: 0px 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
   margin-bottom: 1rem;
   background: #FFFFFF;
   border-radius: 0.2rem;
@@ -76,7 +77,7 @@
 
   p {
     font-size: 1.15rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0px;
   }
 
   a {
@@ -90,6 +91,14 @@
 }
 
 .author-poem-title {
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+  border-bottom: 0.5px solid #CCCCCC;
   border-radius: 0.2rem;
+}
+
+.shelf {
+  height: 21px;
+  background-size: cover;
+  background-position: 347px 116px;
+  width: 347px;
+  background-image: url(bookshelf.svg);
 }
