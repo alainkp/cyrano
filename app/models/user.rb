@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   def completed?(poem)
     lesson = Lesson.find_by(poem_id: poem.id, user_id: id)
-    if lesson
+    if lesson && !lesson.recites.empty?
       lesson.recites.last.progression == 100
     end
   end
