@@ -7,7 +7,8 @@
     "diff-match-patch": "^1.0.4",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
-    "progressbar.js": "^1.1.0"
+    "progressbar.js": "^1.1.0",
+    "typed.js": "^2.0.11"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"

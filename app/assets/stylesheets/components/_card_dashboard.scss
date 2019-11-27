@@ -1,17 +1,18 @@
-ul {
-  list-style: none;
+.app a {
+  text-decoration: none;
   padding-left: 0px;
 }
 
 .card-poems {
-  border-radius: 20px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .card-image img {
-  height: 40vh;
+  height: 35vh;
   width: 100%;
   object-fit: cover;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .card-description li {
@@ -27,7 +28,7 @@ ul {
   align-items: center;
   background: hsl(0,0%,97%);
   box-shadow: 0 2px 6px 0 hsla(0,0%,0%,0.2);
-  border-left: 6px solid #40A4F4;
+  border-left: 6px solid #9dd8c8;
 }
 
 .name-author {
@@ -41,6 +42,9 @@ font-size: 20px;
 
 .progressions {
   padding-right: 20px;
+  height: 100px;
+  width: 100px;
+  padding-top: 10px;
 }
 
 .author-poem {
@@ -48,16 +52,18 @@ font-size: 20px;
   background-color: #ffffff;
   border-radius: 16px;
   padding: 1px 16px;
-  top: -69px;
+  top: -19px;
   left: -13px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
+  color: rgba(0,0,0,0.4);
 }
 
 .title-poem {
   position: relative;
-  top: 15px;
+  top: -5px;
   left: -7px;
+  color: #333333;
 }
 
 .app {
@@ -73,7 +79,59 @@ font-size: 20px;
 .hs {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns:repeat(7, calc(27% - 40px));
+  grid-template-columns:repeat(7, calc(24% - 39px));
   grid-template-rows: minmax(150px, 1fr);
 }
 
+.header-introduction-dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -15px;
+
+  h1 {
+    font-size: 2rem;
+    color: #555555;
+    font-weight: bolder;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    color: #555555;
+  }
+}
+
+.lessons-list {
+
+  h6 {
+    font-size: 1.3rem;
+    color: #555555;
+    font-weight: bolder;
+  }
+}
+
+.dashboard-content {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -50px;
+  border-radius: 8px;
+  height: 475px;
+}
+
+.dashboard-image img {
+  position: relative;
+  left: 15px;
+}
+
+#lessons-card {
+  height: 350px;
+}
+
+.title-intro {
+  position: relative;
+  top: 15px;
+}
+
+.title-category {
+  position: relative;
+  top: -10px;
+}
