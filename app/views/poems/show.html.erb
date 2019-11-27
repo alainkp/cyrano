@@ -1,5 +1,5 @@
 <div class="poem-background">
-  <div class="container px-3">
+  <div class="poem-container">
     <div class="poem-image">
       <%= image_tag "bookshelf.svg", alt: "alttext", width: '100%' %>
     </div>
@@ -44,11 +44,11 @@
         <% author_poems = Poem.where(author_name: @poem.author_name) %>
         <% if author_poems.count > 0 %>
           <div class="author-poems-list">
-            <h3 class="p-3">Other poems by <%= @poem.author_name %></h3>
+            <h3 class="p-3 border-bottom">Other poems by <%= @poem.author_name %></h3>
             <ul>
               <% author_poems.each do |poem| %>
                 <% if poem != @poem %>
-                  <p class="author-poem-title d-flex justify-content-between align-items-center p-2 border"><%= link_to poem.title, poem_path(poem) %><i class="fas fa-greater-than"></i></p>
+                  <p class="author-poem-title d-flex justify-content-between align-items-center p-3"><%= link_to poem.title, poem_path(poem) %><i class="fas fa-greater-than"></i></p>
                 <% end %>
               <% end %>
             </ul>
