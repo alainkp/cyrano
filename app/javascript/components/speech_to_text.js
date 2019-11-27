@@ -43,11 +43,11 @@ const speechToText = () => {
     //   recognition.stop();
     // });
 
-    document.getElementById('stop-record-btn').addEventListener('click', (e) => {
-      recognition.stop();
-      noteContent = '';
-      noteTextarea.innerText = '';
-    });
+    // document.getElementById('stop-record-btn').addEventListener('click', (e) => {
+    //   recognition.stop();
+    //   noteContent = '';
+    //   noteTextarea.innerText = '';
+    // });
 
     initRecordButton(recognition);
 
