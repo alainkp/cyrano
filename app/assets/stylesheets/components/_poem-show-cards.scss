@@ -6,7 +6,7 @@
 
 .poem-show-cards {
   position: relative;
-  top: -95px;
+  top: -90px;
 }
 
 .poem-description {
@@ -39,7 +39,6 @@
 }
 
 .poem-infos__start-lesson {
-  padding-right: 1rem;
 
   p {
     color: #555555;
@@ -73,6 +72,7 @@
   h3 {
     font-size: 1.2rem;
     color: #555555;
+    margin-bottom: 0px;
   }
 
   p {
@@ -96,9 +96,9 @@
 }
 
 .shelf {
-  height: 21px;
+  height: 20px;
   background-size: cover;
-  background-position: 347px 116px;
-  width: 347px;
+  background-position: 0px 110px;
+  width: 100%;
   background-image: url(bookshelf.svg);
 }
