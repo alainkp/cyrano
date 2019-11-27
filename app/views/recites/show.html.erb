@@ -2,18 +2,17 @@
   <h1><%= @recite.lesson.poem.title %></h1>
   <% poem = @recite.lesson.poem %>
   <h3>Recite</h3>
-  <p id="poem-content">
+  <div id="poem-content">
   <p class='hidden-poem hidden'><%= poem.content %></p>
     <% poem.content.split(/\n/).each do |line, i| %>
-      <p class="content-line mb-1 text-center"><%= line %></p>
+      <p class="content-line mb-1 text-center hidden"><%= line %></p>
     <% end %>
-  </p>
+  </div>
   <div class="input-single">
-      <p id="note-textarea"></p>
+    <p id="note-textarea" class="bg-red"></p>
   </div>
   <button id="start-record-btn" class= "btn btn-success" title="Start Recording">Start Recognition</button>
   <button id="pause-record-btn" class= "btn btn-info" title="Pause Recording">Pause Recognition</button>
   <button id="stop-record-btn" class= "btn btn-warning" title="Stop Recording">Stop Recognition</button>
-  <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
+  <!-- <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p> -->
 </div>
-s
