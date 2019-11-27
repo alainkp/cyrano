@@ -11,7 +11,15 @@
   margin: 0px auto;
   border: 1px solid #9dd8c880;
   background: #9dd8c8;
-  box-shadow: 0px 0px 20px #9dd8c890;
+
+  &.homepage {
+    height: 85px;
+    width: 85px;
+    position: relative;
+    top: -30px;
+    border: 1px solid #FFCE0080;
+    background: #FFCE00;
+  }
 
   .fa-play {
     text-decoration: none;
