@@ -3,8 +3,8 @@
   <% poem = @recite.lesson.poem %>
   <h3>Recite</h3>
   <p id="poem-content">
+  <p class='hidden-poem hidden'><%= poem.content %></p>
     <% poem.content.split(/\n/).each do |line, i| %>
-      <p class='hidden-poem hidden'><%= poem.content %></p>
       <p class="content-line mb-1 text-center"><%= line %></p>
     <% end %>
   </p>

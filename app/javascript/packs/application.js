@@ -1,7 +1,6 @@
 import "bootstrap";
 import ProgressBar from "progressbar.js";
 import { speechToText } from "../components/speech_to_text.js";
-import { createPoemArray } from "../components/poem_to_array.js";
 import { initAudio } from "../components/audio_timecode.js";
 import { lessonProgressBar, lessonShowProgression, lessonOverallProgress } from "../components/lessonProgressBar";
 
@@ -20,8 +19,4 @@ if (document.querySelector(".lesson-show-progression")) {
 
 if (document.getElementById('note-textarea')) {
   speechToText();
-}
-
-if (document.querySelector('.hidden-poem')) {
-  createPoemArray();
 }
