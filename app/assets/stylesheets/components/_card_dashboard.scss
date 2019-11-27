@@ -8,7 +8,7 @@ ul {
 }
 
 .card-image img {
-  height: 20vh;
+  height: 40vh;
   width: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
@@ -54,9 +54,7 @@ font-size: 20px;
 .hs {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns:
-    repeat(6, calc(30% - 40px))
-    10px;
+  grid-template-columns:repeat(7, calc(27% - 40px));
   grid-template-rows: minmax(150px, 1fr);
 }
 
