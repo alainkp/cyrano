@@ -1,3 +1,15 @@
+const createPoemArray = () => {
+  const poem = document.querySelector('.hidden-poem').innerText;
+  const wordsPoem = poem.replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ").split(' ');
+  console.log(wordsPoem)
+  return wordsPoem;
+}
+
+if (document.querySelector('.hidden-poem')) {
+  const poem = createPoemArray();
+}
+
+
 const speechToText = () => {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognition = new SpeechRecognition();
