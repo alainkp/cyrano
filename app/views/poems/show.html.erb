@@ -1,19 +1,58 @@
-<div class="container bg-white mt-3">
-  <h1><%= @poem.title %></h1>
-  <h3><%= @poem.author_name %></h3>
-
-  <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>
-  <% if lesson %>
-      <%= link_to 'Resume lesson', lesson_path(lesson), class: "btn btn-primary"%>
-  <% else %>
-    <%= simple_form_for [@poem, @lesson] do |f| %>
-      <%= f.submit 'Start Lesson', class: 'btn btn-success' %>
-    <% end %>
-  <% end %>
-
-  <p>
-    <span><%= link_to 'Poems list', poems_path %> | </span>
-    <span><%= link_to 'Dashboard', dashboard_path %></span>
-  </p>
-
+<div class="poem-background">
+  <div class="container px-3">
+    <div class="poem-image">
+      <%= image_tag "bookshelf.svg", alt: "alttext", width: '100%' %>
+    </div>
+    <div class="poem-show-cards">
+      <div class="poem-description">
+        <h1 class="border-bottom pb-1"><%= @poem.title %></h1>
+        <div class="poem-infos d-flex justify-content-between">
+          <div class="poem-infos__icons">
+            <p><i class="fas fa-feather-alt"></i><%= @poem.author_name %></p>
+            <p><i class="fas fa-align-justify"></i><%= pluralize @poem.content.split(/\n/).count, 'line' %></p>
+            <p class="poem-difficulty-list"><% (@poem.difficulty.to_i).times do %>
+              <i class="fas fa-user-graduate on"></i>
+            <% end %>
+            <% (5 - @poem.difficulty.to_i).times do %>
+              <i class="fas fa-user-graduate off"></i>
+             <% end %>
+            </p>
+          </div>
+          <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>
+          <div class="poem-infos__start-lesson">
+            <% if lesson %>
+              <%= link_to lesson_path(lesson), class: "start-button-bg" do %>
+                <i class="fas fa-play"></i>
+              <% end %>
+              <p class="text-center">Resume lesson</p>
+            <% else %>
+              <div class="text-center">
+                <%= simple_form_for [@poem, @lesson] do |f| %>
+                  <%= f.button :button, class: 'start-button-bg' do %>
+                    <i class="fas fa-play"></i>
+                  <% end %>
+                <% end %>
+                <p>Start a new lesson</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="poem-author-list p-3">
+        <% author_poems = Poem.where(author_name: @poem.author_name) %>
+        <% if author_poems.count > 0 %>
+          <div class="author-poems-list">
+            <h3 class="border-bottom pb-1">Other poems by <%= @poem.author_name %></h3>
+            <ul>
+              <% author_poems.each do |poem| %>
+                <% if poem != @poem %>
+                  <p class="author-poem-title d-flex justify-content-between align-items-center p-2 border"><%= link_to poem.title, poem_path(poem) %><i class="fas fa-greater-than"></i></p>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
