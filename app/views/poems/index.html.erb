@@ -4,9 +4,19 @@
   <div class="card-product">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Victor_Hugo_001.jpg/1200px-Victor_Hugo_001.jpg"alt="..."class="rounded-circle"/>
     <div class="card-product-infos">
+      <% if current_user.completed?(poem) %>
+        <p class="float-right"><strong>BRAVO !</strong><i class="fas fa-award"></i></p>
+       <% elsif current_user.started?(poem) %>
+        <p class="float-right"><strong>leçon en cours ...</strong><i class="fas fa-book-reader"></i></p>
+      <% else %>
+        <p class="float-right"></p>
+        <% end %>
+
       <h2><%= link_to poem.title, poem_path(poem) %></h2>
-      <p><%= poem.author_name %></p>
-      <p class="float-right">
+      <p><%= poem.author_name %>
+        <p class="float-center"></p>
+      </p>
+      <p class="float-left">
           Difficulty
         <% (poem.difficulty.to_i).times do %>
           <i class="fas fa-user-graduate on"></i>
@@ -15,6 +25,8 @@
           <i class="fas fa-user-graduate off"></i>
         <% end %>
       </p>
+      <p class="float-right badge-completion">
+
     </div>
   </div>
   <% end %>
