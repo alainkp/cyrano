@@ -19,8 +19,12 @@
         </div>
         <div class="card-description d-flex">
           <div class="name-author">
-            <%= lesson.poem.title %> <br>
-            <%= lesson.poem.author_name %> <br>
+            <div class="title-poem">
+              <%= lesson.poem.title %> <br>
+            </div>
+            <div class="author-poem">
+              <%= lesson.poem.author_name %> <br>
+            </div>
           </div>
           <div class="progressions">
             <% recite_progression = lesson.recites.last.nil? ? 0 : lesson.recites.last.progression %>
