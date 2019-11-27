@@ -8,13 +8,24 @@
 }
 
 .bottom-navbar {
+  border-top: .5px solid rgba(0,0,0,0.3);
   background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 75px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  height: 60px;
+  // padding: 0px 50px;
+  // color: rgba(0,0,0,0.3);
   position: sticky;
   bottom: 0px;
+
+  a i {
+    color:#CBCBCB;
+    font-size: 26px;
+  }
+  a p {
+    color:#9B9B9B;
+    font-size: 12px;
+    margin:0;
+  }
 }
