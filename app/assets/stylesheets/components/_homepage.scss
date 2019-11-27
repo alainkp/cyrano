@@ -36,6 +36,70 @@
   background-position: left center, right center;
   animation: eyes 6000ms infinite;
 }
+
+#cyrano-logo {
+  color: white;
+  // z-index: 100;
+  position: absolute;
+  display: flex;
+  flex-direction : column;
+  align-items : center;
+  justify-content: center;
+  top: calc(50% - 97px);
+  right: calc(50% - 83px);
+  // font-size: 63px;
+  // animation: 3s linear 1s infinite running slidein;
+  animation: appear 6000ms ;
+
+  img {
+    width: 100px
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+}
+
+// #cyrano-logo::after {
+//   content: ' ';
+//   // opacity: 0;
+//   color: white;
+//   height:40px;
+//   width: 40px;
+//   background-color: #fff;
+//   // z-index: 100;
+//   position: absolute;
+//   top: calc(50% - 63px);
+//   right: 23%;
+//   font-size: 63px;
+//   // animation: 3s linear 1s infinite running slidein;
+//   animation: appear 6000ms ;
+// }
+
+@keyframes appear {
+  0%, 50%, 80% {
+    opacity: 0;
+  }
+
+  85% {
+    opacity: 0.25;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  95% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes flashlight {
   0%, 9% {
     opacity: 0;
