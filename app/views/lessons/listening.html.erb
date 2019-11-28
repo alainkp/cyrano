@@ -1,27 +1,48 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>LISTENING : <%= @lesson.poem.title %></h1>
-      <h3>poem audio</h3>
-      <audio id="listening-audio" controls src="<%= @lesson.poem.audio_url %>">
-        Your browser does not support the audio element.
-      </audio>
+    <div class="listening-image">
+      <%= image_tag "listening.svg", alt: "alttext", width: "150px" %>
+    </div>
+    <div class="speech-bubble">
+      <div class="col-sm-12">
+        <div class="listening-title">
+          <h1> <span class="highlight">Listening</span> : </h1>
+        </div>
+          <div class="poem-title">
+            <p> <%= @lesson.poem.title %> </p>
+          </div>
+          <p><i class="fas fa-feather-alt"></i><%= @lesson.poem.author_name %></p>
+          <p class="poem-difficulty-list"><% (@lesson.poem.difficulty.to_i).times do %>
+            <i class="fas fa-user-graduate on"></i>
+          <% end %>
+          <% (5 - @lesson.poem.difficulty.to_i).times do %>
+            <i class="fas fa-user-graduate off"></i>
+           <% end %>
+          </p>
+          <br>
+        <audio id="listening-audio" controls src="<%= @lesson.poem.audio_url %>">
+          Your browser does not support the audio element.
+        </audio>
 
-      <div class="progress">
-        <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar" ></div>
+        <!-- <div class="progress">
+          <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar" ></div>
+        </div> -->
+        <br><br>
+        <div id="audio-progress-bar"></div>
+
+
+        <br><br>
+      <div class="button-choice">
+        <button type="button" class="btn btn-primary button-back">
+          <%= link_to 'Back (Reading)', reading_lesson_path(@lesson) %>
+        </button>
+        <%= form_for @lesson, url: listening_lesson_path(@lesson),method: :patch do |f| %>
+        <%= f.text_field :listening_progression , value:  @lesson.listening_progression , class: "hidden"%>
+        <%= f.submit 'Next (listening)' , class: "btn btn-primary button-next"%>
+        <% end %>
+    </div>
+
       </div>
-
-      <div id="audio-progress-bar"></div>
-
-      <%= simple_form_for @lesson, url: listening_lesson_path(@lesson),method: :patch do |f| %>
-      <%= f.input :listening_progression , input_html: {value:  @lesson.listening_progression} %>
-      <%= f.submit 'Next (listening)'%>
-      <% end %>
-
-      <ul>
-        <li><%= link_to 'Back (Reading)', reading_lesson_path(@lesson) %></li><li><%= link_to 'Next (Recite)', listening_lesson_path(@lesson) %></li>
-        <li><%= link_to 'Accueil', poems_path %></li>
-      </ul>
     </div>
   </div>
 </div>

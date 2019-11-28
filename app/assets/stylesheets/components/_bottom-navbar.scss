@@ -19,6 +19,10 @@
   position: sticky;
   bottom: 0px;
 
+  a {
+    text-decoration: none;
+  }
+
   a i {
     color:#CBCBCB;
     font-size: 26px;
@@ -29,3 +33,9 @@
     margin:0;
   }
 }
+
+
+.bottom-navbar .active p, .bottom-navbar .active i  {
+  color: #9DD8C8;
+}
+

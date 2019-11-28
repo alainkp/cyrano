@@ -1,15 +1,35 @@
-<h1>READING : <%= @lesson.poem.title %></h1>
-<h3>poem text</h3>
-<p><%= @lesson.poem.content %></p>
+<%= image_tag "letter.svg", alt: "alttext", width: '70%', class: 'reading-icon'%>
+<div id="poem" class="poem-reading-container">
+  <h1 class="poem-reading-title text-center border-bottom"><%= @lesson.poem.title %></h1>
+  <div class="start-container">
+    <div id="start" class="start-button-bg text-center">
+      <i class="fas fa-play"></i>
+    </div>
+    <p class="text-center">Start reading</p>
+  </div>
+  <div class="poem-reading-content hidden">
+    <% @lesson.poem.content.split(/\n/).each_with_index do |line, i| %>
+      <% if i == 0 %>
+        <p class="poem-reading-line text-center"><%= line %></p>
+      <% else %>
+        <p class="poem-reading-line-hidden text-center"><%= line %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="reading-progress-bar"></div>
+</div>
+  <!-- <div class="reading-overall-progress">
+    <div class="reading-overall-progress-bar"></div>
+  </div> -->
 
 <%= simple_form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
-  <%= f.input :reading_progression , input_html: {value:  '41'} %>
+  <%#= f.input :reading_progression , input_html: {value:  '41'} %>
   <%= f.submit 'Next (listening)'%>
 <% end %>
 
-<ul>
-  <li><%= link_to 'Next (listening)', listening_lesson_path(@lesson) %></li>
-  <li><%= link_to 'Accueil', poems_path %></li>
+<!-- <ul>
+  <li><%#= link_to 'Next (listening)', listening_lesson_path(@lesson) %></li>
+  <li><%#= link_to 'Accueil', poems_path %></li>
 </ul>
-
+ -->
 
