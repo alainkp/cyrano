@@ -54,13 +54,13 @@ const audioSetTimecode = () => {
   if (audio) {
     console.log('toto');
     const input_audio_progr = document.getElementById('lesson_listening_progression');
-    const p = document.querySelector('.progress-bar');
+    // const p = document.querySelector('.progress-bar');
     audio.currentTime = audio.duration * input_audio_progr.value / 100;
-    p.style.width = input_audio_progr.value;
+    // p.style.width = input_audio_progr.value;
     audio.addEventListener('timeupdate',() => {
       input_audio_progr.value = Math.ceil(audio.currentTime / audio.duration * 100);
       // console.log(input_audio_progr.value);
-      p.style.width = `${input_audio_progr.value}%`
+      // p.style.width = `${input_audio_progr.value}%`
       bar.animate(input_audio_progr.value/100);
     });
   }
