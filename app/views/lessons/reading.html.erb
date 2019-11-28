@@ -7,6 +7,7 @@
     </div>
     <p class="text-center">Start reading</p>
   </div>
+  <div id="reading-progress-bar" class="hidden"></div>
   <div class="poem-reading-content hidden">
     <% @lesson.poem.content.split(/\n/).each_with_index do |line, i| %>
       <% if i == 0 %>
@@ -16,16 +17,14 @@
       <% end %>
     <% end %>
   </div>
-  <div id="reading-progress-bar"></div>
+  <div class="container-next-btn hidden">
+    <%= form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
+      <%= f.text_field :reading_progression, class: "hidden" %>
+      <%= f.submit 'Next (listening)' , class: "btn btn-primary button-next"%>
+    <% end %>
+  </div>
 </div>
-  <!-- <div class="reading-overall-progress">
-    <div class="reading-overall-progress-bar"></div>
-  </div> -->
 
-<%= simple_form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
-  <%#= f.input :reading_progression , input_html: {value:  '41'} %>
-  <%= f.submit 'Next (listening)'%>
-<% end %>
 
 <!-- <ul>
   <li><%#= link_to 'Next (listening)', listening_lesson_path(@lesson) %></li>

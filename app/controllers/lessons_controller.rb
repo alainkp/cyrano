@@ -18,7 +18,8 @@ class LessonsController < ApplicationController
   end
 
   def update_reading
-    @lesson.update(lesson_params)
+    current_progr = lesson_params[:reading_progression].to_i
+    @lesson.update(lesson_params) if current_progr > @lesson.reading_progression
     redirect_to listening_lesson_path(@lesson)
   end
 
