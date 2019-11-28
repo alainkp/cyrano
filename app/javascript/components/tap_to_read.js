@@ -58,7 +58,7 @@ const readingProgressBar = () => {
   overallProgression += Number.parseInt(progression,10);
   return overallProgression/100
 }
-let scrolling = 0;
+// let scrolling = 0;
 
 const restartReading = () => {
   if (document.getElementById('restart')) {
@@ -66,9 +66,9 @@ const restartReading = () => {
     const poemLines = document.querySelectorAll('.poem-reading-content p');
     const poemContent = document.querySelector('.poem-reading-content')
     restartButton.addEventListener('click', (event) => {
-      poemContent.scroll(0, 0);
+      // poemContent.scroll(0, 0);
       bar.animate(0);
-      scrolling = 0;
+      // scrolling = 0;
       poemLines.forEach((line) => {
         if (document.querySelector('.poem-reading-line-viewed')) {
           line.classList.remove('poem-reading-line-viewed')
@@ -80,6 +80,7 @@ const restartReading = () => {
       const firstLine = document.querySelector('.poem-reading-line-hidden');
       firstLine.classList.remove('poem-reading-line-hidden');
       firstLine.classList.add('poem-reading-line');
+      document.querySelector('.poem-reading-line').scrollIntoView({'behavior': 'smooth'})
     });
   }
 }
@@ -93,13 +94,14 @@ const tapToRead = () => {
           const shownLine = document.querySelector('.poem-reading-line');
           const hiddenLine = document.querySelector('.poem-reading-line-hidden');
           const readingProgression = document.querySelector('#lesson_reading_progression');
-          let elementHeight = document.querySelector('.poem-reading-line').offsetHeight - 20;
+          // let elementHeight = document.querySelector('.poem-reading-line').offsetHeight;
           shownLine.classList.remove('poem-reading-line');
           shownLine.classList.add('poem-reading-line-viewed');
           hiddenLine.classList.remove('poem-reading-line-hidden');
           hiddenLine.classList.add('poem-reading-line');
-          scrolling += elementHeight;
-          poemContent.scroll(0, scrolling);
+          shownLine.scrollIntoView({'behavior': 'smooth'})
+          // scrolling += elementHeight;
+          // poemContent.scroll(0, scrolling);
           readingProgression.value = readingProgressBar()*100;
           bar.animate(readingProgressBar());
         }
