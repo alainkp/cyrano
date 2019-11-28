@@ -1,6 +1,7 @@
 class RecitesController < ApplicationController
   def show
     @recite = Recite.find(params[:id])
+    @poem = @recite.lesson.poem
   end
 
   def create
