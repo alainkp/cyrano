@@ -1,3 +1,8 @@
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .app a {
   text-decoration: none;
   padding-left: 0px;
@@ -9,7 +14,7 @@
 }
 
 .card-image img {
-  height: 35vh;
+  height: 33vh;
   width: 100%;
   object-fit: cover;
   border-radius: 10px 10px 0px 0px;
@@ -79,7 +84,7 @@ font-size: 20px;
 .hs {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns:repeat(7, calc(24% - 39px));
+  grid-template-columns:repeat(7, calc(20% - 39px));
   grid-template-rows: minmax(150px, 1fr);
 }
 
@@ -110,7 +115,7 @@ font-size: 20px;
 }
 
 .dashboard-content {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -5px 5px -5px #333;
   position: relative;
   top: -50px;
   border-radius: 8px;
