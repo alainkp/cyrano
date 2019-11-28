@@ -47,13 +47,15 @@ const initAudioProgressBar = () => {
 }
 
 const audioSetTimecode = () => {
-  console.log('audio loadeddata..')
+  // console.log('audio loadeddata..')
   const audio = document.getElementById('listening-audio');
   const audioProgressBar = document.getElementById('audio-progress-bar');
   const bar = initAudioProgressBar();
   if (audio) {
     const input_audio_progr = document.getElementById('lesson_listening_progression');
     // const p = document.querySelector('.progress-bar');
+    // console.log(input_audio_progr.value);
+    // console.log(audio.duration);
     audio.currentTime = audio.duration * input_audio_progr.value / 100;
     // p.style.width = input_audio_progr.value;
     audio.addEventListener('timeupdate',() => {
@@ -66,11 +68,22 @@ const audioSetTimecode = () => {
 }
 
 const initAudio = () => {
+  // console.log('interieur de initAudio');
   const audio = document.getElementById('listening-audio');
-  if (audio) { //loadedmetadata
-    audio.addEventListener('loadeddata', audioSetTimecode)
-    // audioSetTimecode();
+
+  if (audio) {
+    // if (audio.readyState === 4 ) {
+      audioSetTimecode();//loadedmetadata
+    // } else {
+      // initAudio();
+    // }
   }
+    // audio.addEventListener('loadeddata', (e)=>{
+    //   console.log(e);
+    //   // audioSetTimecode
+    // })
+    // audioSetTimecode();
+
 }
 
 export { initAudio }

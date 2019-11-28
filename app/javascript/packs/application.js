@@ -9,7 +9,10 @@ import { lessonProgressBar, lessonShowProgression, lessonOverallProgress } from 
 import { initPlyr } from "../components/init_plyr";
 // import { loadDynamicDashboardText } from '../components/banner';
 
-initAudio();
+setTimeout(()=>{
+  initAudio();
+},1000);
+
 
 if (document.querySelector("#lessons-card")) {
   lessonProgressBar();
