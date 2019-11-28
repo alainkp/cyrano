@@ -6,6 +6,11 @@
   box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
 }
 
+.container-next-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
 .start-container {
 
   .start-button-bg {
@@ -25,7 +30,9 @@
 }
 
 .poem-reading-content {
+  height: 33vh;
   padding: 1rem;
+  margin-top: 10%;
   overflow: auto;
 }
 
@@ -38,19 +45,19 @@
   opacity: 1;
   font-size: 1.4rem;
   color: #333333;
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
 
 .poem-reading-line-hidden {
   font-size: 1rem;
-  opacity: 0.1;
-  transition: all 0.3s;
+  opacity: 0.05;
+  transition: all 0.6s;
 }
 
 .poem-reading-line-viewed {
   font-size: 1rem;
   opacity: 0.4;
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
 
 #reading-progress-bar {
