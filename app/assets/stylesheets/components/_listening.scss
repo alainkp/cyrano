@@ -26,6 +26,7 @@
   left: 15px;
   height: 520px;
   box-shadow: 0 -5px 5px -5px #333;
+  width: 96%;
 }
 
   h1 {
@@ -83,4 +84,8 @@
 
 .highlight {
   background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #9dd8c8 60%);
+}
+
+.row {
+  margin-right: 0px;
 }
