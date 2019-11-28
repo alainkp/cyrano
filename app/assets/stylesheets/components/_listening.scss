@@ -1,3 +1,91 @@
 #audio-progress-bar{
-  width: 50%;
+  width: 80%;
+  position: relative;
+  left: 25px;
+}
+
+.listening-image {
+  position: relative;
+  left: 200px;
+}
+
+.listening-title {
+  // position: relative;
+  // bottom: 40px;
+}
+
+.poem-title {
+  // position: relative;
+  // bottom: 40px;
+}
+
+.speech-bubble {
+  position: relative;
+  // background: #00aabb;
+  border-radius: .4em;
+  left: 15px;
+  height: 520px;
+  box-shadow: 0 -5px 5px -5px #333;
+  width: 96%;
+}
+
+  h1 {
+    font-size: 2rem;
+    color: #555555;
+    font-weight: bolder;
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: #555555;
+    font-weight: bolder;
+  }
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 55%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #5555;
+  border-top: 0;
+  border-right: 0;
+  margin-left: -10px;
+  margin-top: -20px;
+}
+
+.button-back {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #9dd8c8;
+
+  a {
+    color: #9dd8c8;
+  }
+}
+
+.button-next {
+  background-color: #9dd8c8;
+  border: 1px solid #9dd8c8;
+  border-radius: 4px;
+
+  a {
+    color: white
+  }
+}
+
+.button-choice {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.highlight {
+  background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #9dd8c8 60%);
+}
+
+.row {
+  margin-right: 0px;
 }

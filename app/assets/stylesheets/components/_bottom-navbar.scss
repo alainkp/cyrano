@@ -29,3 +29,14 @@
     margin:0;
   }
 }
+  .bottom-navbar:hover {
+    border-top: .5px solid #000000;
+    border-bottom: 4px solid #000000;
+    background: white;
+    padding: 6px 0;
+}
+
+  .bottom-navbar .active p, .bottom-navbar .active i  {
+  color: #30681f;
+}
+
