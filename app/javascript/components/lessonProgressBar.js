@@ -2,9 +2,9 @@ import ProgressBar from "progressbar.js";
 const linearGradientCircle = `
 <defs>
   <linearGradient id="gradientCircle" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#00b09b"/>
-    <stop offset="50%" stop-color="#60BD70"/>
-    <stop offset="100%" stop-color="#96c93d"/>
+    <stop offset="0%" stop-color="#9DD8C8"/>
+    <stop offset="75%" stop-color="#FFEBB7"/>
+    <stop offset="100%" stop-color="#FFEBB7"/>
   </linearGradient>
 </defs>`;
 
@@ -14,7 +14,7 @@ const lessonProgressBar = () => {
     const readingProgress = card.dataset.readingProgress;
     const bar = new ProgressBar.Circle(card, {
       strokeWidth: 6,
-      color: '#FFEA82',
+      color: 'url(#gradientCircle)',
       trailColor: '#eee',
       trailWidth: 1,
       easing: 'easeInOut',
@@ -24,8 +24,8 @@ const lessonProgressBar = () => {
         value: '',
         alignToBottom: false
       },
-      from: {color: '#ED6A5A'},
-      to: {color: '#1EDD88}'},
+      // from: {color: '#ED6A5A'},
+      // to: {color: '#1EDD88}'},
       // Set default step function for all animate calls
       step: (state, bar) => {
         bar.path.setAttribute('stroke', state.color);
@@ -75,7 +75,7 @@ const lessonShowProgression = () => {
           bar.setText(`${value}%`);
         }
 
-        bar.text.style.color = '#60BD70';
+        bar.text.style.color = '#9DD8C8';
       }
     });
     // bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';

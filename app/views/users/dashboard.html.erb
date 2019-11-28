@@ -1,13 +1,13 @@
-<div class="container pt-2">
+<div class="dashboard-container pt-2">
   <div class="dashboard-image">
     <%= image_tag "shakespeare.svg", alt: "alttext", width: "200px" %>
   </div>
-  <div class="dashboard-content px-3 pt-2 bg-white">
+  <div class="dashboard-content pl-3 pt-2 bg-white">
     <div class="header-introduction-dashboard d-flex">
       <div class="title-intro">
         <h1> <span class="highlight"> Salut, <%= current_user.first_name %> </span> </h1>
       </div>
-      <div class="profile-avatar pt-3 pb-3">
+      <div class="profile-avatar p-3">
         <%= image_tag "no-profile-pic.png", alt: "alttext", width: '45px' %>
       </div>
     </div>
