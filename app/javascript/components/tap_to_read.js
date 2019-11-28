@@ -62,24 +62,26 @@ const tapToRead = () => {
   let scrolling = 0;
   const bar = initReadingProgressBar();
   const poemContent = document.querySelector('.poem-reading-content');
-  poemContent.addEventListener('touchstart', (event) => {
-    if (document.querySelector('.start-container.hidden')) {
-      if (document.querySelector('.poem-reading-line-hidden')) {
-        const shownLine = document.querySelector('.poem-reading-line');
-        const hiddenLine = document.querySelector('.poem-reading-line-hidden');
-        const readingProgression = document.querySelector('#lesson_reading_progression');
-        let elementHeight = document.querySelector('.poem-reading-line').offsetHeight - 20;
-        shownLine.classList.remove('poem-reading-line');
-        shownLine.classList.add('poem-reading-line-viewed');
-        hiddenLine.classList.remove('poem-reading-line-hidden');
-        hiddenLine.classList.add('poem-reading-line');
-        scrolling += elementHeight;
-        poemContent.scroll(0, scrolling);
-        readingProgression.value = readingProgressBar()*100;
-        bar.animate(readingProgressBar());
+  if (poemContent) {
+    poemContent.addEventListener('touchstart', (event) => {
+      if (document.querySelector('.start-container.hidden')) {
+        if (document.querySelector('.poem-reading-line-hidden')) {
+          const shownLine = document.querySelector('.poem-reading-line');
+          const hiddenLine = document.querySelector('.poem-reading-line-hidden');
+          const readingProgression = document.querySelector('#lesson_reading_progression');
+          let elementHeight = document.querySelector('.poem-reading-line').offsetHeight - 20;
+          shownLine.classList.remove('poem-reading-line');
+          shownLine.classList.add('poem-reading-line-viewed');
+          hiddenLine.classList.remove('poem-reading-line-hidden');
+          hiddenLine.classList.add('poem-reading-line');
+          scrolling += elementHeight;
+          poemContent.scroll(0, scrolling);
+          readingProgression.value = readingProgressBar()*100;
+          bar.animate(readingProgressBar());
+        }
       }
-    }
-  }, false);
+    }, false);
+  }
 };
 
 export { tapToRead };

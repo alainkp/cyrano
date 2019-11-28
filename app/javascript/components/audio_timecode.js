@@ -52,7 +52,6 @@ const audioSetTimecode = () => {
   const audioProgressBar = document.getElementById('audio-progress-bar');
   const bar = initAudioProgressBar();
   if (audio) {
-    console.log('toto');
     const input_audio_progr = document.getElementById('lesson_listening_progression');
     // const p = document.querySelector('.progress-bar');
     audio.currentTime = audio.duration * input_audio_progr.value / 100;
@@ -69,8 +68,8 @@ const audioSetTimecode = () => {
 const initAudio = () => {
   const audio = document.getElementById('listening-audio');
   if (audio) { //loadedmetadata
-    // audio.addEventListener('loadedmetadata', audioSetTimecode)
-    audioSetTimecode();
+    audio.addEventListener('loadeddata', audioSetTimecode)
+    // audioSetTimecode();
   }
 }
 

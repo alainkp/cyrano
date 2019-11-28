@@ -5,6 +5,7 @@ import { initAudio } from "../components/audio_timecode.js";
 import { startReading } from "../components/start_reading.js";
 import { tapToRead } from "../components/tap_to_read.js";
 import { lessonProgressBar, lessonShowProgression, lessonOverallProgress } from "../components/lessonProgressBar";
+import { initPlyr } from "../components/init_plyr";
 // import { loadDynamicDashboardText } from '../components/banner';
 
 initAudio();
