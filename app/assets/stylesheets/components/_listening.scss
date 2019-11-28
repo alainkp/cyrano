@@ -89,3 +89,30 @@
 .row {
   margin-right: 0px;
 }
+
+.plyr--full-ui input[type=range] {
+  color: #9dd8c8 !important;
+}
+
+.plyr__control--overlaid {
+  background: rgba(157, 216, 200, .5);
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded=true] {
+  background: #9dd8c8 !important;
+}
+
+.plyr__control.plyr__tab-focus {
+  box-shadow: 0 0 0 5px rgba(157, 216, 200, .5);
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+  background: #9dd8c8 !important;
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+    background: #9dd8c8 !important;
+    color: #fff;
+}
