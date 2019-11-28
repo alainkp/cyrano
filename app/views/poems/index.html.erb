@@ -2,7 +2,7 @@
 <div class ="card-container">
   <% @poems.each do |poem| %>
   <div class="card-product">
-    <img src="https://image.flaticon.com/icons/svg/163/163811.svg"alt="..."class="rounded-circle"/>
+    <%= image_tag(@index_image.sample) %>
     <div class="card-product-infos">
       <% if current_user.completed?(poem) %>
         <p class="float-right"><strong>BRAVO !</strong><i class="fas fa-award"></i></p>
