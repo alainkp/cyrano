@@ -1,23 +1,9 @@
-<!-- <h1>BANNER</h1>
-<p> LOGO </p>
-<p> TITRE </p>
-<p> SOUS TITRE </p> -->
-<div class="banner-cyrano d-flex justify-content-center flex-column">
-  <div class="col-sm-12">
-    <div class="logo-cyrano d-flex flex-column justify-content-center align-items-center">
-      <%= image_tag "shakespeare.svg", alt: "alttext", width: '120px' %>
-      <h3 class=>Cyrano</h3>
-    </div>
-    <div class="catch-phrase">
-      <p>What's my line ?</p>
-    </div>
-    <div class="start-button-bg homepage">
-      <%= link_to dashboard_path do %>
-        <i class="fas fa-play"></i>
-      <% end %>
-    </div>
-    <br>
+<%= link_to dashboard_path do  %>
+  <div id="home-page-animation">
   </div>
-    <%= link_to "Components",components_path %>
-</div>
-
+  <div id="cyrano-logo">
+    <%= image_tag "shakespeare.svg", alt: "cyrano logo"%>
+    <h1>Cyrano</h1>
+    <p><em>What's my line ?</em></p>
+  </div>
+<% end %>
