@@ -62,7 +62,7 @@ const tapToRead = () => {
   let scrolling = 0;
   const bar = initReadingProgressBar();
   const poemContent = document.querySelector('.poem-reading-content');
-  document.addEventListener('touchstart', (event) => {
+  poemContent.addEventListener('touchstart', (event) => {
     if (document.querySelector('.start-container.hidden')) {
       if (document.querySelector('.poem-reading-line-hidden')) {
         const shownLine = document.querySelector('.poem-reading-line');
