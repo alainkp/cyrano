@@ -84,7 +84,7 @@ font-size: 20px;
 .hs {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns:repeat(80, calc(20% - 95px));
+  grid-template-columns:repeat(50, calc(20% - 80px));
   grid-template-rows: minmax(150px, 1fr);
 }
 
