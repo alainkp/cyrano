@@ -1,4 +1,4 @@
-.container {
+.dashboard-container {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -84,7 +84,7 @@ font-size: 20px;
 .hs {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns:repeat(7, calc(20% - 39px));
+  grid-template-columns:repeat(80, calc(20% - 95px));
   grid-template-rows: minmax(150px, 1fr);
 }
 
@@ -139,4 +139,20 @@ font-size: 20px;
 .title-category {
   position: relative;
   top: -10px;
+}
+
+.btn-start-lesson > a {
+  color: white;
+}
+
+.btn-start-lesson {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #9dd8c8;
+  border: 1px solid #9dd8c8;
+}
+
+.if-lesson-empty p {
+  margin: 0 auto;
+  width: 100%;
 }
