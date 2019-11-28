@@ -1,5 +1,7 @@
 import DiffMatchPatch from 'diff-match-patch';
 
+let currentLine = 0;
+
 const createPoemArray = () => {
   const poem = document.querySelector('.hidden-poem').innerText;
   const wordsPoem = poem.replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ").split(' ');
@@ -9,27 +11,49 @@ const createPoemArray = () => {
 
 const speechToText = () => {
   // if (document.querySelector('.hidden-poem')) {
-    const my_poem = createPoemArray();
+    // const my_poem = createPoemArray();
     // const poem = document.querySelector('.hidden-poem').innerText;
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-    const noteTextarea = document.getElementById('note-textarea');
-    let noteContent = '';
     recognition.continuous = true;
     recognition.lang = 'fr-FR';
+    // const noteTextarea = document.getElementById('note-textarea');
+    // let noteContent = '';
 
     recognition.onresult = (event) =>  {
       console.log(event);
       const current = event.resultIndex;
+      const currentReciteLineClass = '.recite-line-' + (current + 1).toString();
+      const currentContentLineClass = '.content-line-' + (current + 1).toString();
+      // console.log(currentContentLineClass);
+      // console.log('toto');
+      const reciteContainer = document.querySelector(currentReciteLineClass);
+      const contentContainer = document.querySelector(currentContentLineClass);
+      // console.log('titi');
+      // console.log(reciteContainer);
       let transcript = event.results[current][0].transcript.trim();
-      noteContent += ' ' +transcript[0].toUpperCase() + transcript.substring(1) + '.';
-      // const dmp = new DiffMatchPatch();
-      // const diffs = dmp.diff_main(noteContent, poem);
-      // const test = dmp.diff_prettyHtml(diffs);
+      // noteContent += ' ' +transcript[0].toUpperCase() + transcript.substring(1) + '.';
+      // reciteContainer.innerText = transcript;
+      const dmp = new DiffMatchPatch();
+      const textModel = contentContainer.innerText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ");
+      console.log(transcript);
+      console.log(textModel);
+      const diffs = dmp.diff_main(transcript,textModel);
+      console.log(diffs);
+      dmp.diff_cleanupSemantic(diffs)
+      const diff_html = dmp.diff_prettyHtml(diffs);
+      console.log(diff_html);
+      reciteContainer.innerHTML = diff_html;
       // const poemContentDiv = document.getElementById('poem-content')
       // poemContentDiv.insertAdjacentHTML('afterbegin', test)
-      noteTextarea.innerText = noteContent;
+      // noteTextarea.innerText = noteContent;
+      contentContainer.parentNode.classList.toggle('hidden');
+      currentLine = current;
+      console.log(currentLine);
+    };
 
+    recognition.onspeechend = (event) => {
+      console.log('arrêt de la parole')
     };
 
     // document.getElementById('start-record-btn').addEventListener('click', (e) => {
@@ -51,9 +75,9 @@ const speechToText = () => {
 
     initRecordButton(recognition);
 
-    noteTextarea.addEventListener('input', () => {
-      noteContent = noteTextarea.innerText;
-    });
+    // noteTextarea.addEventListener('input', () => {
+    //   noteContent = noteTextarea.innerText;
+    // });
   // }
 };
 
