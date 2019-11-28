@@ -27,7 +27,6 @@
   height: 520px;
   box-shadow: 0 -5px 5px -5px #333;
   width: 96%;
-}
 
   h1 {
     font-size: 2rem;
@@ -40,6 +39,7 @@
     color: #555555;
     font-weight: bolder;
   }
+}
 
 .speech-bubble:after {
   content: '';
@@ -72,7 +72,7 @@
   border-radius: 4px;
 
   a {
-    color: white
+    color: white;
   }
 }
 
