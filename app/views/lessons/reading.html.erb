@@ -17,15 +17,12 @@
     <% end %>
   </div>
   <div id="reading-progress-bar"></div>
-</div>
-  <!-- <div class="reading-overall-progress">
-    <div class="reading-overall-progress-bar"></div>
-  </div> -->
-
-<%= simple_form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
-  <%#= f.input :reading_progression , input_html: {value:  '41'} %>
-  <%= f.submit 'Next (listening)'%>
+<%= form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
+  <%= f.text_field :reading_progression %>
+  <%= f.submit 'Next (listening)' , class: "btn btn-primary button-next"%>
 <% end %>
+</div>
+
 
 <!-- <ul>
   <li><%#= link_to 'Next (listening)', listening_lesson_path(@lesson) %></li>
