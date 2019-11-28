@@ -18,6 +18,9 @@
     <% end %>
   </div>
   <div class="container-next-btn hidden">
+    <div id="restart" class="btn btn-primary button-back">
+      <i class="fas fa-redo-alt"></i>
+    </div>
     <%= form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
       <%= f.text_field :reading_progression, class: "hidden" %>
       <%= f.submit 'Next (listening)' , class: "btn btn-primary button-next"%>

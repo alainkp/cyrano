@@ -48,6 +48,7 @@ const initReadingProgressBar = () => {
     return bar
   }
 }
+const bar = initReadingProgressBar();
 
 const readingProgressBar = () => {
   let overallProgression = 0;
@@ -57,10 +58,33 @@ const readingProgressBar = () => {
   overallProgression += Number.parseInt(progression,10);
   return overallProgression/100
 }
+let scrolling = 0;
+
+const restartReading = () => {
+  if (document.getElementById('restart')) {
+    const restartButton = document.getElementById('restart');
+    const poemLines = document.querySelectorAll('.poem-reading-content p');
+    const poemContent = document.querySelector('.poem-reading-content')
+    restartButton.addEventListener('click', (event) => {
+      poemContent.scroll(0, 0);
+      bar.animate(0);
+      scrolling = 0;
+      poemLines.forEach((line) => {
+        if (document.querySelector('.poem-reading-line-viewed')) {
+          line.classList.remove('poem-reading-line-viewed')
+        } if (document.querySelector('.poem-reading-line')) {
+          line.classList.remove('poem-reading-line')
+        }
+        line.classList.add('poem-reading-line-hidden')
+      });
+      const firstLine = document.querySelector('.poem-reading-line-hidden');
+      firstLine.classList.remove('poem-reading-line-hidden');
+      firstLine.classList.add('poem-reading-line');
+    });
+  }
+}
 
 const tapToRead = () => {
-  let scrolling = 0;
-  const bar = initReadingProgressBar();
   const poemContent = document.querySelector('.poem-reading-content');
   poemContent.addEventListener('touchstart', (event) => {
     if (document.querySelector('.start-container.hidden')) {
@@ -82,4 +106,4 @@ const tapToRead = () => {
   }, false);
 };
 
-export { tapToRead };
+export { tapToRead, restartReading };
