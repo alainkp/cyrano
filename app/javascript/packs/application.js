@@ -2,6 +2,8 @@ import "bootstrap";
 import ProgressBar from "progressbar.js";
 import { speechToText,initRecordButton } from "../components/speech_to_text.js";
 import { initAudio } from "../components/audio_timecode.js";
+import { startReading } from "../components/start_reading.js";
+import { tapToRead } from "../components/tap_to_read.js";
 import { lessonProgressBar, lessonShowProgression, lessonOverallProgress } from "../components/lessonProgressBar";
 // import { loadDynamicDashboardText } from '../components/banner';
 
@@ -23,4 +25,8 @@ if (document.getElementById('note-textarea')) {
   // initRecordButton();
 }
 
-// loadDynamicDashboardText();
+if (document.getElementById('start')) {
+  startReading();
+}
+
+tapToRead();
