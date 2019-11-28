@@ -2,6 +2,21 @@
   width: 27%;
 }
 
+.lesson-image {
+  text-align: center;
+  z-index: -1;
+}
+
+.lesson-container {
+  padding: 1rem;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.2);
+  height: 70vh;
+  position: relative;
+  top: -70px;
+  background: white;
+  z-index: 0;
+}
+
 .poem-img {
   padding: 119px 0;
   margin-bottom: 30px;
@@ -45,7 +60,10 @@
 
   h1 {
     font-size: 20px;
-    margin-bottom: 30px;
+  }
+
+  p {
+    margin-bottom: 0.2rem;
   }
 
   .lesson-level {
@@ -54,6 +72,11 @@
   .lesson-level span {
     font-weight: bolder;
     font-size: 18px;
+  }
+
+  .poem-difficulty-list {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #CCCCCC;
   }
 }
 
@@ -64,7 +87,7 @@
 }
 
 .lesson-step{
-  background-color: #60BD70;
+  background-color: #9DD8C8;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 9px;
@@ -72,7 +95,7 @@
   width: 56px;
   border-radius: 50%;
   font-size: 26px;
-  border: 1px solid #60BD70;
+  border: 1px solid #9DD8C8;
 }
 
 .lesson-steps{
@@ -94,7 +117,11 @@
   margin-top: -2px;
   width: 0;
   transition: width 2s ease-in-out;
-  background: linear-gradient(90deg, rgba(0,176,155,1) 0%, rgba(96,189,112,1) 50%, rgba(150,201,61,1) 100%);
+  background: linear-gradient(90deg, #FFEBB7 0%, #9DD8C8 100%);
+}
+
+.lesson-progressions {
+  padding-top: 1rem;
 }
 
 

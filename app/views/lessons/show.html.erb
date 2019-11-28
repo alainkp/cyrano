@@ -1,25 +1,21 @@
-<div class="poem-img" style="background: url(https://images.unsplash.com/photo-1513545581681-9217042d29b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
-</div>
-<div class="container">
-  <div class="lesson-show">
-    <div class="lesson-back">
-      <%= link_to '#' do %>
-      <i class="fas fa-chevron-left"></i>
-      <% end %>
-    </div>
-    <div class="lesson-author">
-      <%= @lesson.poem.author_name %>
-    </div>
+<div class="lesson-show">
+  <div class="lesson-image">
+    <%= image_tag "open-book.svg", alt: "alttext", width: '70%' %>
+  </div>
+  <div class="lesson-container">
     <div class="lesson-body">
-      <p class="lesson-level"><span>Difficulty</span> : <% (@lesson.poem.difficulty.to_i).times do %>
-       <i class="fas fa-user-graduate on"></i>
-       <% end %>
-       <% (5 - @lesson.poem.difficulty.to_i).times do %>
-       <i class="fas fa-user-graduate off"></i>
+      <h1 class="border-bottom pb-1"><%= @lesson.poem.title %></h1>
+      <p><i class="fas fa-feather-alt"></i><%= @lesson.poem.author_name %></p>
+      <p><i class="fas fa-align-justify"></i><%= pluralize @lesson.poem.content.split(/\n/).count, 'line' %></p>
+      <p class="poem-difficulty-list"><% (@lesson.poem.difficulty.to_i).times do %>
+        <i class="fas fa-user-graduate on"></i>
+      <% end %>
+      <% (5 - @lesson.poem.difficulty.to_i).times do %>
+        <i class="fas fa-user-graduate off"></i>
        <% end %>
       </p>
-      <h1><%= @lesson.poem.title %></h1>
 
+        <h1><span class="highlight">Progression</span> :</h1>
       <div class="d-flex justify-content-between lesson-progressions">
         <div class="lesson-progression text-center">
           <div id="reading-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.reading_progression %>">
@@ -32,7 +28,7 @@
           <p>Listening</p>
         </div>
         <div class="lesson-progression text-center">
-          <div id="listening-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.recites.last ?  @lesson.recites.last.progression : "0"  %>">
+          <div id="recite-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.recites.last ?  @lesson.recites.last.progression : "0"  %>">
           </div>
           <p>Speaking</p>
         </div>
