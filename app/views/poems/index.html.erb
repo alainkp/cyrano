@@ -1,33 +1,32 @@
 <%= render "searchbar" %>
 <div class ="card-container">
   <% @poems.each do |poem| %>
-  <div class="card-product">
-    <%= image_tag(@index_image.sample) %>
-    <div class="card-product-infos">
-      <% if current_user.completed?(poem) %>
-        <p class="float-right"><strong>BRAVO !</strong><i class="fas fa-award"></i></p>
-       <% elsif current_user.started?(poem) %>
-        <p class="float-right"><strong>leçon en cours ...</strong><i class="fas fa-book-reader"></i></p>
-      <% else %>
-        <p class="float-right"></p>
-        <% end %>
-
-      <h2><%= link_to poem.title, poem_path(poem) %></h2>
-      <p><%= poem.author_name %>
-        <p class="float-center"></p>
-      </p>
-      <p class="float-left">
-          Difficulty
-        <% (poem.difficulty.to_i).times do %>
-          <i class="fas fa-user-graduate on"></i>
-        <% end %>
-        <% (5 - poem.difficulty.to_i).times do %>
-          <i class="fas fa-user-graduate off"></i>
-        <% end %>
-      </p>
-      <p class="float-right badge-completion">
-
-    </div>
-  </div>
+    <h2><%= link_to poem_path(poem) do %></h2>
+      <div class="card-product">
+        <%= image_tag(@index_image.sample) %>
+        <div class="card-product-infos">
+        <h2><%= poem.title %></h2>
+          <p><%= poem.author_name %>
+          <p class="float-center"></p>
+          </p>
+          <p class="float-left">
+          <% (poem.difficulty.to_i).times do %>
+            <i class="fas fa-user-graduate on"></i>
+          <% end %>
+          <% (5 - poem.difficulty.to_i).times do %>
+            <i class="fas fa-user-graduate off"></i>
+          <% end %>
+          </p>
+          <% if current_user.completed?(poem) %>
+              <p class="float-right card-index__complete"><strong>Par coeur !</strong><i class="fas fa-award"></i></p>
+          <% elsif current_user.started?(poem) %>
+              <p class="float-right card-index__in-progress"><strong>Leçon en cours ...</strong><i class="fas fa-book-reader"></i></p>
+          <% else %>
+            <p class="float-right"></p>
+          <% end %>
+          <p class="float-right badge-completion">
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
