@@ -25,6 +25,12 @@ USERS = [
     password: 123456,
     first_name: 'Alain',
     last_name: 'KONG'
+  },
+  {
+    email: 'martin@cyrano.com',
+    password: 123456,
+    first_name: 'Martin',
+    last_name: 'MARTIN'
   }
 ]
 
