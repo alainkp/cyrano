@@ -1,5 +1,5 @@
 class PoemsController < ApplicationController
-  skip_before_action :authenticate_user!
+  # skip_before_action :authenticate_user!
 
   def index
     @index_image = ['fennec.svg', 'bee.svg', 'fox.svg', 'fox2.svg', 'cat.svg', 'bee2.svg', 'fly.png', 'cocci.svg', 'kid.svg', 'rena.svg', 'bug.png', 'scar.png', 'snowm.png', 'kids.png']
