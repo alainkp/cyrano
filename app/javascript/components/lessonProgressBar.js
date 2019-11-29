@@ -3,25 +3,23 @@ const linearGradientCircle = `
 <defs>
   <linearGradient id="gradientCircle" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
     <stop offset="0%" stop-color="#9DD8C8"/>
-    <stop offset="75%" stop-color="#FFEBB7"/>
+    <stop offset="90%" stop-color="#FFEBB7"/>
     <stop offset="100%" stop-color="#FFEBB7"/>
   </linearGradient>
 </defs>`;
 
 const lessonProgressBar = () => {
   const lessonProgressBar = document.querySelectorAll('.reading-progression');
-
   lessonProgressBar.forEach((card) => {
-
     const readingProgress = card.dataset.readingProgress;
     console.log(readingProgress);
     const bar = new ProgressBar.Circle(card, {
       strokeWidth: 6,
       color: 'url(#gradientCircle)',
       trailColor: '#eee',
-      trailWidth: 10,
+      trailWidth: 1,
       easing: 'easeInOut',
-      duration: 1000,
+      duration: 3000,
       svgStyle: null,
       text: {
         value: '',
@@ -39,14 +37,15 @@ const lessonProgressBar = () => {
           bar.setText(`${value}%`);
         }
 
-        bar.text.style.color = 'rgba(157, 216, 200, 1)';
+        bar.text.style.color = '#9DD8C8';
       }
     });
 
     bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
     bar.text.style.fontSize = '1rem';
     // console.log(Number.parseInt(readingProgress,10)/100);
-    bar.animate(1);  // Number from 0.0 to 1.0
+    bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
+    bar.animate(Number.parseInt(readingProgress,10)/100);  // Number from 0.0 to 1.0
   })
 }
 
