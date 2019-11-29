@@ -1,11 +1,11 @@
 
-<div class="container pt-2">
+<div class="containerz">
 <div class="dashboard-container">
   <div class="dashboard-image">
     <%= image_tag "shakespeare.svg", alt: "alttext", width: "200px" %>
   </div>
-  <div class="dashboard-content pl-3 pt-2 bg-white">
-    <div class="header-introduction-dashboard d-flex">
+  <div class="dashboard-content bg-white">
+    <div class="header-introduction-dashboard d-flex px-3">
       <div class="title-intro">
         <h1> <span class="highlight"> Salut, <%= current_user.first_name %> </span> </h1>
       </div>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="lessons-list">
-      <div class="title-category">
+      <div class="title-category pl-3">
         <h6> Mes poèmes :</h6>
       </div>
       <% my_lessons = @lessons.select { |lesson| lesson.user == current_user } %>
