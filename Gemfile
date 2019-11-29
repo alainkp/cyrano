@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search', '~> 2.3.0'
 gem "faye-websocket"
+gem 'diff-lcs', '~> 1.3'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
