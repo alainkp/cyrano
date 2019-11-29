@@ -37,7 +37,7 @@
         </button>
         <%= form_for @lesson, url: listening_lesson_path(@lesson),method: :patch do |f| %>
         <%= f.text_field :listening_progression , value:  @lesson.listening_progression , class: "hidden"%>
-        <%= f.submit 'Next (listening)' , class: "btn btn-primary button-next"%>
+        <%= f.submit 'Next (Recite)' , class: "btn btn-primary button-next"%>
         <% end %>
     </div>
 
