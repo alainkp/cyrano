@@ -2,7 +2,7 @@ import ProgressBar from "progressbar.js";
 const linearGradientCircle = `
 <defs>
   <linearGradient id="gradientCircle" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#9DD8C8"/>
+    <stop offset="0%" stop-color="#DCE35B"/>
     <stop offset="90%" stop-color="#FFEBB7"/>
     <stop offset="100%" stop-color="#FFEBB7"/>
   </linearGradient>
