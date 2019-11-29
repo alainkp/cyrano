@@ -23,8 +23,8 @@ const initAudioProgressBar = () => {
         value: '',
         alignToBottom: false
       },
-      // from: {color: '#26DBF2'},
-      // to: {color: '#1EDD88'},
+      // from: {color: '#9DD8C8'},
+      // to: {color: '#FFEBB7'},
       // Set default step function for all animate calls
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
@@ -34,7 +34,7 @@ const initAudioProgressBar = () => {
         } else {
           bar.setText(`${value}%`);
         }
-        bar.text.style.color = '#57D296';
+        bar.text.style.color = '#9DD8C8';
       }
     });
 

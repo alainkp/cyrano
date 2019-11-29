@@ -3,9 +3,9 @@ import ProgressBar from "progressbar.js";
 const linearGradient = `
 <defs>
   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#00b09b"/>
-    <stop offset="50%" stop-color="#60BD70"/>
-    <stop offset="100%" stop-color="#96c93d"/>
+    <stop offset="0%" stop-color="#FFEBB7"/>
+    <stop offset="50%" stop-color="#FFEBB7"/>
+    <stop offset="100%" stop-color="#9DD8C8"/>
   </linearGradient>
 </defs>`;
 
@@ -25,8 +25,8 @@ const initReadingProgressBar = () => {
         value: '',
         alignToBottom: false
       },
-      // from: {color: '#26DBF2'},
-      // to: {color: '#1EDD88'},
+      // from: {color: '#9DD8C8'},
+      // to: {color: '#FFEBB7'},
       // Set default step function for all animate calls
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
@@ -36,7 +36,7 @@ const initReadingProgressBar = () => {
         } else {
           bar.setText(`${value}%`);
         }
-        bar.text.style.color = '#57D296';
+        bar.text.style.color = '#9DD8C8';
       }
     });
 
