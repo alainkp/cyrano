@@ -1,0 +1,19 @@
+ // error text
+ del {
+  background: #d81a1abf !important;
+  border-radius: 4px;
+  color: white;
+  padding: 0 1px;
+  margin: 0 2px;
+  text-decoration: line-through;
+}
+
+// correct text
+ins {
+  background: #6c757dc2 !important;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  padding: 0 2px;
+  margin: 0 1px;
+}
