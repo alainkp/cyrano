@@ -47,7 +47,7 @@ const speechToText = () => {
       // const poemContentDiv = document.getElementById('poem-content')
       // poemContentDiv.insertAdjacentHTML('afterbegin', test)
       // noteTextarea.innerText = noteContent;
-      contentContainer.parentNode.classList.toggle('hidden');
+      // contentContainer.parentNode.classList.toggle('hidden');
       currentLine = current;
       console.log(currentLine);
     };
