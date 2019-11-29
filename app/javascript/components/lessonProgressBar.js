@@ -10,13 +10,16 @@ const linearGradientCircle = `
 
 const lessonProgressBar = () => {
   const lessonProgressBar = document.querySelectorAll('.reading-progression');
+
   lessonProgressBar.forEach((card) => {
+
     const readingProgress = card.dataset.readingProgress;
+    console.log(readingProgress);
     const bar = new ProgressBar.Circle(card, {
       strokeWidth: 6,
       color: 'url(#gradientCircle)',
       trailColor: '#eee',
-      trailWidth: 1,
+      trailWidth: 10,
       easing: 'easeInOut',
       duration: 1000,
       svgStyle: null,
@@ -28,7 +31,7 @@ const lessonProgressBar = () => {
       // to: {color: '#1EDD88}'},
       // Set default step function for all animate calls
       step: (state, bar) => {
-        bar.path.setAttribute('stroke', state.color);
+        // bar.path.setAttribute('stroke', state.color);
         const value = readingProgress;
         if (value === 0) {
           bar.setText('');
@@ -36,14 +39,14 @@ const lessonProgressBar = () => {
           bar.setText(`${value}%`);
         }
 
-        bar.text.style.color = state.color;
+        bar.text.style.color = 'rgba(157, 216, 200, 1)';
       }
     });
 
     bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
     bar.text.style.fontSize = '1rem';
-    bar.animate(Number.parseInt(readingProgress,10)/100);  // Number from 0.0 to 1.0
-
+    // console.log(Number.parseInt(readingProgress,10)/100);
+    bar.animate(1);  // Number from 0.0 to 1.0
   })
 }
 

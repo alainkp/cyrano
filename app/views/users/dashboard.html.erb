@@ -1,22 +1,23 @@
 
-<div class="containerz">
-<div class="dashboard-container">
+<!-- <div class="dashboard-container"> -->
   <div class="dashboard-image">
-    <%= image_tag "shakespeare.svg", alt: "alttext", width: "200px" %>
+    <%= image_tag "shakespeare.svg", alt: "alttext", class: 'cyrano'%>
+    <%= image_tag "bubble.svg", alt: "alttext", class: 'bubble'%>
+    <h1 class="greeting"> <p class=""> Salut,</p><p class="highlight bold"><%= current_user.first_name %> </p> </h1>
   </div>
-  <div class="dashboard-content bg-white">
-    <div class="header-introduction-dashboard d-flex px-3">
+  <!-- <div class="dashboard-content bg-white"> -->
+    <!-- <div class="header-introduction-dashboard d-flex px-3">
       <div class="title-intro">
         <h1> <span class="highlight"> Salut, <%= current_user.first_name %> </span> </h1>
       </div>
       <div class="profile-avatar p-3">
-        <%= image_tag "no-profile-pic.png", alt: "alttext", width: '45px' %>
+        <%#= image_tag "no-profile-pic.png", alt: "profile image", width: '45px'%>
       </div>
-    </div>
-    <div class="lessons-list">
-      <div class="title-category pl-3">
+    </div> -->
+    <!-- <div class="lessons-list"> -->
+      <!-- <div class="title-category pl-3">
         <h6> Mes poèmes :</h6>
-      </div>
+      </div> -->
       <% my_lessons = @lessons.select { |lesson| lesson.user == current_user } %>
         <% if my_lessons.empty? %>
           <div class="if-lesson-empty">
@@ -26,35 +27,36 @@
             <%= link_to "+ Start a lesson", poems_path %> </button>
           </div>
         <% else %>
-        <div class="app">
+        <!-- <div class="app"> -->
           <div id="lessons-card" class="hs">
             <% @lessons.each do |lesson| %>
-              <%= link_to lesson_path(lesson) do %>
                 <div class="card-poems bg-white">
-                  <div class="card-image">
-                    <%= image_tag(@index_image.sample) %>
+              <%= link_to lesson_path(lesson) do %>
+                  <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)">
+
                   </div>
                   <div class="card-description d-flex">
-                    <div class="name-author">
                       <div class="author-poem">
                         <%= lesson.poem.author_name %> <br>
                       </div>
-                      <div class="title-poem">
+                    <!-- <div class="name-author"> -->
+                    <!-- </div> -->
+                    <div class="title-poem">
                         <%= lesson.poem.title %> <br>
                       </div>
-                    </div>
                     <div class="progressions">
                       <% recite_progression = lesson.recites.last.nil? ? 0 : lesson.recites.last.progression %>
                       <div class="reading-progression" data-reading-progress=" <%= (lesson.reading_progression + lesson.listening_progression + recite_progression)/3%>"></div>
                     </div>
+
                   </div>
-                </div>
               <% end %>
+                </div>
             <% end %>
           </div>
           <% end %>
-        </div>
+        <!-- </div> -->
       </div>
-    </div>
-  </div>
-</div>
+    <!-- </div> -->
+  <!-- </div> -->
+
