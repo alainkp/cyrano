@@ -6,27 +6,17 @@
 
 .listening-image {
   position: relative;
-  left: 200px;
-}
-
-.listening-title {
-  // position: relative;
-  // bottom: 40px;
-}
-
-.poem-title {
-  // position: relative;
-  // bottom: 40px;
+  left: 90px;
 }
 
 .speech-bubble {
   position: relative;
-  // background: #00aabb;
   border-radius: .4em;
   left: 15px;
-  height: 520px;
   box-shadow: 0 -5px 5px -5px #333;
   width: 96%;
+  margin-top: -105px;
+  background: white;
 
   h1 {
     font-size: 2rem;
@@ -41,20 +31,20 @@
   }
 }
 
-.speech-bubble:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 55%;
-  width: 0;
-  height: 0;
-  border: 20px solid transparent;
-  border-bottom-color: #5555;
-  border-top: 0;
-  border-right: 0;
-  margin-left: -10px;
-  margin-top: -20px;
-}
+// .speech-bubble:after {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 55%;
+//   width: 0;
+//   height: 0;
+//   border: 20px solid transparent;
+//   border-bottom-color: #5555;
+//   border-top: 0;
+//   border-right: 0;
+//   margin-left: -10px;
+//   margin-top: -20px;
+// }
 
 .button-back {
   background-color: white;

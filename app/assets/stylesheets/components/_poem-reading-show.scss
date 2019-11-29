@@ -32,6 +32,12 @@
   }
 }
 
+.reading-highlight {
+  font-size: 2rem;
+  text-align: center;
+  color: #333333;
+}
+
 .start-container {
 
   .start-button-bg {
@@ -51,7 +57,7 @@
 }
 
 .poem-reading-content {
-  height: 45vh;
+  height: 41vh;
   padding: 1rem;
   margin-top: 10%;
   overflow: auto;
@@ -60,23 +66,24 @@
 .poem-reading-title {
   font-weight: bolder;
   font-size: 1.4rem;
+  color: #333333;
 }
 
 .poem-reading-line {
   opacity: 1;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #333333;
   transition: all 0.3s;
 }
 
 .poem-reading-line-hidden {
-  font-size: 1rem;
+  font-size: 1.1rem;
   opacity: 0.05;
   transition: all 0.3s;
 }
 
 .poem-reading-line-viewed {
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0.4;
   transition: all 0.3s;
 }
