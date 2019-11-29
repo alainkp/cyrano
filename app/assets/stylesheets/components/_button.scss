@@ -36,12 +36,35 @@
 }
 
 .record-btn {
-  background-color: #FD1016;
+  background-color: #9dd8c8;
   border-radius: 50%;
   font-size: 33px;
   color: white;
   height: 80px;
   width: 80px;
+  transition: .3s ease-in-out;
+  border: 0;
+}
+
+.lesson-over-btn {
+  background-color: #9dd8c8;
+  border-radius: 50%;
+  font-size: 15px;
+  color: white;
+  height: 40px;
+  width: 40px;
+  transition: .3s ease-in-out;
+  border: 0;
+}
+
+
+.replay-btn {
+  background-color: #9dd8c8;
+  border-radius: 50%;
+  font-size: 15px;
+  color: white;
+  height: 40px;
+  width: 40px;
   transition: .3s ease-in-out;
   border: 0;
 }
@@ -52,7 +75,7 @@
   height: 100px;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 

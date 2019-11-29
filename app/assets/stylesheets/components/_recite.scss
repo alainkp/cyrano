@@ -17,5 +17,25 @@
 }
 
 .sticky-record-btn {
-    min-height: calc(100vh);
+    // min-height: calc(20vh);
+}
+
+
+.recites-container {
+  padding: 1rem;
+  box-shadow: 0 -5px 5px -5px #333;
+  height: 100vh;
+  background: white;
+  z-index: 0;
+
+  h1 {
+    font-size: 2rem;
+    color: #555555;
+    font-weight: bolder;
+}
+  p {
+    font-size: 1.3rem;
+    color: #555555;
+    font-weight: bolder;
+  }
 }
