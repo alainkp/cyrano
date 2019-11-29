@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="shelf">
+      <div class="shelf" style='background-image: url(<%= image_path "bookshelf.svg" %>)'>
       </div>
       <div class="poem-author-list">
         <% author_poems = Poem.where(author_name: @poem.author_name) %>

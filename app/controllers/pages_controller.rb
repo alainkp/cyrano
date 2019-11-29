@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def components
     @lesson = Lesson.first
     @user = User.first
-    @poem = Poem.first
+    @poem = Poem.find(186)
     @recite = Recite.first
   end
 end
