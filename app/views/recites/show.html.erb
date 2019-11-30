@@ -1,12 +1,10 @@
 <div class="recite-image text-center">
   <%= image_tag "ballad.svg", alt: "alttext", width: "250px", class: 'recite-image' %>
 </div>
-
 <div class="recites-container bg-white">
   <div class="recite-title">
     <h1> <span class="highlight">Recite</span> : </h1>
   </div>
-
   <div class="sticky-record-btn">
     <p><%= @poem.title %></p>
     <div id="recite-progress-bar"></div>
@@ -23,31 +21,21 @@
       <p id="note-textarea" class="bg-red"></p>
     </div>
   </div>
-<!--   <button id="stop-record-btn" class= "btn btn-warning" title="Stop Recording">Stop Recognition</button> -->
-
   <div class="record-btn-container">
     <%= link_to do %>
       <button class= "replay-btn">
         <i class="fas fa-redo-alt"></i>
       </button>
     <% end %>
-      <button class= "record-btn">
-        <i class="record-btn-logo fas fa-microphone-alt"></i>
-      </button>
-      <%= form_for @recite, url: recite_path(@recite), method: :patch do |f| %>
-        <%= f.text_field :progression, class: "hidden" %>
-        <%= f.button class: "lesson-over-btn" do %>
-          <i class="fas fa-check"></i>
-        <% end %>
+    <button class= "record-btn">
+      <i class="record-btn-logo fas fa-microphone-alt"></i>
+    </button>
+    <%= form_for @recite, url: recite_path(@recite), method: :patch do |f| %>
+      <%= f.text_field :progression, class: "hidden" %>
+      <%= f.button class: "lesson-over-btn" do %>
+        <i class="fas fa-check"></i>
       <% end %>
-    <%#= link_to lesson_path(@recite.lesson) do %>
-      <!-- <button class= "lesson-over-btn"> -->
-        <!-- <i class="fas fa-check"></i> -->
-      <!-- </button> -->
-    <%# end %>
+    <% end %>
   </div>
 </div>
-<!-- <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p> -->
-
-
 
