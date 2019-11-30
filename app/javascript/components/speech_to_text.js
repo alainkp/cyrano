@@ -1,56 +1,95 @@
 import DiffMatchPatch from 'diff-match-patch';
+import ProgressBar from "progressbar.js";
+
+const linearGradient = `
+<defs>
+  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#FFEBB7"/>
+    <stop offset="50%" stop-color="#FFEBB7"/>
+    <stop offset="100%" stop-color="#9DD8C8"/>
+  </linearGradient>
+</defs>`;
 
 let currentLine = 0;
 
-const createPoemArray = () => {
-  const poem = document.querySelector('.hidden-poem').innerText;
-  const wordsPoem = poem.replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ").split(' ');
-  console.log(wordsPoem)
-  return wordsPoem;
+const initReciteProgressBar = () => {
+  const reciteProgressBar = document.getElementById('recite-progress-bar');
+  if (reciteProgressBar) {
+     const bar = new ProgressBar.SemiCircle(reciteProgressBar, {
+      strokeWidth: 6,
+      color: 'url(#gradient)',
+      trailColor: '#eee',
+      trailWidth: 1,
+      easing: 'easeInOut',
+      duration: 500,
+      svgStyle: null,
+      text: {
+        value: '',
+        alignToBottom: false
+      },
+      // from: {color: '#9DD8C8'},
+      // to: {color: '#FFEBB7'},
+      // Set default step function for all animate calls
+      step: (state, bar) => {
+        const value = Math.round(bar.value() * 100);
+        if (value === 0) {
+          bar.setText('');
+        } else {
+          bar.setText(`${value}%`);
+        }
+        bar.text.style.color = '#9DD8C8';
+      }
+    });
+
+    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontSize = '2rem';
+    bar.svg.insertAdjacentHTML('afterBegin', linearGradient);
+    return bar
+  }
 }
+const bar = initReciteProgressBar();
 
 const speechToText = () => {
   // if (document.querySelector('.hidden-poem')) {
-    // const my_poem = createPoemArray();
-    // const poem = document.querySelector('.hidden-poem').innerText;
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.continuous = true;
     recognition.lang = 'fr-FR';
-    // const noteTextarea = document.getElementById('note-textarea');
-    // let noteContent = '';
-
     recognition.onresult = (event) =>  {
-      console.log(event);
+      // console.log(event);
+      let overallProgression = 0;
+      const poemLength = document.querySelectorAll('.line').length - 1;
       const current = event.resultIndex;
       const currentReciteLineClass = '.recite-line-' + (current + 1).toString();
       const currentContentLineClass = '.content-line-' + (current + 1).toString();
+      const reciteProgression = document.querySelector('#recite_progression');
       // console.log(currentContentLineClass);
-      // console.log('toto');
       const reciteContainer = document.querySelector(currentReciteLineClass);
       const contentContainer = document.querySelector(currentContentLineClass);
-      // console.log('titi');
       // console.log(reciteContainer);
       let transcript = event.results[current][0].transcript.trim();
-      // noteContent += ' ' +transcript[0].toUpperCase() + transcript.substring(1) + '.';
       // reciteContainer.innerText = transcript;
       const dmp = new DiffMatchPatch();
       const textModel = contentContainer.innerText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ");
-      console.log(transcript);
-      console.log(textModel);
+      // console.log(transcript);
+      // console.log(textModel);
       const diffs = dmp.diff_main(transcript,textModel);
-      console.log(diffs);
+      // console.log(diffs);
       dmp.diff_cleanupSemantic(diffs)
       const diff_html = dmp.diff_prettyHtml(diffs);
-      console.log(diff_html);
+      // console.log(diff_html);
       reciteContainer.innerHTML = diff_html;
-      // const poemContentDiv = document.getElementById('poem-content')
-      // poemContentDiv.insertAdjacentHTML('afterbegin', test)
-      // noteTextarea.innerText = noteContent;
       // contentContainer.parentNode.classList.toggle('hidden');
       currentLine = current;
       reciteContainer.scrollIntoView({'behavior': 'smooth'});
+      console.log(poemLength);
       console.log(currentLine);
+      let reciteProgress = ((currentLine + 1) * 100 / poemLength);
+      console.log(reciteProgress);
+      overallProgression += Number.parseInt(reciteProgress,10);
+      reciteProgression.value = overallProgression;
+      bar.animate(overallProgression/100);
+
     };
 
     recognition.onspeechend = (event) => {
@@ -75,11 +114,6 @@ const speechToText = () => {
     // });
 
     initRecordButton(recognition);
-
-    // noteTextarea.addEventListener('input', () => {
-    //   noteContent = noteTextarea.innerText;
-    // });
-  // }
 };
 
 const initRecordButton = (recognition) => {

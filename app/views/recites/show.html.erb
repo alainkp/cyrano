@@ -9,6 +9,7 @@
 
   <div class="sticky-record-btn">
     <p><%= @poem.title %></p>
+    <div id="recite-progress-bar"></div>
     <div id="poem-content">
       <p class='hidden-poem hidden'><%= @poem.content %></p>
       <% @poem.content.split(/\./).each_with_index do |line, i| %>
@@ -24,21 +25,25 @@
   </div>
 <!--   <button id="stop-record-btn" class= "btn btn-warning" title="Stop Recording">Stop Recognition</button> -->
 
-<div class="record-btn-container">
-  <%= link_to do %>
-    <button class= "replay-btn">
-      <i class="fas fa-redo-alt"></i>
-    </button>
-  <% end %>
-    <button class= "record-btn">
-      <i class="record-btn-logo fas fa-microphone-alt"></i>
-    </button>
-  <%= link_to lesson_path(@recite.lesson) do %>
-    <button class= "lesson-over-btn">
-      <i class="fas fa-check"></i>
-    </button>
-  <% end %>
-</div>
+  <div class="record-btn-container">
+    <%= link_to do %>
+      <button class= "replay-btn">
+        <i class="fas fa-redo-alt"></i>
+      </button>
+    <% end %>
+      <button class= "record-btn">
+        <i class="record-btn-logo fas fa-microphone-alt"></i>
+      </button>
+      <%= form_for @recite, url: recite_path(@recite), method: :patch do |f| %>
+        <%= f.text_field :progression, class: "hidden" %>
+        <%= f.submit 'V' ,class: "lesson-over-btn"%>
+      <% end %>
+    <%#= link_to lesson_path(@recite.lesson) do %>
+      <!-- <button class= "lesson-over-btn"> -->
+        <!-- <i class="fas fa-check"></i> -->
+      <!-- </button> -->
+    <%# end %>
+  </div>
 </div>
 <!-- <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p> -->
 
