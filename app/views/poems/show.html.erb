@@ -10,12 +10,19 @@
           <div class="poem-infos__icons">
             <p><i class="fas fa-feather-alt"></i><%= @poem.author_name %></p>
             <p><i class="fas fa-align-justify"></i><%= pluralize @poem.content.split(/\n/).count, 'line' %></p>
-            <p class="poem-difficulty-list"><% (@poem.difficulty.to_i).times do %>
+            <p class="poem-difficulty-list"><%# (@poem.difficulty.to_i).times do %>
               <i class="fas fa-user-graduate on"></i>
-            <% end %>
-            <% (5 - @poem.difficulty.to_i).times do %>
-              <i class="fas fa-user-graduate off"></i>
-             <% end %>
+              <% if @poem.difficulty.to_i <= 1 %>
+                <span class="easy-difficulty">facile</span>
+              <% elsif @poem.difficulty.to_i <= 3 %>
+                <span class="medium-difficulty">moyen</span>
+              <% else %>
+                <span class="hard-difficulty">difficile</span>
+              <% end %>
+            <%# end %>
+            <%# (5 - @poem.difficulty.to_i).times do %>
+              <!-- <i class="fas fa-user-graduate off"></i> -->
+             <%# end %>
             </p>
           </div>
           <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>

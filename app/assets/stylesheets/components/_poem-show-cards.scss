@@ -6,7 +6,7 @@
 
 .poem-show-cards {
   position: relative;
-  top: -104px;
+  top: -99px;
 }
 
 .poem-description {
@@ -49,22 +49,44 @@
   padding: 0.3rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  color: #9dd8c8;
+  color: #74D8BD;
 }
 
 .fa-align-justify {
   padding: 0.3rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  color: #9dd8c8;
-}
-
-.fa-user-graduate.on {
   color: #74D8BD;
 }
 
-.fa-user-graduate.off {
-  color: #CCCCCC;
+.fa-user-graduate.on {
+  padding: 0.3rem;
+  color: #74D8BD;
+  margin-right: 0.3rem;
+}
+
+.easy-difficulty {
+  background-color: #74D8BD;
+  padding: 0rem 0.2rem;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+.medium-difficulty {
+  background-color: #FFC634;
+  padding: 0rem 0.2rem;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+.hard-difficulty {
+  background-color: hsla(9,82%,50%,100%);
+  padding: 0rem 0.2rem;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
 }
 
 .poem-author-list {
@@ -106,7 +128,7 @@
 .shelf {
   height: 20px;
   background-size: cover;
-  background-position: 0px 124px;
+  background-position: 0px 120px;
   width: 100%;
   // background-image: url(bookshelf.svg);
 }

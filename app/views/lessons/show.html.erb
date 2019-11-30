@@ -7,12 +7,15 @@
       <h1 class="border-bottom pb-1"><%= @lesson.poem.title %></h1>
       <p><i class="fas fa-feather-alt"></i><%= @lesson.poem.author_name %></p>
       <p><i class="fas fa-align-justify"></i><%= pluralize @lesson.poem.content.split(/\n/).count, 'line' %></p>
-      <p class="poem-difficulty-list"><% (@lesson.poem.difficulty.to_i).times do %>
+      <p class="poem-difficulty-list"><%# (@poem.difficulty.to_i).times do %>
         <i class="fas fa-user-graduate on"></i>
-      <% end %>
-      <% (5 - @lesson.poem.difficulty.to_i).times do %>
-        <i class="fas fa-user-graduate off"></i>
-       <% end %>
+        <% if @lesson.poem.difficulty.to_i <= 1 %>
+          <span class="easy-difficulty">facile</span>
+        <% elsif @lesson.poem.difficulty.to_i <= 3 %>
+          <span class="medium-difficulty">moyen</span>
+        <% else %>
+          <span class="hard-difficulty">difficile</span>
+        <% end %>
       </p>
 
         <h1><span class="highlight">Progression</span> :</h1>

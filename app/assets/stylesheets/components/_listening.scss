@@ -49,16 +49,16 @@
 .button-back {
   background-color: white;
   border-radius: 4px;
-  border: 1px solid #9dd8c8;
+  border: 1px solid #74D8BD;
 
   a {
-    color: #9dd8c8;
+    color: #74D8BD;
   }
 }
 
 .button-next {
-  background-color: #9dd8c8;
-  border: 1px solid #9dd8c8;
+  background-color: #74D8BD;
+  border: 1px solid #74D8BD;
   border-radius: 4px;
 
   a {
@@ -73,7 +73,7 @@
 
 
 .highlight {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #9dd8c8 60%);
+  background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #74D8BD 60%);
 }
 
 .row {
@@ -81,7 +81,7 @@
 }
 
 .plyr--full-ui input[type=range] {
-  color: #9dd8c8 !important;
+  color: #74D8BD !important;
 }
 
 .plyr__control--overlaid {
@@ -91,7 +91,7 @@
 .plyr--video .plyr__control.plyr__tab-focus,
 .plyr--video .plyr__control:hover,
 .plyr--video .plyr__control[aria-expanded=true] {
-  background: #9dd8c8 !important;
+  background: #74D8BD !important;
 }
 
 .plyr__control.plyr__tab-focus {
@@ -99,10 +99,10 @@
 }
 
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
-  background: #9dd8c8 !important;
+  background: #74D8BD !important;
 }
 
 .plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
-    background: #9dd8c8 !important;
+    background: #74D8BD !important;
     color: #fff;
 }
