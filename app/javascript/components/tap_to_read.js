@@ -99,7 +99,7 @@ const tapToRead = () => {
           shownLine.classList.add('poem-reading-line-viewed');
           hiddenLine.classList.remove('poem-reading-line-hidden');
           hiddenLine.classList.add('poem-reading-line');
-          shownLine.scrollIntoView({'behavior': 'smooth'})
+          shownLine.scrollIntoView({'behavior': 'smooth'});
           // scrolling += elementHeight;
           // poemContent.scroll(0, scrolling);
           readingProgression.value = readingProgressBar()*100;
