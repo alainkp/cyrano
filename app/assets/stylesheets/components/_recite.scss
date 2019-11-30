@@ -13,11 +13,15 @@
   .recite-line{
     color:#79C25B;
   }
+}
 
+.poem-content {
+  height: 45vh;
+  overflow: scroll;
 }
 
 .sticky-record-btn {
-    // min-height: calc(20vh);
+  height: 50vh;
 }
 
 
@@ -28,6 +32,7 @@
   background: white;
   z-index: 0;
   margin-top: -100px;
+  height: 56vh;
 
   h1 {
     font-size: 2rem;
