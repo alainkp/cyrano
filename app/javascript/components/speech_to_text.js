@@ -49,6 +49,7 @@ const speechToText = () => {
       // noteTextarea.innerText = noteContent;
       // contentContainer.parentNode.classList.toggle('hidden');
       currentLine = current;
+      reciteContainer.scrollIntoView({'behavior': 'smooth'});
       console.log(currentLine);
     };
 
