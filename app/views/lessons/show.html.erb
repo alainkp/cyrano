@@ -6,7 +6,7 @@
     <div class="lesson-body">
       <h1 class="border-bottom pb-1"><%= @lesson.poem.title %></h1>
       <p><i class="fas fa-feather-alt"></i><%= @lesson.poem.author_name %></p>
-      <p><i class="fas fa-align-justify"></i><%= pluralize @lesson.poem.content.split(/\n/).count, 'line' %></p>
+      <p><i class="fas fa-align-justify"></i><%= pluralize @lesson.poem.content.split(/\n/).count, 'ligne' %></p>
       <p class="poem-difficulty-list"><%# (@poem.difficulty.to_i).times do %>
         <i class="fas fa-user-graduate on"></i>
         <% if @lesson.poem.difficulty.to_i <= 1 %>
@@ -23,17 +23,17 @@
         <div class="lesson-progression text-center">
           <div id="reading-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.reading_progression %>">
           </div>
-          <p>Reading</p>
+          <p>Lire</p>
         </div>
         <div class="lesson-progression text-center">
           <div id="listening-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.listening_progression %>">
           </div>
-          <p>Listening</p>
+          <p>Écouter</p>
         </div>
         <div class="lesson-progression text-center">
           <div id="recite-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.recites.last ?  @lesson.recites.last.progression : "0"  %>">
           </div>
-          <p>Speaking</p>
+          <p>Réciter</p>
         </div>
       </div>
       <div class="lesson-steps d-flex justify-content-around">

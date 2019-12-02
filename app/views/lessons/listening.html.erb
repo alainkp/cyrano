@@ -5,7 +5,7 @@
     <div class="animated speech-bubble slideInUp fast">
       <div class="col-sm-12">
         <div class="listening-title">
-          <h1> <span class="highlight">Listening</span> : </h1>
+          <h1> <span class="highlight">Écouter</span> : </h1>
         </div>
           <div class="poem-title">
             <p> <%= @lesson.poem.title %> </p>
@@ -23,7 +23,7 @@
           </p>
           <br>
         <audio id="listening-audio" controls src="<%= @lesson.poem.audio_url %>">
-          Your browser does not support the audio element.
+          Votre navigateur ne supporte pas l'audio.
         </audio>
 
         <!-- <div class="progress">
@@ -35,11 +35,11 @@
         <br><br>
       <div class="button-choice">
         <button type="button" class="btn btn-primary button-back">
-          <%= link_to 'Back (Reading)', reading_lesson_path(@lesson) %>
+          <%= link_to 'Précédent (écouter)', reading_lesson_path(@lesson) %>
         </button>
         <%= form_for @lesson, url: listening_lesson_path(@lesson),method: :patch do |f| %>
         <%= f.text_field :listening_progression , value:  @lesson.listening_progression , class: "hidden"%>
-        <%= f.submit 'Next (Recite)' , class: "btn btn-primary button-next"%>
+        <%= f.submit 'Suivant (réciter)' , class: "btn btn-primary button-next"%>
         <% end %>
     </div>
 
