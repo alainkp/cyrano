@@ -1,8 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400|Source+Sans+Pro:300,400,600&display=swap');
 // Define fonts for body and headers
-$body-font: 'Source Sans Pro', sans-serif;
-$headers-font: 'Source Sans Pro', sans-serif;
+$body-font: 'museo-sans-rounded', sans-serif;
+// $body-font: 'Source Sans Pro', sans-serif;
+$headers-font: 'museo-sans-rounded', sans-serif;
+// $headers-font: 'Source Sans Pro', sans-serif;
 
 
 // To use a font file (.woff) uncomment following lines
@@ -14,3 +16,47 @@ $headers-font: 'Source Sans Pro', sans-serif;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: 'museo-sans-rounded';
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-100-webfont.eot');
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-100-webfont.eot?#iefix') format('embedded-opentype'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-100-webfont.woff2') format('woff2'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-100-webfont.woff') format('woff'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-100-webfont.svg#museo_sans_rounded100') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo-sans-rounded';
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-300-webfont.eot');
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-300-webfont.eot?#iefix') format('embedded-opentype'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-300-webfont.woff2') format('woff2'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-300-webfont.woff') format('woff'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-300-webfont.svg#museo_sans_rounded300') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo-sans-rounded';
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-500-webfont.eot');
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-500-webfont.eot?#iefix') format('embedded-opentype'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-500-webfont.woff2') format('woff2'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-500-webfont.woff') format('woff'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-500-webfont.svg#museo_sans_rounded500') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo-sans-rounded';
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-700-webfont.eot');
+  src: url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-700-webfont.eot?#iefix') format('embedded-opentype'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-700-webfont.woff2') format('woff2'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-700-webfont.woff') format('woff'),
+   url('https://d7mj4aqfscim2.cloudfront.net/proxy/fonts/museo/museosansrounded-700-webfont.svg#museo_sans_rounded700') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}

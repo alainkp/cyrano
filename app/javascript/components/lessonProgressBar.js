@@ -1,5 +1,5 @@
 import ProgressBar from "progressbar.js";
-const linearGradientCircle = `
+let linearGradientCircle = `
 <defs>
   <linearGradient id="gradientCircle" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
     <stop offset="0%" stop-color="#DCE35B"/>
@@ -53,11 +53,22 @@ const lessonShowProgression = () => {
   const progressCircles = document.querySelectorAll('.lesson-show-progression')
   progressCircles.forEach((progressCircle)=>{
     const progress = progressCircle.dataset.progression;
+    const colorFirst = progressCircle.dataset.colorFirst;
+    const colorLast = progressCircle.dataset.colorLast;
+    let linearGradientCircle = `
+        <defs>
+          <linearGradient id="gradientCircle${colorFirst}" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="${colorFirst}"/>
+            <stop offset="100%" stop-color="${colorLast}"/>
+          </linearGradient>
+        </defs>`;
+        console.log(linearGradientCircle);
     const bar = new ProgressBar.Circle(progressCircle, {
-      strokeWidth: 4,
-      color: 'url(#gradientCircle)',
-      trailColor: '#eee',
-      trailWidth: 1,
+      strokeWidth: 9,
+      color: `${colorFirst}`,
+      // color: `url(#gradientCircle${colorFirst})`,
+      trailColor: '#E5E5E5',
+      trailWidth: 5,
       easing: 'easeInOut',
       duration: 3000,
       svgStyle: null,
@@ -77,11 +88,11 @@ const lessonShowProgression = () => {
           bar.setText(`${value}%`);
         }
 
-        bar.text.style.color = '#9DD8C8';
+        bar.text.style.color = colorFirst;
       }
     });
-    // bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-    // bar.text.style.fontSize = '1Opx';
+    bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
+    bar.text.style.fontSize = '20px';
     bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(progress,10)/100);  // Number from 0.0 to 1.0
   });

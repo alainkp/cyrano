@@ -21,30 +21,30 @@
         <h1><span class="highlight">Progression</span> :</h1>
       <div class="d-flex justify-content-between lesson-progressions">
         <div class="lesson-progression text-center">
-          <div id="reading-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.reading_progression %>">
+          <div id="reading-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.reading_progression %>" data-color-first="#1A9AD6" data-color-last="#85D3F7">
           </div>
           <p>Lire</p>
         </div>
         <div class="lesson-progression text-center">
-          <div id="listening-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.listening_progression %>">
+          <div id="listening-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.listening_progression %>" data-color-first="#FFC902" data-color-last="#FFEBA1">
           </div>
           <p>Écouter</p>
         </div>
         <div class="lesson-progression text-center">
-          <div id="recite-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.recites.last ?  @lesson.recites.last.progression : "0"  %>">
+          <div id="recite-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.recites.last ?  @lesson.recites.last.progression : "0"  %>" data-color-first="#EA2B2B" data-color-last="#FDB5B4">
           </div>
           <p>Réciter</p>
         </div>
       </div>
       <div class="lesson-steps d-flex justify-content-around">
-        <%= link_to reading_lesson_path(@lesson) , class: "lesson-step" do%>
+        <%= link_to reading_lesson_path(@lesson) , class: "lesson-step read" do%>
         <i class="fab fa-readme"></i>
         <% end %>
-        <%= link_to listening_lesson_path(@lesson) , class: "lesson-step" do %>
+        <%= link_to listening_lesson_path(@lesson) , class: "lesson-step listen" do %>
         <i class="fas fa-headphones-alt"></i>
         <% end %>
         <%= simple_form_for [@lesson, @recite] do |f| %>
-        <%= button_tag type: 'submit', class: "lesson-step" do %>
+        <%= button_tag type: 'submit', class: "lesson-step recite" do %>
         <i class="fas fa-microphone-alt"></i>
         <% end %>
         <% end %>

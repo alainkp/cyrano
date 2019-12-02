@@ -74,6 +74,17 @@
 
 .highlight {
   background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #74D8BD 60%);
+  &.blue{
+    background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #80E5F7 60%);
+  }
+
+  &.yellow{
+    background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #74D8BD 60%);
+  }
+
+  &.red{
+    background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #74D8BD 60%);
+  }
 }
 
 .row {

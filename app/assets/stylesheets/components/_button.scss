@@ -1,16 +1,59 @@
 .start-button-bg {
+  display: block;
+  margin-bottom: 10px;
   border-radius: 50%;
-  height: 70px;
-  width: 70px;
-  display: -webkit-box;
+  height: 60px;
+  width: 60px;
+  // display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
+  // -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
+  // -webkit-box-align: center;
   align-items: center;
   margin: 0px auto;
-  border: 1px solid #74D8BD80;
-  background: #74D8BD;
+  // border: 1px solid #74D8BD80;
+
+
+  &.green {
+    box-shadow: 0 5px 0 0 #3FA691;
+    background: $focus-color;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #3FA691;
+      transform: translateY(3px);
+    }
+  }
+
+  &.blue {
+    background-color: #1CB0F6;
+    box-shadow: 0 5px 0 0 #1999D6;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #1999D6;
+      transform: translateY(3px);
+    }
+  }
+
+  &.yellow {
+    box-shadow: 0 5px 0 0 #3FA691;
+    background: $focus-color;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #3FA691;
+      transform: translateY(3px);
+    }
+  }
+
+  &.red {
+    box-shadow: 0 5px 0 0 #3FA691;
+    background: $focus-color;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #3FA691;
+      transform: translateY(3px);
+    }
+  }
+
 
   &.homepage {
     height: 85px;
@@ -23,7 +66,7 @@
 
   .fa-play {
     text-decoration: none;
-    color: #555555;
+    color: #fff;
     opacity: 0.9;
     font-size: 1rem;
     transition: all 0.1s;
