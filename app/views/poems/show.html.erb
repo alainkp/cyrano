@@ -9,13 +9,20 @@
         <div class="poem-infos d-flex justify-content-between">
           <div class="poem-infos__icons">
             <p><i class="fas fa-feather-alt"></i><%= @poem.author_name %></p>
-            <p><i class="fas fa-align-justify"></i><%= pluralize @poem.content.split(/\n/).count, 'line' %></p>
-            <p class="poem-difficulty-list"><% (@poem.difficulty.to_i).times do %>
+            <p><i class="fas fa-align-justify"></i><%= pluralize @poem.content.split(/\n/).count, 'ligne' %></p>
+            <p class="poem-difficulty-list"><%# (@poem.difficulty.to_i).times do %>
               <i class="fas fa-user-graduate on"></i>
-            <% end %>
-            <% (5 - @poem.difficulty.to_i).times do %>
-              <i class="fas fa-user-graduate off"></i>
-             <% end %>
+              <% if @poem.difficulty.to_i <= 1 %>
+                <span class="easy-difficulty">facile</span>
+              <% elsif @poem.difficulty.to_i <= 3 %>
+                <span class="medium-difficulty">moyen</span>
+              <% else %>
+                <span class="hard-difficulty">difficile</span>
+              <% end %>
+            <%# end %>
+            <%# (5 - @poem.difficulty.to_i).times do %>
+              <!-- <i class="fas fa-user-graduate off"></i> -->
+             <%# end %>
             </p>
           </div>
           <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>
@@ -24,7 +31,7 @@
               <%= link_to lesson_path(lesson), class: "start-button-bg" do %>
                 <i class="fas fa-play"></i>
               <% end %>
-              <p class="text-center">Resume lesson</p>
+              <p class="text-center">Reprendre la leçon</p>
             <% else %>
               <div class="text-center">
                 <%= simple_form_for [@poem, @lesson] do |f| %>
@@ -32,7 +39,7 @@
                     <i class="fas fa-play"></i>
                   <% end %>
                 <% end %>
-                <p>Start a new lesson</p>
+                <p>Commencer une leçon</p>
               </div>
             <% end %>
           </div>
@@ -44,7 +51,7 @@
         <% author_poems = Poem.where(author_name: @poem.author_name) %>
         <% if author_poems.count > 0 %>
           <div class="author-poems-list">
-            <h3 class="p-3 border-bottom">Other poems by <%= @poem.author_name %></h3>
+            <h3 class="p-3 border-bottom">Autres poêmes de <%= @poem.author_name %></h3>
             <ul>
               <% author_poems.each do |poem| %>
                 <% if poem != @poem %>

@@ -9,15 +9,16 @@
   align-items: center;
   padding: 5px;
   border-radius: 6px;
-  border-bottom: 3px solid #9DD8C8;
+  border-bottom: 3px solid #74D8BD;
   // margin: 0.5rem 0rem 0.5rem 0rem;
 
 }
 
-  a:hover, a:active {
-    text-decoration: none;
-    color: #333333;
-  }
+a:hover, a:active {
+  text-decoration: none;
+  color: #333333;
+}
+
 .card-product img {
   height: 80%;
   width: 85px;
@@ -65,9 +66,11 @@ color: gray;
     font-size: 0.9rem;
     line-height: 1.4;
     opacity: .7;
-    margin-bottom: 5px;
-    margin-top: 8px;
     color: #555555;
+
+    .fa-user-graduate {
+      margin-right: 0px;
+    }
   }
 }
 
@@ -78,15 +81,19 @@ color: gray;
 }
 
 .card-index__in-progress {
-  color: #555555;
-  background: #FFEBB7;
+  background-color: #FFC634;
   padding: 0rem 0.3rem;
+  border-radius: 3px;
+  color: white !important;
+  // margin-bottom: 0px;
 }
 
 .card-index__complete {
-  color: #555555;
-  background: #9DD8C8;
+  background-color: #74D8BD;
   padding: 0rem 0.3rem;
+  border-radius: 3px;
+  color: white !important;
+  // margin-bottom: 0px;
 
   .fa-award {
     margin-left: 0.5rem;
@@ -94,3 +101,4 @@ color: gray;
     color: hsla(9,82%,50%,100%);
   }
 }
+

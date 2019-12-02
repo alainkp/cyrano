@@ -12,8 +12,16 @@ class RecitesController < ApplicationController
     redirect_to recite_path(@recite)
   end
 
+  def update
+    @recite = Recite.find(params[:id])
+    current_progr = recite_params[:progression].to_i
+    @recite.update(recite_params) if current_progr > @recite.progression
+    redirect_to lesson_path(@recite.lesson)
+  end
+
   private
 
   def recite_params
+    params.require(:recite).permit(:progression)
   end
 end

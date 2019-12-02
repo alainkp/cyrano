@@ -3,7 +3,6 @@
   // padding-right: 0px;
 }
 
-
 .card-poems {
   // padding-right: 10px;
   margin-top: 9px;
@@ -29,7 +28,7 @@
   padding: 138px 0;
   background-size: cover;
   background-position: center;
-  border-left: 6px solid #9dd8c8;
+  border-left: 6px solid #74D8BD;
 }
 
 .card-description li {
@@ -45,7 +44,7 @@
   justify-content: space-between;
   align-items: center;
   background: hsl(0,0%,97%);
-  border-left: 6px solid #9dd8c8;
+  border-left: 6px solid #74D8BD;
   height: 140px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -192,7 +191,7 @@
     color: #555555;
     position:absolute;
     top: 48px;
-    left: 225px;
+    left: 275px;
 
     p {
       margin: 0
@@ -223,14 +222,25 @@
   color: white;
 }
 
-.btn-start-lesson {
-  margin: 0 auto;
-  width: 100%;
-  background-color: #9dd8c8;
-  border: 1px solid #9dd8c8;
-}
 
-.if-lesson-empty p {
-  margin: 0 auto;
-  width: 100%;
+
+.if-lesson-empty {
+  top: 247px;
+  position: relative;
+  padding: 0 34px;
+
+  .btn-start-lesson {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #74D8BD;
+    border: 1px solid #74D8BD;
+    padding: 98px 0;
+    border-radius: 56px;
+  }
+
+  p {
+    margin-bottom: 33px;
+    width: 100%;
+    color: #555555;
+  }
 }
