@@ -13,7 +13,7 @@ const initAudioProgressBar = () => {
   if (audioProgressBar) {
      const bar = new ProgressBar.SemiCircle(audioProgressBar, {
       strokeWidth: 6,
-      color: 'url(#gradient)',
+      color: 'rgba(255, 211, 52, 1)',
       trailColor: '#eee',
       trailWidth: 1,
       easing: 'easeInOut',
@@ -34,7 +34,7 @@ const initAudioProgressBar = () => {
         } else {
           bar.setText(`${value}%`);
         }
-        bar.text.style.color = '#9DD8C8';
+        bar.text.style.color = 'rgba(255, 211, 52, 1)';
       }
     });
 
