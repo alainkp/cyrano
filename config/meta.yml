@@ -1,0 +1,5 @@
+meta_product_name: "Cyrano"
+meta_title: "Cyrano - What's the next line"
+meta_description: "Cyrano est le moyen le plus approprié pour toi d'apprendre tes poèmes"
+meta_image: "shakespeare.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
