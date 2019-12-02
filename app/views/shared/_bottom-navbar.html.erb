@@ -6,21 +6,21 @@
       <div class="home-icon text-center <%= "active" if request.path == "/dashboard" %>">
         <%= link_to dashboard_path do %>
           <i class="fas fa-book"></i>
-          <p>My lessons</p>
+          <p>Mes lessons</p>
         <% end %>
       </div>
 
       <div class="search-icon text-center <%= "active" if request.path == "/poems" %>">
         <%= link_to poems_path do %>
           <i class="fas fa-th-large"></i>
-          <p>Explore</p>
+          <p>Explorer</p>
         <% end %>
       </div>
       <!-- need to change the path to recordings -->
       <div class="list-icon text-center <%= "active" if request.path == "/root"%>">
         <%= link_to root_path do %>
             <i class="fas fa-microphone-alt"></i>
-            <p>My recordings</p>
+            <p>Enregistrements</p>
           <% end %>
       </div>
     </div>
