@@ -8,7 +8,7 @@
 }
 
 .bottom-navbar {
-  border-top: .5px solid rgba(0,0,0,0.3);
+  border-top: 1px solid #CBCBCB;
   background: white;
   display: flex;
   align-items: center;
@@ -32,6 +32,10 @@
     font-size: 12px;
     margin:0;
   }
+}
+
+.nav-icon {
+  width: 36px;
 }
 
 

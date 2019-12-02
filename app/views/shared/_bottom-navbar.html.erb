@@ -3,25 +3,40 @@
     <div class="footer-icons">
 
 
-      <div class="home-icon text-center <%= "active" if request.path == "/dashboard" %>">
+      <div class="home-icon text-center">
         <%= link_to dashboard_path do %>
-          <i class="fas fa-book"></i>
-          <p>Mes lessons</p>
+          <!-- <i class="fas fa-book"></i> -->
+          <% if  request.path == "/dashboard" %>
+            <%= image_tag 'cyrano-nav-color-lesson.svg', class: 'nav-icon' %>
+          <% else %>
+            <%= image_tag 'cyrano-nav-grey-lesson.svg', class: 'nav-icon' %>
+          <!-- <p>Mes lessons</p> -->
+          <% end %>
         <% end %>
       </div>
 
-      <div class="search-icon text-center <%= "active" if request.path == "/poems" %>">
+      <div class="search-icon text-center">
         <%= link_to poems_path do %>
-          <i class="fas fa-th-large"></i>
-          <p>Explorer</p>
+          <% if  request.path == "/poems" %>
+            <%= image_tag 'cyrano-nav-color-poems.svg', class: 'nav-icon' %>
+          <% else %>
+            <%= image_tag 'cyrano-nav-grey-poems.svg', class: 'nav-icon' %>
+          <% end %>
+          <!-- <i class="fas fa-th-large"></i> -->
+          <!-- <p>Explorer</p> -->
         <% end %>
       </div>
       <!-- need to change the path to recordings -->
-      <div class="list-icon text-center <%= "active" if request.path == "/root"%>">
-        <%= link_to root_path do %>
-            <i class="fas fa-microphone-alt"></i>
-            <p>Enregistrements</p>
+      <div class="list-icon text-center">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <% if  request.path == "/root" %>
+            <%= image_tag 'cyrano-nav-color-speaker.svg', class: 'nav-icon' %>
+          <% else %>
+            <%= image_tag 'cyrano-nav-grey-speaker.svg', class: 'nav-icon' %>
           <% end %>
+            <!-- <i class="fas fa-microphone-alt"></i> -->
+            <!-- <p>Enregistrements</p> -->
+        <% end %>
       </div>
     </div>
   </div>
