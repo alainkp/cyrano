@@ -28,7 +28,7 @@
           <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>
           <div class="poem-infos__start-lesson">
             <% if lesson %>
-              <%= link_to lesson_path(lesson), class: "start-button-bg" do %>
+              <%= link_to lesson_path(lesson), class: "start-button-bg green" do %>
                 <i class="fas fa-play"></i>
               <% end %>
               <p class="text-center">Reprendre la leçon</p>
