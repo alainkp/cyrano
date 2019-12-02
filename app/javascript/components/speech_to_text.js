@@ -48,7 +48,7 @@ const initReciteProgressBar = () => {
   }
 }
 const bar = initReciteProgressBar();
-
+let current = 0;
 const speechToText = () => {
   // if (document.querySelector('.hidden-poem')) {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -56,10 +56,10 @@ const speechToText = () => {
     recognition.continuous = true;
     recognition.lang = 'fr-FR';
     recognition.onresult = (event) =>  {
-      // console.log(event);
+      console.log(event);
       let overallProgression = 0;
       const poemLength = document.querySelectorAll('.line').length - 1;
-      const current = event.resultIndex;
+      // const current = event.resultIndex;
       const currentReciteLineClass = '.recite-line-' + (current + 1).toString();
       const currentContentLineClass = '.content-line-' + (current + 1).toString();
       const reciteProgression = document.querySelector('#recite_progression');
@@ -67,28 +67,32 @@ const speechToText = () => {
       const reciteContainer = document.querySelector(currentReciteLineClass);
       const contentContainer = document.querySelector(currentContentLineClass);
       // console.log(reciteContainer);
-      let transcript = event.results[current][0].transcript.trim();
+      let transcript = event.results[0][0].transcript.trim().toLowerCase();
+      // let mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
+      const textModel = contentContainer.innerText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ").trim();
+      // if (!mobileRepeatBug) {
+        const dmp = new DiffMatchPatch();
+        console.log(transcript);
+        console.log(textModel);
+        const diffs = dmp.diff_main(transcript,textModel);
+        // console.log(diffs);
+        dmp.diff_cleanupSemantic(diffs)
+        const diff_html = dmp.diff_prettyHtml(diffs);
+        // console.log(diff_html);
+        reciteContainer.innerHTML = diff_html;
+        // contentContainer.parentNode.classList.toggle('hidden');
+        currentLine = current;
+        reciteContainer.scrollIntoView({'behavior': 'smooth'});
+        // console.log(poemLength);
+        // console.log(currentLine);
+        let reciteProgress = ((currentLine + 1) * 100 / poemLength);
+        // console.log(reciteProgress);
+        overallProgression += Number.parseInt(reciteProgress,10);
+        reciteProgression.value = overallProgression;
+        bar.animate(overallProgression/100);
+
+      // }
       // reciteContainer.innerText = transcript;
-      const dmp = new DiffMatchPatch();
-      const textModel = contentContainer.innerText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ");
-      // console.log(transcript);
-      // console.log(textModel);
-      const diffs = dmp.diff_main(transcript,textModel);
-      // console.log(diffs);
-      dmp.diff_cleanupSemantic(diffs)
-      const diff_html = dmp.diff_prettyHtml(diffs);
-      // console.log(diff_html);
-      reciteContainer.innerHTML = diff_html;
-      // contentContainer.parentNode.classList.toggle('hidden');
-      currentLine = current;
-      reciteContainer.scrollIntoView({'behavior': 'smooth'});
-      console.log(poemLength);
-      console.log(currentLine);
-      let reciteProgress = ((currentLine + 1) * 100 / poemLength);
-      console.log(reciteProgress);
-      overallProgression += Number.parseInt(reciteProgress,10);
-      reciteProgression.value = overallProgression;
-      bar.animate(overallProgression/100);
 
     };
 
@@ -96,6 +100,10 @@ const speechToText = () => {
       console.log('arrêt de la parole')
     };
 
+    recognition.onend = () => {
+      recognition.start();
+      current += 1;
+    };
     // document.getElementById('start-record-btn').addEventListener('click', (e) => {
     //   if (noteContent.length) {
     //     noteContent += ' ';
@@ -139,15 +147,3 @@ const initRecordButton = (recognition) => {
 }
 
 export { speechToText };
-
-
-
-
-
-
-
-
-
-
-
-
