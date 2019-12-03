@@ -78,37 +78,47 @@
   }
 }
 
+.recite-btn {
+  background-color: $red-light;
+  box-shadow: 0 5px 0 0 $red-dark;
+
+  &:hover, &:active {
+    box-shadow: 0 3px 0 0 $red-dark;
+    transform: translateY(3px);
+  }
+}
+
 .record-btn {
-  background-color: #74D8BD;
+  // background-color: #74D8BD;
   border-radius: 50%;
   font-size: 33px;
   color: white;
   height: 80px;
   width: 80px;
-  transition: .3s ease-in-out;
+  transition: .15s ease-in-out;
   border: 0;
 }
 
 .lesson-over-btn {
-  background-color: #74D8BD;
+  // background-color: #74D8BD;
   border-radius: 50%;
   font-size: 15px;
   color: white;
   height: 40px;
   width: 40px;
-  transition: .3s ease-in-out;
+  transition: .15s ease-in-out;
   border: 0;
 }
 
 
 .replay-btn {
-  background-color: #74D8BD;
+  // background-color: #74D8BD;
   border-radius: 50%;
   font-size: 15px;
   color: white;
   height: 40px;
   width: 40px;
-  transition: .3s ease-in-out;
+  transition: .15s ease-in-out;
   border: 0;
 }
 
@@ -124,7 +134,7 @@
 
 .pause {
   background-color: rgba(232, 76, 61, 0.7);
-  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7), 0 5px 0 0 $red-dark;
   border-radius: 25%;
   height: 60px;
   width: 60px;
@@ -132,7 +142,7 @@
 }
 
 
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@keyframes pulse {to {box-shadow: 0 0 4px 20px rgba(232, 76, 61, 0);}}
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
+@keyframes pulse {to {box-shadow: 0 0 4px 20px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}

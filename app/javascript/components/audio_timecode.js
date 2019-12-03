@@ -32,7 +32,7 @@ const initAudioProgressBar = () => {
         if (value === 0) {
           bar.setText('');
         } else {
-          bar.setText(`${value}%`);
+          bar.setText(`100%`);
         }
         bar.text.style.color = 'rgba(255, 211, 52, 1)';
       }
