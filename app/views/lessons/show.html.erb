@@ -19,7 +19,7 @@
       </p>
 
         <h1><span class="highlight">Progression</span> :</h1>
-      <div class="d-flex justify-content-between lesson-progressions">
+      <div class="d-flex justify-content-between lesson-progressions mt-3">
         <div class="lesson-progression text-center">
           <div id="reading-progression" class="lesson-show-progression mb-3" data-progression="<%= @lesson.reading_progression %>" data-color-first="#1A9AD6" data-color-last="#85D3F7">
           </div>
@@ -36,7 +36,7 @@
           <p>Réciter</p>
         </div>
       </div>
-      <div class="lesson-steps d-flex justify-content-around">
+      <div class="lesson-steps d-flex justify-content-around mt-4">
         <%= link_to reading_lesson_path(@lesson) , class: "lesson-step read" do%>
         <i class="fab fa-readme"></i>
         <% end %>

@@ -14,7 +14,7 @@ const initAudioProgressBar = () => {
      const bar = new ProgressBar.SemiCircle(audioProgressBar, {
       strokeWidth: 9,
       color: 'rgba(255, 211, 52, 1)',
-      trailColor: '#eee',
+      trailColor: '#E5E5E5',
       trailWidth: 5,
       easing: 'easeInOut',
       duration: 500,
@@ -38,7 +38,7 @@ const initAudioProgressBar = () => {
       }
     });
 
-    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
     bar.text.style.fontSize = '2rem';
     bar.svg.insertAdjacentHTML('afterBegin', linearGradient);
     // Number from 0.0 to 1.0

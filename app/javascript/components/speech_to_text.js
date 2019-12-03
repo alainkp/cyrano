@@ -1,14 +1,14 @@
 import DiffMatchPatch from 'diff-match-patch';
 import ProgressBar from "progressbar.js";
 
-const linearGradient = `
-<defs>
-  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#FFEBB7"/>
-    <stop offset="50%" stop-color="#FFEBB7"/>
-    <stop offset="100%" stop-color="#9DD8C8"/>
-  </linearGradient>
-</defs>`;
+// const linearGradient = `
+// <defs>
+//   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+//     <stop offset="0%" stop-color="#FFEBB7"/>
+//     <stop offset="50%" stop-color="#FFEBB7"/>
+//     <stop offset="100%" stop-color="#9DD8C8"/>
+//   </linearGradient>
+// </defs>`;
 
 let currentLine = 0;
 
@@ -41,9 +41,9 @@ const initReciteProgressBar = () => {
       }
     });
 
-    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
     bar.text.style.fontSize = '2rem';
-    bar.svg.insertAdjacentHTML('afterBegin', linearGradient);
+    // bar.svg.insertAdjacentHTML('afterBegin', linearGradient);
     return bar
   }
 }

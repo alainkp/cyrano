@@ -1,13 +1,13 @@
 import ProgressBar from "progressbar.js";
 
-const linearGradient = `
-<defs>
-  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#FFEBB7"/>
-    <stop offset="50%" stop-color="#FFEBB7"/>
-    <stop offset="100%" stop-color="#9DD8C8"/>
-  </linearGradient>
-</defs>`;
+// const linearGradient = `
+// <defs>
+//   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+//     <stop offset="0%" stop-color="#FFEBB7"/>
+//     <stop offset="50%" stop-color="#FFEBB7"/>
+//     <stop offset="100%" stop-color="#9DD8C8"/>
+//   </linearGradient>
+// </defs>`;
 
 const initReadingProgressBar = () => {
   const readingProgressBar = document.getElementById('reading-progress-bar');
@@ -30,18 +30,18 @@ const initReadingProgressBar = () => {
       // Set default step function for all animate calls
       step: (state, bar) => {
         const value = Math.round(bar.value() * 100);
-        if (value === 0) {
-          bar.setText('');
-        } else {
+        // if (value === 0) {
+        //   bar.setText('');
+        // } else {
           bar.setText(`${value}%`);
-        }
+        // }
         bar.text.style.color = '#1A9AD6';
       }
     });
 
-    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
     bar.text.style.fontSize = '2rem';
-    bar.svg.insertAdjacentHTML('afterBegin', linearGradient);
+    // bar.svg.insertAdjacentHTML('afterBegin', linearGradient);
     return bar
   }
 }

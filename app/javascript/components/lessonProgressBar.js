@@ -2,9 +2,8 @@ import ProgressBar from "progressbar.js";
 let linearGradientCircle = `
 <defs>
   <linearGradient id="gradientCircle" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#DCE35B"/>
-    <stop offset="90%" stop-color="#FFEBB7"/>
-    <stop offset="100%" stop-color="#FFEBB7"/>
+    <stop offset="0%" stop-color="#FDB76C"/>
+    <stop offset="100%" stop-color="#FB8180"/>
   </linearGradient>
 </defs>`;
 
@@ -12,12 +11,12 @@ const lessonProgressBar = () => {
   const lessonProgressBar = document.querySelectorAll('.reading-progression');
   lessonProgressBar.forEach((card) => {
     const readingProgress = card.dataset.readingProgress;
-    console.log(readingProgress);
+    // console.log(readingProgress);
     const bar = new ProgressBar.Circle(card, {
-      strokeWidth: 6,
+      strokeWidth: 9,
       color: 'url(#gradientCircle)',
-      trailColor: '#eee',
-      trailWidth: 1,
+      trailColor: '#E5E5E5',
+      trailWidth: 5,
       easing: 'easeInOut',
       duration: 3000,
       svgStyle: null,
@@ -31,17 +30,17 @@ const lessonProgressBar = () => {
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
         const value = readingProgress;
-        if (value === 0) {
-          bar.setText('');
-        } else {
+        // if (value === 0) {
+        //   bar.setText('');
+        // } else {
           bar.setText(`${value}%`);
-        }
+        // }
 
         bar.text.style.color = '#9DD8C8';
       }
     });
 
-    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
     bar.text.style.fontSize = '1rem';
     // console.log(Number.parseInt(readingProgress,10)/100);
     bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
@@ -55,14 +54,14 @@ const lessonShowProgression = () => {
     const progress = progressCircle.dataset.progression;
     const colorFirst = progressCircle.dataset.colorFirst;
     const colorLast = progressCircle.dataset.colorLast;
-    let linearGradientCircle = `
-        <defs>
-          <linearGradient id="gradientCircle${colorFirst}" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="${colorFirst}"/>
-            <stop offset="100%" stop-color="${colorLast}"/>
-          </linearGradient>
-        </defs>`;
-        console.log(linearGradientCircle);
+    // let linearGradientCircle = `
+    //     <defs>
+    //       <linearGradient id="gradientCircle${colorFirst}" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+    //         <stop offset="0%" stop-color="${colorFirst}"/>
+    //         <stop offset="100%" stop-color="${colorLast}"/>
+    //       </linearGradient>
+    //     </defs>`;
+    //     console.log(linearGradientCircle);
     const bar = new ProgressBar.Circle(progressCircle, {
       strokeWidth: 9,
       color: `${colorFirst}`,
@@ -82,18 +81,18 @@ const lessonShowProgression = () => {
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
         const value = progress;
-        if (value === 0) {
-          bar.setText('');
-        } else {
+        // if (value === 0) {
+        //   bar.setText('');
+        // } else {
           bar.setText(`${value}%`);
-        }
+        // }
 
         bar.text.style.color = colorFirst;
       }
     });
     bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
     bar.text.style.fontSize = '20px';
-    bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
+    // bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(progress,10)/100);  // Number from 0.0 to 1.0
   });
 }
