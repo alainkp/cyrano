@@ -1,19 +1,15 @@
 import "bootstrap";
 import ProgressBar from "progressbar.js";
-import { speechToText,initRecordButton } from "../components/speech_to_text.js";
+import { speechToText,initRecordButton, speechToTextDesktop } from "../components/speech_to_text.js";
 import { initAudio } from "../components/audio_timecode.js";
 import { startReading } from "../components/start_reading.js";
 import { tapToRead, restartReading } from "../components/tap_to_read.js";
-// import { restartReading } from "../components/restart_reading.js";
 import { lessonProgressBar, lessonShowProgression, lessonOverallProgress } from "../components/lessonProgressBar";
 import { initPlyr } from "../components/init_plyr";
-// import { successModal } from "../components/success_modal";
-// import { loadDynamicDashboardText } from '../components/banner';
 
 setTimeout(()=>{
   initAudio();
 },1000);
-
 
 if (document.querySelector("#lessons-card")) {
   lessonProgressBar();
@@ -27,8 +23,11 @@ if (document.querySelector(".lesson-show-progression")) {
 }
 
 if (document.getElementById('note-textarea')) {
-  speechToText();
-  // initRecordButton();
+  if (!navigator.userAgent.includes('Mobile')) {
+    speechToTextDesktop();
+  } else {
+    speechToText();
+  }
 }
 
 if (document.getElementById('start')) {
@@ -37,4 +36,3 @@ if (document.getElementById('start')) {
 
 tapToRead();
 restartReading();
-// successModal();

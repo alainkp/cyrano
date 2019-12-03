@@ -3,8 +3,10 @@
 }
 
 .lesson-image {
-  text-align: center;
-  z-index: -1;
+  height: calc(30vh - 60px);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center 0%;
 }
 
 .lesson-container {
@@ -12,7 +14,6 @@
   box-shadow: 0px 4px 16px rgba(0,0,0,0.2);
   height: 70vh;
   position: relative;
-  top: -70px;
   background: white;
   z-index: 0;
 }
