@@ -29,7 +29,7 @@
         <% else %>
         <!-- <div class="app"> -->
           <div id="lessons-card" class="hs">
-            <% @lessons.each do |lesson| %>
+            <% @lessons.order('created_at DESC').each do |lesson| %>
                 <div class="card-poems bg-white">
               <%= link_to lesson_path(lesson) do %>
                   <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)">
