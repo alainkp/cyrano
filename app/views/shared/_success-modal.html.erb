@@ -1,19 +1,20 @@
 <div id="myModal" class="animated bounceInDown modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
+      <div class="star star4"></div>
+      <div class="star star3"></div>
       <div class="modal-header">
-        <h4 class="modal-title">🎉 Bravo ! 🎉</h4>
-          <!-- <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-          </div> -->
+        <h4 class="modal-title"> Bravo !</h4>
       </div>
       <% if current_page?(reading_lesson_path) %>
-        <p class="modal-body">Tu as tout lu !</p>
+      <p class="modal-body">Tu as tout lu !</p>
       <% elsif current_page?(listening_lesson_path) %>
-        <p class="modal-body">Tu as tout écouté !</p>
+      <p class="modal-body">Tu as tout écouté !</p>
       <% elsif current_page?(recite_path) %>
-        <p class="modal-body">Tu as tout récité !</p>
+      <p class="modal-body">Tu as tout récité !</p>
       <% end %>
+
     </div>
   </div>
 </div>
+

@@ -3,7 +3,7 @@ const hideSuccessModal = () => {
 }
 const successModal = () => {
   $("#myModal").modal('show');
-  setTimeout(hideSuccessModal, 4000)
+  setTimeout(hideSuccessModal, 3500)
 }
 
 export { successModal };
