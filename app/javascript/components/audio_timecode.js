@@ -1,4 +1,6 @@
 import ProgressBar from "progressbar.js";
+import { successModal } from '../components/success_modal.js'
+
 const linearGradient = `
 <defs>
   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
@@ -60,9 +62,13 @@ const audioSetTimecode = () => {
     // p.style.width = input_audio_progr.value;
     audio.addEventListener('timeupdate',() => {
       input_audio_progr.value = Math.ceil(audio.currentTime / audio.duration * 100);
-      // console.log(input_audio_progr.value);
+      console.log(input_audio_progr.value);
       // p.style.width = `${input_audio_progr.value}%`
       bar.animate(input_audio_progr.value/100);
+      if (input_audio_progr.value === '100') {
+        console.log('ok')
+        setTimeout(successModal, 1500)
+      }
     });
   }
 }

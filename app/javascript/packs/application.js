@@ -7,6 +7,7 @@ import { tapToRead, restartReading } from "../components/tap_to_read.js";
 // import { restartReading } from "../components/restart_reading.js";
 import { lessonProgressBar, lessonShowProgression, lessonOverallProgress } from "../components/lessonProgressBar";
 import { initPlyr } from "../components/init_plyr";
+// import { successModal } from "../components/success_modal";
 // import { loadDynamicDashboardText } from '../components/banner';
 
 setTimeout(()=>{
@@ -36,3 +37,4 @@ if (document.getElementById('start')) {
 
 tapToRead();
 restartReading();
+// successModal();

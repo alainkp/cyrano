@@ -1,5 +1,7 @@
 import DiffMatchPatch from 'diff-match-patch';
 import ProgressBar from "progressbar.js";
+import { successModal } from '../components/success_modal.js'
+
 
 const linearGradient = `
 <defs>
@@ -91,6 +93,9 @@ const speechToText = () => {
         overallProgression += Number.parseInt(reciteProgress,10);
         reciteProgression.value = overallProgression;
         bar.animate(overallProgression/100);
+        if (reciteProgression.value === '100') {
+          setTimeout(successModal, 1500)
+        }
 
       // }
       // reciteContainer.innerText = transcript;

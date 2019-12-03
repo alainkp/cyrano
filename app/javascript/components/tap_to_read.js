@@ -1,4 +1,5 @@
 import ProgressBar from "progressbar.js";
+import { successModal } from '../components/success_modal.js'
 
 const linearGradient = `
 <defs>
@@ -95,6 +96,9 @@ const tapToRead = () => {
           shownLine.scrollIntoView({'behavior': 'smooth'});
           readingProgression.value = readingProgressBar()*100;
           bar.animate(readingProgressBar());
+          if (readingProgression.value === '100') {
+            setTimeout(successModal, 1500)
+          }
         }
       }
     }, false);
