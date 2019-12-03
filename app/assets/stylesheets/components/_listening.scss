@@ -65,6 +65,15 @@
     border-color: #FFC902 !important;
     box-sizing: border-box;
 
+    &:active, &:hover {
+
+      // &.yellow{
+        background-color: white !important;
+        box-shadow: 0 1px 0 0 #FFC902 !important;
+        transform: translateY(3px);
+      // }
+    }
+
   }
 
   a {
@@ -81,16 +90,17 @@
     background-color: #FFD334;
     box-shadow: 0 5px 0 0 #FFC902;
     border: 0;
-  }
 
-  &:active, &:hover {
+    &:active, &:hover {
 
-    &.yellow{
-      background-color: #FFD334 !important;
-      box-shadow: 0 3px 0 0 #FFC902 !important;
-      transform: translateY(3px);
+      // &.yellow{
+        background-color: #FFD334 !important;
+        box-shadow: 0 3px 0 0 #FFC902 !important;
+        transform: translateY(3px);
+      // }
     }
   }
+
 
   a {
     color: white;
@@ -114,7 +124,7 @@
   }
 
   &.red{
-    background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #74D8BD 60%);
+    background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #FFB6AD 60%);
   }
 }
 

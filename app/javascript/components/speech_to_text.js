@@ -17,8 +17,8 @@ const initReciteProgressBar = () => {
   if (reciteProgressBar) {
      const bar = new ProgressBar.SemiCircle(reciteProgressBar, {
       strokeWidth: 6,
-      color: 'url(#gradient)',
-      trailColor: '#eee',
+      color: '#FE4A49',
+      trailColor: '#E5E5E5',
       trailWidth: 1,
       easing: 'easeInOut',
       duration: 500,
