@@ -145,6 +145,11 @@ button:focus {
   outline: none;
 }
 
+.button-back-lesson {
+  font-size: 20px;
+  padding: 5px 0 0 10px;
+}
+
 
 @-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
 @-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
