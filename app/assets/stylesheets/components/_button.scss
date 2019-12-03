@@ -1,16 +1,59 @@
 .start-button-bg {
+  display: block;
+  margin-bottom: 10px;
   border-radius: 50%;
-  height: 70px;
-  width: 70px;
-  display: -webkit-box;
+  height: 60px;
+  width: 60px;
+  // display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
+  // -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
+  // -webkit-box-align: center;
   align-items: center;
   margin: 0px auto;
-  border: 1px solid #74D8BD80;
-  background: #74D8BD;
+  // border: 1px solid #74D8BD80;
+
+
+  &.green {
+    box-shadow: 0 5px 0 0 #3FA691;
+    background: $focus-color;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #3FA691;
+      transform: translateY(3px);
+    }
+  }
+
+  &.blue {
+    background-color: #1CB0F6;
+    box-shadow: 0 5px 0 0 #1999D6;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #1999D6;
+      transform: translateY(3px);
+    }
+  }
+
+  &.yellow {
+    box-shadow: 0 5px 0 0 #3FA691;
+    background: $focus-color;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #3FA691;
+      transform: translateY(3px);
+    }
+  }
+
+  &.red {
+    box-shadow: 0 5px 0 0 #3FA691;
+    background: $focus-color;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #3FA691;
+      transform: translateY(3px);
+    }
+  }
+
 
   &.homepage {
     height: 85px;
@@ -23,7 +66,7 @@
 
   .fa-play {
     text-decoration: none;
-    color: #555555;
+    color: #fff;
     opacity: 0.9;
     font-size: 1rem;
     transition: all 0.1s;
@@ -35,37 +78,47 @@
   }
 }
 
+.recite-btn {
+  background-color: $red-light;
+  box-shadow: 0 5px 0 0 $red-dark;
+
+  &:hover, &:active {
+    box-shadow: 0 3px 0 0 $red-dark;
+    transform: translateY(3px);
+  }
+}
+
 .record-btn {
-  background-color: #74D8BD;
+  // background-color: #74D8BD;
   border-radius: 50%;
   font-size: 33px;
   color: white;
   height: 80px;
   width: 80px;
-  transition: .3s ease-in-out;
+  transition: .15s ease-in-out;
   border: 0;
 }
 
 .lesson-over-btn {
-  background-color: #74D8BD;
+  // background-color: #74D8BD;
   border-radius: 50%;
   font-size: 15px;
   color: white;
   height: 40px;
   width: 40px;
-  transition: .3s ease-in-out;
+  transition: .15s ease-in-out;
   border: 0;
 }
 
 
 .replay-btn {
-  background-color: #74D8BD;
+  // background-color: #74D8BD;
   border-radius: 50%;
   font-size: 15px;
   color: white;
   height: 40px;
   width: 40px;
-  transition: .3s ease-in-out;
+  transition: .15s ease-in-out;
   border: 0;
 }
 
@@ -81,15 +134,19 @@
 
 .pause {
   background-color: rgba(232, 76, 61, 0.7);
-  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7), 0 5px 0 0 $red-dark;
   border-radius: 25%;
   height: 60px;
   width: 60px;
   animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 
+button:focus {
+  outline: none;
+}
 
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@keyframes pulse {to {box-shadow: 0 0 4px 20px rgba(232, 76, 61, 0);}}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}
+@keyframes pulse {to {box-shadow: 0 0 4px 20px rgba(232, 76, 61, 0), 0 5px 0 0 $red-dark;}}

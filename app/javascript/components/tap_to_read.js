@@ -13,10 +13,11 @@ const initReadingProgressBar = () => {
   const readingProgressBar = document.getElementById('reading-progress-bar');
   if (readingProgressBar) {
      const bar = new ProgressBar.SemiCircle(readingProgressBar, {
-      strokeWidth: 6,
-      color: 'url(#gradient)',
-      trailColor: '#eee',
-      trailWidth: 1,
+      strokeWidth: 9,
+      // color: 'url(#gradient)',
+      color: '#1A9AD6',
+      trailColor: '#E5E5E5',
+      trailWidth: 5,
       easing: 'easeInOut',
       duration: 500,
       svgStyle: null,
@@ -34,7 +35,7 @@ const initReadingProgressBar = () => {
         } else {
           bar.setText(`${value}%`);
         }
-        bar.text.style.color = '#9DD8C8';
+        bar.text.style.color = '#1A9AD6';
       }
     });
 

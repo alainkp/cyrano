@@ -3,7 +3,7 @@
 </div>
 <div class="recites-container bg-white">
   <div class="recite-title">
-    <h1> <span class="highlight">Réciter</span> : </h1>
+    <h1> <span class="highlight red">Réciter</span> : </h1>
   </div>
   <div class="sticky-record-btn">
     <p><%= @poem.title %></p>
@@ -23,16 +23,16 @@
   </div>
   <div class="record-btn-container">
     <%= link_to do %>
-      <button class= "replay-btn">
+      <button class= "recite-btn replay-btn">
         <i class="fas fa-redo-alt"></i>
       </button>
     <% end %>
-    <button class= "record-btn">
+    <button class= "recite-btn record-btn">
       <i class="record-btn-logo fas fa-microphone-alt"></i>
     </button>
     <%= form_for @recite, url: recite_path(@recite), method: :patch do |f| %>
       <%= f.text_field :progression, class: "hidden" %>
-      <%= f.button class: "lesson-over-btn" do %>
+      <%= f.button class: "recite-btn lesson-over-btn" do %>
         <i class="fas fa-check"></i>
       <% end %>
     <% end %>

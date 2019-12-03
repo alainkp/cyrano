@@ -20,17 +20,20 @@
     color: #555555;
   }
 }
+.poem-image {
+  opacity: 0.89;
+}
 
 .poem-image::after {
-  transform: scaleY(-1);
+  // transform: scaleY(-1);
 }
 
 .poem-infos__icons {
   p {
-    font-size: 1.15rem;
+    // font-size: 1.15rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
-    color: #555555;
+    // color: #555555;
   }
 }
 
@@ -41,7 +44,7 @@
 .poem-infos__start-lesson {
 
   p {
-    color: #555555;
+    margin: 0;
   }
 }
 
@@ -97,17 +100,17 @@
 
   h3 {
     font-size: 1.2rem;
-    color: #555555;
+    // color: #555555;
     margin-bottom: 0px;
   }
 
   p {
-    font-size: 1.15rem;
+    // font-size: 1rem;
     margin-bottom: 0px;
   }
 
   a {
-    color: #555555;
+    color: #777777;
   }
 
   .fa-greater-than {
@@ -118,11 +121,15 @@
   ul {
     padding-left: 0px;
   }
+
+  .fa-chevron-right {
+    color: $focus-color;
+  }
 }
 
 .author-poem-title {
-  border-bottom: 0.5px solid #CCCCCC;
-  border-radius: 0.2rem;
+  border-bottom: 0.5px solid #ddd;
+  // border-radius: 0.2rem;
 }
 
 .shelf {
@@ -130,5 +137,6 @@
   background-size: cover;
   background-position: 0px 120px;
   width: 100%;
+  opacity: 0.89;
   // background-image: url(bookshelf.svg);
 }

@@ -86,8 +86,7 @@
   }
 }
 
-.lesson-step{
-  background-color: #74D8BD;
+.lesson-step {
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 9px;
@@ -95,8 +94,56 @@
   width: 56px;
   border-radius: 50%;
   font-size: 26px;
-  border: 1px solid #74D8BD;
+
+  &.lesson-step.read {
+    background-color: #1CB0F6;
+    box-shadow:  0 5px 0 0 #1999D6;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #1999D6;
+      transform: translateY(3px);
+    }
+  }
+
+  &.lesson-step.listen {
+    background-color: #FFD334;
+    box-shadow:  0 5px 0 0 #FFC803;
+
+    &:active {
+      box-shadow:  0 3px 0 0 #FFC803;
+      transform: translateY(3px);
+    }
+  }
+
+  &.lesson-step.recite {
+    background-color: #FC4948;
+    box-shadow:  0 5px 0 0 #EA2B2B;
+    border: none;
+
+    &:active {
+    box-shadow:  0 3px 0 0 #EA2B2B;
+    transform: translateY(3px);
+    }
+  }
+
 }
+
+// .lesson-step:active {
+//   box-shadow:  0 2px 0 0 transparent;
+//   transform: translateY(3px);
+// }
+
+
+
+// .lesson-step.listen {
+//   background-color: #FFD334;
+//   box-shadow:  0 5px 0 0 #FFC803;
+// }
+
+
+
+
+
 
 .lesson-steps{
   position:relative;
@@ -117,13 +164,17 @@
   margin-top: -2px;
   width: 0;
   transition: width 2s ease-in-out;
-  background: linear-gradient(90deg, #FFEBB7 0%, #74D8BD 100%);
+  background: linear-gradient(90deg, #1CB0F6 0%,#FFD334 50%,#CE82FF 100%);
 }
 
 .lesson-progressions {
   padding-top: 1rem;
 }
 
-
-
+#header_lesson {
+  background-image: url("./images/background-rose.jpeg");
+  background-size: cover;
+  //height:190px;
+  height:610px;
+}
 

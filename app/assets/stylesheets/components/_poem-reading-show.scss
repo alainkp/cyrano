@@ -12,22 +12,35 @@
   display: flex;
   justify-content: center;
 
-  .button-back {
-    background-color: #74D8BD;
-    border-color: #74D8BD;
+  .button-back, .button-next {
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    border :0;
     margin-right: 1rem;
 
-    i {
-      color: #FFFFFF;
+    &.blue {
+      background-color: #1CB0F6;
+      box-shadow: 0 5px 0 0 #1999D6;
     }
+
+
   }
 
-  .button-back:active, .button-back:hover {
-    background-color: #74D8BD;
-    border-color: #74D8BD;
+  .button-back:active, .button-back:hover,
+  .button-next:active, .button-next:hover {
 
-    i {
-      color: #FFFFFF;
+    &.blue{
+      background-color: #1CB0F6;
+      box-shadow: 0 3px 0 0 #1999D6;
+      transform: translateY(3px);
+    }
+
+
+    &.yellow{
+      background-color: #FFD334;
+      box-shadow: 0 3px 0 0 #FFC902;
+      transform: translateY(3px);
     }
   }
 }
@@ -35,7 +48,8 @@
 .reading-highlight {
   font-size: 2rem;
   text-align: center;
-  color: #333333;
+  // color: #333333;
+
 }
 
 .start-container {
@@ -64,15 +78,15 @@
 }
 
 .poem-reading-title {
-  font-weight: bolder;
+  // font-weight: bolder;
   font-size: 1.4rem;
-  color: #333333;
+  // color: #333333;
 }
 
 .poem-reading-line {
   opacity: 1;
   font-size: 1.3rem;
-  color: #333333;
+  // color: #333333;
   transition: all 0.3s;
 }
 

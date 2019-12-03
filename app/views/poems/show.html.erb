@@ -28,14 +28,14 @@
           <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>
           <div class="poem-infos__start-lesson">
             <% if lesson %>
-              <%= link_to lesson_path(lesson), class: "start-button-bg" do %>
+              <%= link_to lesson_path(lesson), class: "start-button-bg green" do %>
                 <i class="fas fa-play"></i>
               <% end %>
               <p class="text-center">Reprendre la leçon</p>
             <% else %>
               <div class="text-center">
                 <%= simple_form_for [@poem, @lesson] do |f| %>
-                  <%= f.button :button, class: 'start-button-bg' do %>
+                  <%= f.button :button, class: 'start-button-bg green' do %>
                     <i class="fas fa-play"></i>
                   <% end %>
                 <% end %>
@@ -55,7 +55,7 @@
             <ul>
               <% author_poems.each do |poem| %>
                 <% if poem != @poem %>
-                  <p class="author-poem-title d-flex justify-content-between align-items-center p-3"><%= link_to poem.title, poem_path(poem) %><i class="fas fa-greater-than"></i></p>
+                  <p class="author-poem-title d-flex justify-content-between align-items-center p-3"><%= link_to poem.title, poem_path(poem) %><i class="fas fa-chevron-right"></i></p>
                 <% end %>
               <% end %>
             </ul>

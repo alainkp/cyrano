@@ -13,8 +13,8 @@ const readingProgressBar = () => {
   // const progressCircle =
   const bar = new ProgressBar.Circle(overallProgression, {
     strokeWidth: 4,
-    color: 'url(#gradientCircle)',
-    trailColor: '#eee',
+    color: '#1A9AD6',
+    trailColor: '#E5E5E5',
     trailWidth: 1,
     easing: 'easeInOut',
     duration: 3000,
@@ -32,9 +32,9 @@ const readingProgressBar = () => {
         bar.setText(`${value}%`);
       }
 
-      bar.text.style.color = '#60BD70';
+      bar.text.style.color = '#1A9AD6';
     }
   });
-  bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
+  // bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
   bar.animate(Number.parseInt(progress,10)/100);
 }
