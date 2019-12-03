@@ -33,15 +33,20 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
   <body>
-    <%#= render 'shared/navbar' %>
-    <%#= render 'shared/flashes' %>
-    <div class="sticky-footer">
-      <%= yield %>
-    </div>
-    <% if !current_page?(root_path) %>
-    <%= render "shared/bottom-navbar" %>
+    <div class="background-cyrano"
+    <% if  request.path == "/dashboard"%>
+      style='background-image: url(<%= image_path "background-rose.jpg" %>)'
     <% end %>
-
+    >
+      <%#= render 'shared/navbar' %>
+      <%#= render 'shared/flashes' %>
+      <div class="sticky-footer">
+        <%= yield %>
+      </div>
+      <% if !current_page?(root_path) %>
+      <%= render "shared/bottom-navbar" %>
+      <% end %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

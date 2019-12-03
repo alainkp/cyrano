@@ -6,10 +6,12 @@
 .card-poems {
   // padding-right: 10px;
   margin-top: 9px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   width: 305px;
-  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 10px 0px 0px #75D8BD;
+  border: 2.7px solid #75D8BD;
   height:417px;
+
 
   a {
   text-decoration: none;
@@ -28,7 +30,7 @@
   padding: 138px 0;
   background-size: cover;
   background-position: center;
-  border-left: 6px solid #74D8BD;
+  // border-left: 6px solid #74D8BD;
 }
 
 .card-description li {
@@ -44,7 +46,7 @@
   justify-content: space-between;
   align-items: center;
   background: hsl(0,0%,97%);
-  border-left: 6px solid #74D8BD;
+  // border-left: 6px solid #74D8BD;
   height: 140px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -121,7 +123,7 @@
   overflow-x: scroll;
   grid-gap: 15px;
   position: relative;
-  top: 170px;
+  top: 198px;
   // top: 222px;
   border-radius: 8px;
   height: 475px;
@@ -176,9 +178,9 @@
 
   .cyrano {
     position: absolute;
-    left: 15px;
-    top: 38px;
-    width: 158px;
+    left: 17px;
+    top: 8px;
+    width: 168px;
   }
   .bubble {
     position: absolute;
@@ -188,7 +190,7 @@
   }
 
   .greeting {
-    font-size: 1.5rem;
+    font-size: 2.3rem;
     color: #555555;
     position:absolute;
     top: 48px;
