@@ -37,7 +37,7 @@ const initReciteProgressBar = () => {
         // if (value === 0) {
         //   bar.setText('');
         // } else {
-          bar.setText(`100%`);
+          bar.setText(`${value}%`);
         // }
         bar.text.style.color = '#FE4A49';
       }
