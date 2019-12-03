@@ -102,6 +102,7 @@
     &:active {
       box-shadow:  0 3px 0 0 #1999D6;
       transform: translateY(3px);
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 
@@ -112,6 +113,7 @@
     &:active {
       box-shadow:  0 3px 0 0 #FFC803;
       transform: translateY(3px);
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 
@@ -123,6 +125,7 @@
     &:active {
     box-shadow:  0 3px 0 0 #EA2B2B;
     transform: translateY(3px);
+    color: rgba(255, 255, 255, 0.8);
     }
   }
 
