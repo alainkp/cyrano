@@ -12,10 +12,10 @@ const initAudioProgressBar = () => {
   const audioProgressBar = document.getElementById('audio-progress-bar');
   if (audioProgressBar) {
      const bar = new ProgressBar.SemiCircle(audioProgressBar, {
-      strokeWidth: 6,
+      strokeWidth: 9,
       color: 'rgba(255, 211, 52, 1)',
       trailColor: '#eee',
-      trailWidth: 1,
+      trailWidth: 5,
       easing: 'easeInOut',
       duration: 500,
       svgStyle: null,
@@ -29,11 +29,11 @@ const initAudioProgressBar = () => {
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
         const value = Math.round(bar.value() * 100);
-        if (value === 0) {
-          bar.setText('');
-        } else {
-          bar.setText(`100%`);
-        }
+        // if (value === 0) {
+        //   bar.setText('');
+        // } else {
+          bar.setText(`${value}%`);
+        // }
         bar.text.style.color = 'rgba(255, 211, 52, 1)';
       }
     });
