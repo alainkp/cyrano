@@ -13,7 +13,7 @@
   position: relative;
   border-radius: .4em;
   left: 15px;
-  box-shadow: 0 -5px 5px -5px #333;
+  box-shadow: 0 -5px 5px -5px #DDDDDD;
   width: 96%;
   margin-top: -105px;
   background: white;
@@ -25,8 +25,8 @@
   }
 
   p {
-    font-size: 1.3rem;
-    color: #555555;
+    font-size: 1.4rem;
+    // color: #555555;
     // font-weight: bolder;
   }
 }
@@ -64,6 +64,7 @@
     box-shadow: 0 3px 0 0 #FFC902;
     border-color: #FFC902 !important;
     box-sizing: border-box;
+    color: #FFC902 !important;
 
     &:active, &:hover {
 

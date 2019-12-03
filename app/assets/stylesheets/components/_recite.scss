@@ -11,7 +11,7 @@
   }
 
   .recite-line{
-    color:#79C25B;
+    color:#999999;
   }
 }
 
@@ -35,16 +35,21 @@
 
   h1 {
     font-size: 2rem;
-    color: #555555;
-    font-weight: bolder;
+    // color: #555555;
+    // font-weight: bolder;
 }
   p {
-    font-size: 1.3rem;
-    color: #555555;
-    font-weight: bolder;
+    // font-size: 1.4rem;
+    // color: #555555;
+    // font-weight: bolder;
   }
 }
 
+.recite-title{
+  p {
+    font-size: 1.4rem;
+  }
+}
 
 .recite-image {
   z-index: -1;

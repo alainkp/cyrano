@@ -5,7 +5,7 @@
 <%= image_tag "letter.svg", alt: "alttext", width: '70%', class: 'reading-icon'%>
 <div id="poem" class="poem-reading-container">
   <h1 class="reading-highlight"> <span class="highlight blue">Lire</span></h1>
-  <h1 class="poem-reading-title text-center border-bottom"><%= @lesson.poem.title %></h1>
+  <p class="poem-reading-title text-center border-bottom"><%= @lesson.poem.title %></p>
   <div class="start-container">
     <div id="start" class="start-button-bg blue text-center">
       <i class="fas fa-play"></i>
@@ -28,7 +28,9 @@
     </div>
     <%= form_for @lesson, url: reading_lesson_path(@lesson),method: :patch do |f| %>
       <%= f.text_field :reading_progression, class: "hidden" %>
-      <%= f.submit 'Suite (écouter)' , class: "btn btn-primary button-next blue"%>
+      <button class="btn btn-primary button-next blue">
+        Écouter  <i class="fas fa-chevron-right"></i>
+      </button>
     <% end %>
   </div>
 </div>
