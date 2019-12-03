@@ -1,19 +1,23 @@
  // error text
 del {
-  background: #d81a1abf !important;
+  background: transparent!important;
   border-radius: 4px;
-  color: white;
-  padding: 0 1px;
+  color: #FF4B4B;
+  padding: 0 3px;
   margin: 0 2px;
   text-decoration: line-through;
+  border: 1.5px solid #FF4B4B;
+  box-shadow: 0 1.5px 0 0 #FF4B4B;
 }
 
 // correct text
 ins {
-  background: #6c757dc2 !important;
+  background: transparent !important;
   border-radius: 4px;
   text-decoration: none;
-  color: white;
+  color: #78C801;
   padding: 0 2px;
   margin: 0 1px;
+  border: 1.5px solid #78C801;
+  box-shadow: 0 1.5px 0 0 #78C801;
 }

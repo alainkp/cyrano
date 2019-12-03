@@ -5,7 +5,7 @@
     <div class="animated speech-bubble slideInUp fast">
       <div class="col-sm-12">
         <div class="listening-title">
-          <h1> <span class="highlight yellow">Écouter</span> : </h1>
+          <h1> <span class="highlight yellow">Écouter</span></h1>
         </div>
           <div class="poem-title">
             <p class="text-center border-bottom"> <%= @lesson.poem.title %> </p>
@@ -34,12 +34,14 @@
 
         <br><br>
       <div class="button-choice">
+          <%= link_to reading_lesson_path(@lesson) do %>
         <button type="button" class="btn btn-primary button-back yellow">
-          <%= link_to 'Précédent (écouter)', reading_lesson_path(@lesson) %>
+          <i class="fas fa-chevron-left"></i>  Lire
         </button>
+        <% end %>
         <%= form_for @lesson, url: listening_lesson_path(@lesson),method: :patch do |f| %>
         <%= f.text_field :listening_progression , value:  @lesson.listening_progression , class: "hidden"%>
-        <%= f.submit 'Suivant (réciter)' , class: "btn btn-primary button-next yellow"%>
+        <button class="btn btn-primary button-next yellow">Réciter  <i class="fas fa-chevron-right"></i> </button>
         <% end %>
     </div>
 

@@ -16,10 +16,10 @@ const initReciteProgressBar = () => {
   const reciteProgressBar = document.getElementById('recite-progress-bar');
   if (reciteProgressBar) {
      const bar = new ProgressBar.SemiCircle(reciteProgressBar, {
-      strokeWidth: 6,
+      strokeWidth: 9,
       color: '#FE4A49',
       trailColor: '#E5E5E5',
-      trailWidth: 1,
+      trailWidth: 5,
       easing: 'easeInOut',
       duration: 500,
       svgStyle: null,
@@ -32,12 +32,12 @@ const initReciteProgressBar = () => {
       // Set default step function for all animate calls
       step: (state, bar) => {
         const value = Math.round(bar.value() * 100);
-        if (value === 0) {
-          bar.setText('');
-        } else {
-          bar.setText(`${value}%`);
-        }
-        bar.text.style.color = '#9DD8C8';
+        // if (value === 0) {
+        //   bar.setText('');
+        // } else {
+          bar.setText(`100%`);
+        // }
+        bar.text.style.color = '#FE4A49';
       }
     });
 
@@ -72,14 +72,15 @@ const speechToText = () => {
       const textModel = contentContainer.innerText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ").trim();
       // if (!mobileRepeatBug) {
         const dmp = new DiffMatchPatch();
-        console.log(transcript);
-        console.log(textModel);
+        // console.log(transcript);
+        // console.log(textModel);
         const diffs = dmp.diff_main(transcript,textModel);
         // console.log(diffs);
         dmp.diff_cleanupSemantic(diffs)
         const diff_html = dmp.diff_prettyHtml(diffs);
-        // console.log(diff_html);
-        reciteContainer.innerHTML = diff_html;
+        const regex = /<ins style="background:#e6ffe6;"> *((&nbsp;)*) *((&nbsp;)*)<\/ins>/gi;
+
+        reciteContainer.innerHTML = diff_html.replace(regex, ' ');
         // contentContainer.parentNode.classList.toggle('hidden');
         currentLine = current;
         reciteContainer.scrollIntoView({'behavior': 'smooth'});
@@ -96,9 +97,9 @@ const speechToText = () => {
 
     };
 
-    recognition.onspeechend = (event) => {
-      console.log('arrêt de la parole')
-    };
+    // recognition.onspeechend = (event) => {
+    //   console.log('arrêt de la parole')
+    // };
 
     recognition.onend = () => {
       recognition.start();

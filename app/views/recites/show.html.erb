@@ -2,11 +2,12 @@
   <%= image_tag "ballad.svg", alt: "alttext", width: "250px", class: 'recite-image' %>
 </div>
 <div class="recites-container bg-white">
-  <div class="recite-title">
-    <h1> <span class="highlight red">Réciter</span> : </h1>
+  <div class="recite-title text-center">
+    <h1> <span class="highlight red">Réciter</span></h1>
+    <p class="border-bottom"><%= @poem.title %></p>
   </div>
   <div class="sticky-record-btn">
-    <p><%= @poem.title %></p>
+
     <div id="recite-progress-bar"></div>
     <div id="poem-content">
       <p class='hidden-poem hidden'><%= @poem.content %></p>
