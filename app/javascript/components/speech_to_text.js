@@ -41,7 +41,7 @@ const speechToText = () => {
   recognition.onresult = (event) =>  {
     console.log(event);
     let overallProgression = 0;
-    const poemLength = document.querySelectorAll('.line').length - 1;
+    const poemLength = document.querySelectorAll('.line').length;
     // const current = event.resultIndex;
     const currentReciteLineClass = '.recite-line-' + (current + 1).toString();
     const currentContentLineClass = '.content-line-' + (current + 1).toString();
@@ -99,7 +99,7 @@ const speechToTextDesktop = () => {
   recognition.onresult = (event) =>  {
     console.log(event);
     let overallProgression = 0;
-    const poemLength = document.querySelectorAll('.line').length - 1;
+    const poemLength = document.querySelectorAll('.line').length;
     current = event.resultIndex;
     const currentReciteLineClass = '.recite-line-' + (current + 1).toString();
     const currentContentLineClass = '.content-line-' + (current + 1).toString();
