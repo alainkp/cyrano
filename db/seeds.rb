@@ -3,12 +3,6 @@ require 'nokogiri'
 
 USERS = [
   {
-    email: 'basile@cyrano.com',
-    password: 123456,
-    first_name: 'Basile',
-    last_name: 'QUINCHON'
-  },
-  {
     email: 'mehdi@cyrano.com',
     password: 123456,
     first_name: 'Mehdi',
@@ -122,4 +116,53 @@ seed_users
 
 puts "➕  Seed lessons..."
 seed_lessons
+
+puts "⚠️ start seed demoday ⚠️"
+basile_hash = {
+  email: 'basile@cyrano.com',
+  password: 123456,
+  first_name: 'Basile',
+  last_name: 'QUINCHON'
+  }
+
+basile = User.new(basile_hash)
+basile.save!
+puts "User basile created!"
+
+cigale = Poem.where('title ILIKE ?', '%la cigale et la fourmi%').first
+corbeau = Poem.where('title ILIKE ?', '%le corbeau et le renard%').first
+
+lesson_cigale = Lesson.new(user: basile, poem: cigale)
+lesson_cigale.reading_progression = 100
+lesson_cigale.listening_progression = 100
+recite_cigale = Recite.new(progression: 100, duration: 0)
+recite_cigale.lesson = lesson_cigale
+recite_cigale.save!
+lesson_cigale.save!
+
+puts "Lesson cigale for Basile created!"
+
+lesson_corbeau = Lesson.new(user: basile, poem: corbeau)
+lesson_corbeau.reading_progression = 100
+lesson_corbeau.listening_progression = 42
+recite_fourmi = Recite.new(progression: 0, duration: 0)
+recite_fourmi.lesson = lesson_corbeau
+recite_fourmi.save!
+lesson_corbeau.save!
+
+puts "Lesson corbeau for Basile created!"
+puts "⚠️ end seed demoday ⚠️"
+
+
+
+
+
+
+
+
+
+
+
+
+
 
