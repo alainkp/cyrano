@@ -24,7 +24,7 @@
           <% end %>
         </div>
         <div class="list-icon text-center">
-          <%= link_to lesson_path(current_user.lessons.order('created_at desc').first) do %>
+          <%= link_to current_user.lessons.empty? ? poems_path : lesson_path(current_user.lessons.order('created_at desc').first) do %>
             <% if  request.path == "/root" || request.path =~ /recites/%>
               <%= image_tag 'cyrano-nav-color-speaker.svg', class: 'nav-icon' %>
             <% else %>
