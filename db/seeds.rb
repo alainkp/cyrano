@@ -138,6 +138,7 @@ lesson_cigale.listening_progression = 100
 recite_cigale = Recite.new(progression: 100, duration: 0)
 recite_cigale.lesson = lesson_cigale
 recite_cigale.save!
+lesson_cigale.created_at = '2019-11-23'
 lesson_cigale.save!
 
 puts "Lesson cigale for Basile created!"
@@ -148,6 +149,7 @@ lesson_corbeau.listening_progression = 85
 recite_fourmi = Recite.new(progression: 0, duration: 0)
 recite_fourmi.lesson = lesson_corbeau
 recite_fourmi.save!
+lesson_corbeau.created_at = '2019-12-02'
 lesson_corbeau.save!
 
 puts "Lesson corbeau for Basile created!"
