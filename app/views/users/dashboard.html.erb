@@ -28,7 +28,7 @@
           </div>
         <% else %>
         <!-- <div class="app"> -->
-          <div id="lessons-card" class="hs">
+          <div id="lessons-card" class="hs animated slideInRight">
             <% @lessons.order('created_at DESC').each do |lesson| %>
                 <div class="card-poems bg-white">
               <%= link_to lesson_path(lesson) do %>
