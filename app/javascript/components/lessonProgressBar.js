@@ -80,7 +80,7 @@ const lessonShowProgression = () => {
       // Set default step function for all animate calls
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
-        // const value = progress;
+        const value = progress;
         if (value === '100') {
           bar.setText('Terminé');
         } else {
