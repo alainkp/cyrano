@@ -42,13 +42,15 @@
                     <!-- <div class="name-author"> -->
                     <!-- </div> -->
                     <div class="title-poem">
-                        <%= lesson.poem.title %> <br>
+                      <%= lesson.poem.title %> <br>
+                      <div class="creation_date">
+                        <span class="badge badge-pill badge-primary">Commencé il y a <%= time_ago_in_words(lesson.created_at)%></span>
                       </div>
+                    </div>
                     <div class="progressions">
                       <% recite_progression = lesson.recites.last.nil? ? 0 : lesson.recites.last.progression %>
                       <div class="reading-progression" data-reading-progress=" <%= (lesson.reading_progression + lesson.listening_progression + recite_progression)/3%>"></div>
                     </div>
-
                   </div>
               <% end %>
                 </div>
