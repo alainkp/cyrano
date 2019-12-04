@@ -81,31 +81,40 @@ const lessonShowProgression = () => {
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
         const value = progress;
-        // if (value === 0) {
-        //   bar.setText('');
-        // } else {
+        if (value === '100') {
+          bar.setText('Terminé');
+        } else {
           bar.setText(`${value}%`);
-        // }
+        }
 
         bar.text.style.color = colorFirst;
       }
     });
     bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
-    bar.text.style.fontSize = '20px';
+    bar.text.style.fontSize = '18px';
     // bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(progress,10)/100);  // Number from 0.0 to 1.0
   });
 }
 
 const lessonOverallProgress = () => {
-  const p = document.querySelector('.lesson-overall-progress-bar')
-  if (p) {
+  const p1 = document.querySelector('.lesson-overall-progress-bar1')
+  const p2 = document.querySelector('.lesson-overall-progress-bar2')
+  if (p1 && p2) {
     const progressCircles = document.querySelectorAll('.lesson-show-progression')
     let overallProgression = 0;
     progressCircles.forEach((progressCircle)=>{
       overallProgression += Number.parseInt(progressCircle.dataset.progression,10);
     });
-    p.style.width = `${overallProgression/3}%`;
+    overallProgression /= 3
+    console.log(overallProgression);
+    if (overallProgression > 50 ) {
+      p1.style.width = `100%`;
+      p2.style.width = `${(overallProgression-50)*2}%`;
+    } else {
+      p1.style.width = `${overallProgression*2}%`;
+    }
+
   }
 }
 
