@@ -30,6 +30,7 @@ const initReciteProgressBar = () => {
     return bar
   }
 }
+
 const bar = initReciteProgressBar();
 let current = 0;
 
