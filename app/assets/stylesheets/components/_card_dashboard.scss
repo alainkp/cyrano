@@ -248,3 +248,13 @@
     color: #555555;
   }
 }
+
+.creation_date {
+  font-size: 15px;
+  position: relative;
+  left: -6px;
+
+  .badge-primary {
+    background-color: #FC8D5B;
+  }
+}
