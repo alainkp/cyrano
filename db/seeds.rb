@@ -144,7 +144,7 @@ puts "Lesson cigale for Basile created!"
 
 lesson_corbeau = Lesson.new(user: basile, poem: corbeau)
 lesson_corbeau.reading_progression = 100
-lesson_corbeau.listening_progression = 42
+lesson_corbeau.listening_progression = 85
 recite_fourmi = Recite.new(progression: 0, duration: 0)
 recite_fourmi.lesson = lesson_corbeau
 recite_fourmi.save!
