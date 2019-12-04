@@ -2,42 +2,42 @@
   <div class="container">
     <div class="footer-icons">
 
+      <% if user_signed_in? %>
+        <div class="home-icon text-center">
+          <%= link_to dashboard_path do %>
+            <% if  request.path == "/dashboard" || request.path =~ /lessons/%>
 
-      <div class="home-icon text-center">
-        <%= link_to dashboard_path do %>
-          <!-- <i class="fas fa-book"></i> -->
-          <% if  request.path == "/dashboard" %>
-            <%= image_tag 'cyrano-nav-color-lesson.svg', class: 'nav-icon' %>
-          <% else %>
-            <%= image_tag 'cyrano-nav-grey-lesson.svg', class: 'nav-icon' %>
-          <!-- <p>Mes lessons</p> -->
+              <%= image_tag 'cyrano-nav-color-lesson.svg', class: 'nav-icon' %>
+            <% else %>
+              <%= image_tag 'cyrano-nav-grey-lesson.svg', class: 'nav-icon' %>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
 
-      <div class="search-icon text-center">
-        <%= link_to poems_path do %>
-          <% if  request.path == "/poems" %>
-            <%= image_tag 'cyrano-nav-color-poems.svg', class: 'nav-icon' %>
-          <% else %>
-            <%= image_tag 'cyrano-nav-grey-poems.svg', class: 'nav-icon' %>
+        <div class="search-icon text-center">
+          <%= link_to poems_path do %>
+            <% if  request.path == "/poems" %>
+              <%= image_tag 'cyrano-nav-color-poems.svg', class: 'nav-icon' %>
+            <% else %>
+              <%= image_tag 'cyrano-nav-grey-poems.svg', class: 'nav-icon' %>
+            <% end %>
           <% end %>
-          <!-- <i class="fas fa-th-large"></i> -->
-          <!-- <p>Explorer</p> -->
-        <% end %>
-      </div>
-      <!-- need to change the path to recordings -->
-      <div class="list-icon text-center">
-        <%= link_to destroy_user_session_path, method: :delete do %>
-          <% if  request.path == "/root" %>
-            <%= image_tag 'cyrano-nav-color-speaker.svg', class: 'nav-icon' %>
-          <% else %>
-            <%= image_tag 'cyrano-nav-grey-speaker.svg', class: 'nav-icon' %>
+        </div>
+        <div class="list-icon text-center">
+          <%= link_to lesson_path(current_user.lessons.order('created_at desc').first) do %>
+            <% if  request.path == "/root" || request.path =~ /recites/%>
+              <%= image_tag 'cyrano-nav-color-speaker.svg', class: 'nav-icon' %>
+            <% else %>
+              <%= image_tag 'cyrano-nav-grey-speaker.svg', class: 'nav-icon' %>
+            <% end %>
           <% end %>
-            <!-- <i class="fas fa-microphone-alt"></i> -->
-            <!-- <p>Enregistrements</p> -->
-        <% end %>
-      </div>
+        </div>
+        <div class="list-icon text-center">
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= image_tag 'cyrano-nav-grey-logout.svg', class: 'nav-icon' %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
