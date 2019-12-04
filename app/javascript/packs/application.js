@@ -15,7 +15,7 @@ if (document.querySelector("#lessons-card")) {
   lessonProgressBar();
 }
 
-if (document.querySelector(".lesson-overall-progress-bar")) {
+if (document.querySelector(".lesson-overall-progress-bar1")) {
   lessonOverallProgress();
 }
 if (document.querySelector(".lesson-show-progression")) {
