@@ -1,65 +1,48 @@
-<!-- <div class="dashboard-container"> -->
-  <!-- <div id="header_lesson" style='background-image: url(<%= image_path "background-rose.jpg" %>)'> --> <!-- style="background-image: url('../app/assets/images/rocket.jpg')"> -->
-    <div class="dashboard-image">
-      <%= image_tag "shakespeare.svg", alt: "alttext", class: 'cyrano'%>
-      <%#= image_tag "bubble.svg", alt: "alttext", class: 'bubble'%>
-      <h1 class="greeting"> <p class="">Salut,</p><p class="highlight bold"><%= current_user.first_name %> </p> </h1>
-    </div>
-  <!-- <div class="dashboard-content bg-white"> -->
-    <!-- <div class="header-introduction-dashboard d-flex px-3">
-      <div class="title-intro">
-        <h1> <span class="highlight"> Salut, <%= current_user.first_name %> </span> </h1>
-      </div>
-      <div class="profile-avatar p-3">
-        <%#= image_tag "no-profile-pic.png", alt: "profile image", width: '45px'%>
-      </div>
-    </div> -->
-    <!-- <div class="lessons-list"> -->
-      <!-- <div class="title-category pl-3">
-        <h6> Mes poèmes :</h6>
-      </div> -->
-      <% my_lessons = @lessons.select { |lesson| lesson.user == current_user } %>
-        <% if my_lessons.empty? %>
-          <div class="if-lesson-empty">
-            <br>
-            <p> Tu n'as pas pas de leçon en cours. </p>
-            <button type="button" class="btn btn-primary btn-lg center btn-start-lesson">
-            <%= link_to "+ Commencer une leçon", poems_path %> </button>
-          </div>
-        <% else %>
-        <!-- <div class="app"> -->
-          <div id="lessons-card" class="hs animated slideInRight">
-            <% @lessons.order('created_at DESC').each do |lesson| %>
-                <div class="card-poems bg-white">
-              <%= link_to lesson_path(lesson) do %>
-                  <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)">
 
+<div class="dashboard-image">
+  <%= image_tag "shakespeare.svg", alt: "alttext", class: 'cyrano'%>
+  <h1 class="greeting">
+    <p class="">Salut,</p>
+    <p class="highlight bold"><%= current_user.first_name %> </p>
+  </h1>
+</div>
+<% my_lessons = @lessons.select { |lesson| lesson.user == current_user } %>
+<% if my_lessons.empty? %>
+  <div class="if-lesson-empty">
+    <br>
+    <p> Tu n'as pas pas de leçon en cours. </p>
+    <%= link_to poems_path do %>
+    <button type="button" class="btn btn-primary btn-lg center btn-start-lesson">+ Commencer une leçon</button>
+    <% end %>
+  </div>
+    <% else %>
+      <div id="lessons-card" class="hs animated slideInRight">
+        <% @lessons.order('created_at DESC').each do |lesson| %>
+            <div class="card-poems bg-white">
+          <%= link_to lesson_path(lesson) do %>
+              <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)">
+
+              </div>
+              <div class="card-description d-flex">
+                  <div class="author-poem">
+                    <%= lesson.poem.author_name %> <br>
                   </div>
-                  <div class="card-description d-flex">
-                      <div class="author-poem">
-                        <%= lesson.poem.author_name %> <br>
-                      </div>
-                    <!-- <div class="name-author"> -->
-                    <!-- </div> -->
-                    <div class="title-poem">
-                      <%= lesson.poem.title %> <br>
-                      <div class="creation_date">
-                        <span class="badge badge-pill badge-primary">Commencé il y a <%= time_ago_in_words(lesson.created_at)%></span>
-                      </div>
-                    </div>
-                    <div class="progressions">
-                      <% recite_progression = lesson.recites.last.nil? ? 0 : lesson.recites.last.progression %>
-                      <div class="reading-progression" data-reading-progress=" <%= (lesson.reading_progression + lesson.listening_progression + recite_progression)/3%>"></div>
-                    </div>
+                <div class="title-poem">
+                  <%= lesson.poem.title %> <br>
+                  <div class="creation_date">
+                    <span class="badge badge-pill badge-primary">Commencé il y a <%= time_ago_in_words(lesson.created_at)%></span>
                   </div>
-              <% end %>
                 </div>
-            <% end %>
-          </div>
+                <div class="progressions">
+                  <% recite_progression = lesson.recites.last.nil? ? 0 : lesson.recites.last.progression %>
+                  <div class="reading-progression" data-reading-progress=" <%= (lesson.reading_progression + lesson.listening_progression + recite_progression)/3%>"></div>
+                </div>
+              </div>
           <% end %>
-        <!-- </div> -->
+            </div>
+        <% end %>
       </div>
-    </div>
-    <!-- </div> -->
-  <!-- </div> -->
+      <% end %>
+  </div>
+</div>
 
