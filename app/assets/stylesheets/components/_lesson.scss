@@ -156,10 +156,10 @@
 .lesson-overall-progress1 {
   position:absolute;
   top:50%;
-  left: 82px;
-  height: 1px;
+  left: 90px;
+  height: 3px;
   // margin-left: 29px;
-  width: 17%;
+  width: 19%;
   background-color: rgba(0,0,0,0.08);
   // margin: 0 16%;
   z-index: -1;
@@ -171,17 +171,17 @@
   margin-top: -2px;
   // margin-left: 29px;
   width: 0%;
-  transition: width 1s ease-in-out;
+  transition: width 1s ease-in;
   background: linear-gradient(90deg, #1CB0F6 0%,#FFD334 100%);
 }
 
 .lesson-overall-progress2 {
   position:absolute;
   top:50%;
-  left: 189px;
-  height: 1px;
+  left: 216px;
+  height: 3px;
   // margin-left: 29px;
-  width: 17%;
+  width: 19%;
   background-color: rgba(0,0,0,0.08);
   // margin: 0 16%;
   z-index: -1;
@@ -191,8 +191,8 @@
   height: 6px;
   margin-top: -2px;
   width: 0;
-  transition: width 1s ease-in-out;
-  transition-delay: .7s;
+  transition: width 1s ease-out;
+  transition-delay: 1s;
   background: linear-gradient(90deg, #FFD334 0%,#FD4A48 100%);
 }
 
