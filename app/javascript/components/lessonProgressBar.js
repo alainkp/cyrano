@@ -80,7 +80,7 @@ const lessonShowProgression = () => {
       // Set default step function for all animate calls
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
-        const value = progress;
+        // const value = progress;
         if (value === '100') {
           bar.setText('Terminé');
         } else {
@@ -107,7 +107,7 @@ const lessonOverallProgress = () => {
       overallProgression += Number.parseInt(progressCircle.dataset.progression,10);
     });
     overallProgression /= 3
-    console.log(overallProgression);
+    // console.log(overallProgression);
     if (overallProgression > 50 ) {
       p1.style.width = `100%`;
       p2.style.width = `${(overallProgression-50)*2}%`;
