@@ -107,7 +107,7 @@ const lessonOverallProgress = () => {
       overallProgression += Number.parseInt(progressCircle.dataset.progression,10);
     });
     overallProgression /= 3
-    console.log(overallProgression);
+    // console.log(overallProgression);
     if (overallProgression > 50 ) {
       p1.style.width = `100%`;
       p2.style.width = `${(overallProgression-50)*2}%`;
