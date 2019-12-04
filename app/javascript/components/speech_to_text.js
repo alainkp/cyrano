@@ -72,7 +72,14 @@ const speechToText = () => {
     reciteProgression.value = overallProgression;
     bar.animate(overallProgression/100);
     if (reciteProgression.value === '100') {
-      setTimeout(successModal, 1500)
+      recognition.stop();
+      const recordBtn = document.querySelector('.record-btn');
+      const recordBtnLogo = document.querySelector('.record-btn-logo');
+      recordBtnLogo.classList.remove('fa-pause');
+      recordBtnLogo.classList.add('fa-microphone-alt');
+      recordBtn.classList.toggle('pause');
+      recognition.continuous = false;
+      setTimeout(successModal, 1500);
     }
   };
 
@@ -123,7 +130,14 @@ const speechToTextDesktop = () => {
     reciteProgression.value = overallProgression;
     bar.animate(overallProgression/100);
     if (reciteProgression.value === '100') {
-      setTimeout(successModal, 1500)
+      recognition.stop();
+      const recordBtn = document.querySelector('.record-btn');
+      const recordBtnLogo = document.querySelector('.record-btn-logo');
+      recordBtnLogo.classList.remove('fa-pause');
+      recordBtnLogo.classList.add('fa-microphone-alt');
+      recordBtn.classList.toggle('pause');
+      recognition.continuous = false;
+      setTimeout(successModal, 1500);
     }
   };
 
