@@ -36,7 +36,7 @@ const lessonProgressBar = () => {
           bar.setText(`${value}%`);
         // }
 
-        bar.text.style.color = '#9DD8C8';
+        bar.text.style.color = '#FC8D5B';
       }
     });
 
