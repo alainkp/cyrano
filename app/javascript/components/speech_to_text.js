@@ -40,35 +40,24 @@ const speechToText = () => {
   recognition.continuous = true;
   recognition.lang = 'fr-FR';
   recognition.onresult = (event) =>  {
-    console.log(event);
     let overallProgression = 0;
     const poemLength = document.querySelectorAll('.line').length;
-    // const current = event.resultIndex;
     const currentReciteLineClass = '.recite-line-' + (current + 1).toString();
     const currentContentLineClass = '.content-line-' + (current + 1).toString();
     const reciteProgression = document.querySelector('#recite_progression');
-    // console.log(currentContentLineClass);
     const reciteContainer = document.querySelector(currentReciteLineClass);
     const contentContainer = document.querySelector(currentContentLineClass);
-    // console.log(reciteContainer);
     let transcript = event.results[0][0].transcript.trim().toLowerCase();
     const textModel = contentContainer.innerText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ").trim();
     const dmp = new DiffMatchPatch();
-    // console.log(transcript);
-    // console.log(textModel);
     const diffs = dmp.diff_main(transcript,textModel);
-    // console.log(diffs);
     dmp.diff_cleanupSemantic(diffs)
     const diff_html = dmp.diff_prettyHtml(diffs);
     const regex = /<ins style="background:#e6ffe6;"> *((&nbsp;)*) *((&nbsp;)*)<\/ins>/gi;
     reciteContainer.innerHTML = diff_html.replace(regex, ' ');
-    // contentContainer.parentNode.classList.toggle('hidden');
     currentLine = current;
     reciteContainer.scrollIntoView({'behavior': 'smooth'});
-    // console.log(poemLength);
-    // console.log(currentLine);
     let reciteProgress = ((currentLine + 1) * 100 / poemLength);
-    // console.log(reciteProgress);
     overallProgression += Number.parseInt(reciteProgress,10);
     reciteProgression.value = overallProgression;
     bar.animate(overallProgression/100);
@@ -98,35 +87,25 @@ const speechToTextDesktop = () => {
   recognition.continuous = true;
   recognition.lang = 'fr-FR';
   recognition.onresult = (event) =>  {
-    console.log(event);
     let overallProgression = 0;
     const poemLength = document.querySelectorAll('.line').length;
     current = event.resultIndex;
     const currentReciteLineClass = '.recite-line-' + (current + 1).toString();
     const currentContentLineClass = '.content-line-' + (current + 1).toString();
     const reciteProgression = document.querySelector('#recite_progression');
-    // console.log(currentContentLineClass);
     const reciteContainer = document.querySelector(currentReciteLineClass);
     const contentContainer = document.querySelector(currentContentLineClass);
-    // console.log(reciteContainer);
     let transcript = event.results[current][0].transcript.trim().toLowerCase();
     const textModel = contentContainer.innerText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}="»\-_`~()|\n]/g," ").trim();
     const dmp = new DiffMatchPatch();
-    // console.log(transcript);
-    // console.log(textModel);
     const diffs = dmp.diff_main(transcript,textModel);
-    // console.log(diffs);
     dmp.diff_cleanupSemantic(diffs)
     const diff_html = dmp.diff_prettyHtml(diffs);
     const regex = /<ins style="background:#e6ffe6;"> *((&nbsp;)*) *((&nbsp;)*)<\/ins>/gi;
     reciteContainer.innerHTML = diff_html.replace(regex, ' ');
-    // contentContainer.parentNode.classList.toggle('hidden');
     currentLine = current;
     reciteContainer.scrollIntoView({'behavior': 'smooth'});
-    // console.log(poemLength);
-    // console.log(currentLine);
     let reciteProgress = ((currentLine + 1) * 100 / poemLength);
-    // console.log(reciteProgress);
     overallProgression += Number.parseInt(reciteProgress,10);
     reciteProgression.value = overallProgression;
     bar.animate(overallProgression/100);
@@ -141,11 +120,6 @@ const speechToTextDesktop = () => {
       setTimeout(successModal, 1500);
     }
   };
-
-  // recognition.onend = () => {
-    // recognition.start();
-    // current += 1;
-  // };
 
   initRecordButton(recognition);
 };
