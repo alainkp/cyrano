@@ -25,13 +25,17 @@ const lessonProgressBar = () => {
       },
       step: (state, bar) => {
         const value = readingProgress;
-        bar.setText(`${value}%`);
+        if (value === '100') {
+          bar.setText('Terminé');
+        } else {
+          bar.setText(`${value}%`);
+        }
         bar.text.style.color = '#FC8D5B';
       }
     });
 
     bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
-    bar.text.style.fontSize = '1rem';
+    bar.text.style.fontSize = '18px';
     bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(readingProgress,10)/100);  // Number from 0.0 to 1.0
   })

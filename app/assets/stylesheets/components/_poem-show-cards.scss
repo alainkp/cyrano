@@ -59,18 +59,25 @@
   padding: 0.3rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  color: #74D8BD;
+  color: #91DCF8;
+}
+
+.fa-clock {
+  padding: 0.3rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  color: #91DCF8;
 }
 
 .fa-user-graduate.on {
   padding: 0.3rem;
-  color: #74D8BD;
+  color: #91DCF8;
   margin-right: 0.3rem;
 }
 
 .easy-difficulty {
   background-color: #74D8BD;
-  padding: 0rem 0.2rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 3px;
   color: white;
   font-weight: bold;
@@ -79,7 +86,7 @@
 
 .medium-difficulty {
   background-color: #FFC634;
-  padding: 0rem 0.2rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 3px;
   color: white;
   font-weight: bold;
@@ -88,7 +95,7 @@
 
 .hard-difficulty {
   background-color: hsla(9,82%,50%,100%);
-  padding: 0rem 0.2rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 3px;
   color: white;
   font-weight: bold;
