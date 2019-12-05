@@ -74,6 +74,41 @@
   padding: 1rem;
   margin-top: 10%;
   overflow: auto;
+  position:relative;
+
+  .tap-instruction {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-image: radial-gradient(circle, rgba(28, 176, 246, 0.6) 0%, rgba(28, 176, 246, 0.2) 22.1%, rgba(255, 255, 255, 0.9) 57.8%);
+
+    .tap-instruction_image {
+      position:absolute;
+      top:0;
+      bottom:0;
+      right:0;
+      left:0;
+      background-repeat: no-repeat;
+      background-size: 28%;
+      background-position: center;
+      animation: tap 1000ms infinite;
+    }
+
+  }
+}
+
+@keyframes tap {
+  0% {
+  background-size: 28%;
+  }
+  50% {
+  background-size: 25%;
+  }
+  100% {
+  background-size: 28%;
+  }
 }
 
 .poem-reading-title {
