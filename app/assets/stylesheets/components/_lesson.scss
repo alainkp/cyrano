@@ -41,10 +41,10 @@
 
 .lesson-back {
   position: absolute;
-  // color: #ffffff;
   top: -258px;
   left: 5px;
   font-size: 24px;
+
   a {
     color: #ffffff;
     opacity: 0.7;
@@ -129,25 +129,7 @@
     color: rgba(255, 255, 255, 0.8);
     }
   }
-
 }
-
-// .lesson-step:active {
-//   box-shadow:  0 2px 0 0 transparent;
-//   transform: translateY(3px);
-// }
-
-
-
-// .lesson-step.listen {
-//   background-color: #FFD334;
-//   box-shadow:  0 5px 0 0 #FFC803;
-// }
-
-
-
-
-
 
 .lesson-steps{
   position:relative;
@@ -158,10 +140,8 @@
   top:50%;
   left: 90px;
   height: 3px;
-  // margin-left: 29px;
   width: 19%;
   background-color: rgba(0,0,0,0.08);
-  // margin: 0 16%;
   z-index: -1;
 }
 
@@ -169,7 +149,6 @@
   z-index: 1000;
   height: 6px;
   margin-top: -2px;
-  // margin-left: 29px;
   width: 0%;
   transition: width 1s ease-in;
   background: linear-gradient(90deg, #1CB0F6 0%,#FFD334 100%);
@@ -180,10 +159,8 @@
   top:50%;
   left: 216px;
   height: 3px;
-  // margin-left: 29px;
   width: 19%;
   background-color: rgba(0,0,0,0.08);
-  // margin: 0 16%;
   z-index: -1;
 }
 
@@ -203,7 +180,6 @@
 #header_lesson {
   background-image: url("./images/background-rose.jpeg");
   background-size: cover;
-  //height:190px;
   height:610px;
 }
 

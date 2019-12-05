@@ -1,7 +1,7 @@
 #audio-progress-bar{
   width: 80%;
   position: relative;
-  left: 25px;
+  left: 30px;
 }
 
 .listening-image {
@@ -20,40 +20,22 @@
 
   h1 {
     font-size: 2rem;
-    // color: #555555;
-    // font-weight: bolder;
   }
 
   p {
     font-size: 1.4rem;
-    // color: #555555;
-    // font-weight: bolder;
   }
 }
 
 .listening-title {
   text-align:center;
+  padding-top: 0.3rem;
 }
 
 .poem-title {
   text-align:center;
   font-size: 1.4rem;
 }
-
-// .speech-bubble:after {
-//   content: '';
-//   position: absolute;
-//   top: 0;
-//   left: 55%;
-//   width: 0;
-//   height: 0;
-//   border: 20px solid transparent;
-//   border-bottom-color: #5555;
-//   border-top: 0;
-//   border-right: 0;
-//   margin-left: -10px;
-//   margin-top: -20px;
-// }
 
 .button-back {
   background-color: white;
@@ -65,14 +47,12 @@
     border-color: #FFC902 !important;
     box-sizing: border-box;
     color: #FFC902 !important;
+    margin-right: 1rem;
 
     &:active, &:hover {
-
-      // &.yellow{
-        background-color: white !important;
-        box-shadow: 0 1px 0 0 #FFC902 !important;
-        transform: translateY(3px);
-      // }
+      background-color: white !important;
+      box-shadow: 0 1px 0 0 #FFC902 !important;
+      transform: translateY(3px);
     }
 
   }
@@ -83,8 +63,6 @@
 }
 
 .button-next {
-  // border: 1px solid #74D8BD;
-  // background-color: #74D8BD;
   border-radius: 4px;
 
   &.yellow {
@@ -110,7 +88,7 @@
 
 .button-choice {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 
