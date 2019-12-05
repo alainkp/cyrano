@@ -23,26 +23,19 @@ const lessonProgressBar = () => {
         value: '',
         alignToBottom: false
       },
-      // from: {color: '#ED6A5A'},
-      // to: {color: '#1EDD88}'},
-      // Set default step function for all animate calls
       step: (state, bar) => {
-        // bar.path.setAttribute('stroke', state.color);
         const value = readingProgress;
-        // console.log(readingProgress);
         if (value === '100') {
           bar.setText('Terminé');
         } else {
           bar.setText(`${value}%`);
         }
-
         bar.text.style.color = '#FC8D5B';
       }
     });
 
     bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
     bar.text.style.fontSize = '18px';
-    // console.log(Number.parseInt(readingProgress,10)/100);
     bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(readingProgress,10)/100);  // Number from 0.0 to 1.0
   })
@@ -54,18 +47,9 @@ const lessonShowProgression = () => {
     const progress = progressCircle.dataset.progression;
     const colorFirst = progressCircle.dataset.colorFirst;
     const colorLast = progressCircle.dataset.colorLast;
-    // let linearGradientCircle = `
-    //     <defs>
-    //       <linearGradient id="gradientCircle${colorFirst}" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-    //         <stop offset="0%" stop-color="${colorFirst}"/>
-    //         <stop offset="100%" stop-color="${colorLast}"/>
-    //       </linearGradient>
-    //     </defs>`;
-    //     console.log(linearGradientCircle);
     const bar = new ProgressBar.Circle(progressCircle, {
       strokeWidth: 9,
       color: `${colorFirst}`,
-      // color: `url(#gradientCircle${colorFirst})`,
       trailColor: '#E5E5E5',
       trailWidth: 5,
       easing: 'easeInOut',
@@ -75,11 +59,7 @@ const lessonShowProgression = () => {
         value: '',
         alignToBottom: false
       },
-      // from: {color: '#ED6A5A'},
-      // to: {color: '#1EDD88}'},
-      // Set default step function for all animate calls
       step: (state, bar) => {
-        // bar.path.setAttribute('stroke', state.color);
         const value = progress;
         if (value === '100') {
           bar.setText('Terminé');
@@ -92,7 +72,6 @@ const lessonShowProgression = () => {
     });
     bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
     bar.text.style.fontSize = '18px';
-    // bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(progress,10)/100);  // Number from 0.0 to 1.0
   });
 }
@@ -107,7 +86,6 @@ const lessonOverallProgress = () => {
       overallProgression += Number.parseInt(progressCircle.dataset.progression,10);
     });
     overallProgression /= 3
-    // console.log(overallProgression);
     if (overallProgression > 50 ) {
       p1.style.width = `100%`;
       p2.style.width = `${(overallProgression-50)*2}%`;

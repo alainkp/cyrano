@@ -5,9 +5,6 @@ const startReading = () => {
   const progressReading = document.getElementById('reading-progress-bar');
   const nextBtn = document.querySelector('.container-next-btn');
 
-  console.log(progressReading);
-  console.log(nextBtn);
-
   startButton.addEventListener('click', (event) => {
     startContainer.classList.add('hidden');
     poemContent.classList.remove('hidden');
