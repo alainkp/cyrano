@@ -24,16 +24,10 @@
   opacity: 0.89;
 }
 
-.poem-image::after {
-  // transform: scaleY(-1);
-}
-
 .poem-infos__icons {
   p {
-    // font-size: 1.15rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
-    // color: #555555;
   }
 }
 
@@ -52,7 +46,7 @@
   padding: 0.3rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  color: #74D8BD;
+  color: #91DCF8;
 }
 
 .fa-align-justify {
@@ -115,7 +109,6 @@
   }
 
   p {
-    // font-size: 1rem;
     margin-bottom: 0px;
   }
 
@@ -139,7 +132,6 @@
 
 .author-poem-title {
   border-bottom: 0.5px solid #ddd;
-  // border-radius: 0.2rem;
 }
 
 .shelf {
@@ -148,5 +140,4 @@
   background-position: 0px 135px;
   width: 100%;
   opacity: 0.89;
-  // background-image: url(bookshelf.svg);
 }

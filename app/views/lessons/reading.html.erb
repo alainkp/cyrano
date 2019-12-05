@@ -2,7 +2,7 @@
   <%= link_to'<i class="fas fa-angle-left"></i>'.html_safe, lesson_path(@lesson) %>
 </div>
 
-<%= image_tag "letter.svg", alt: "alttext", width: '70%', class: 'reading-icon'%>
+<%= image_tag "letter.svg", alt: "alttext", width: '60%', class: 'reading-icon'%>
 <div id="poem" class="poem-reading-container">
   <h1 class="reading-highlight"> <span class="highlight blue">Lire</span></h1>
   <p class="poem-reading-title text-center border-bottom"><%= @lesson.poem.title %></p>
@@ -36,11 +36,3 @@
 </div>
 
 <%= render 'shared/success-modal' %>
-
-
-<!-- <ul>
-  <li><%#= link_to 'Next (listening)', listening_lesson_path(@lesson) %></li>
-  <li><%#= link_to 'Accueil', poems_path %></li>
-</ul>
- -->
-
