@@ -93,7 +93,7 @@
       background-repeat: no-repeat;
       background-size: 28%;
       background-position: center;
-      animation: tap 1000ms infinite;
+      animation: tap 1500ms infinite;
     }
 
   }
@@ -103,10 +103,10 @@
   0% {
   background-size: 28%;
   }
-  50% {
+  25% {
   background-size: 25%;
   }
-  100% {
+  50% {
   background-size: 28%;
   }
 }
