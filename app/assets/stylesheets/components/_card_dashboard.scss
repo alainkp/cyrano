@@ -7,8 +7,8 @@
   position: relative;
   border-radius: 10px;
   width: 363px;
-  box-shadow: 0px 7px 0px 0px #91DCF8;
-  border: 2.7px solid #91DCF8;
+  box-shadow: 0px 7px 0px 0px #59D0FA;
+  border: 2.7px solid #59D0FA;
   height:483px;
   background: #f7f7f7;
   display: flex;
@@ -95,11 +95,15 @@
   font-size: 15px;
   font-weight: bold;
   color: rgba(0,0,0,0.4);
-  box-shadow: 0px 3px 0px 0 #91DCF8;
+  box-shadow: 0px 3px 0px 0 #59D0FA;
 
   p {
     margin: 0;
   }
+}
+
+#lessons-card i {
+  font-size:1rem;
 }
 
 .title-poem {
