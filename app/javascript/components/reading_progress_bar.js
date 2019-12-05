@@ -10,7 +10,6 @@ const readingProgressBar = () => {
     p.style.width = `${overallProgression}%`;
   }
 
-  // const progressCircle =
   const bar = new ProgressBar.Circle(overallProgression, {
     strokeWidth: 4,
     color: '#1A9AD6',
@@ -35,6 +34,5 @@ const readingProgressBar = () => {
       bar.text.style.color = '#1A9AD6';
     }
   });
-  // bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
   bar.animate(Number.parseInt(progress,10)/100);
 }
