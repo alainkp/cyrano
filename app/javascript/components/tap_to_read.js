@@ -44,6 +44,7 @@ const restartReading = () => {
     const restartButton = document.getElementById('restart');
     const poemLines = document.querySelectorAll('.poem-reading-content p');
     const poemContent = document.querySelector('.poem-reading-content')
+    const tapInstruction = document.querySelector('.tap-instruction');
     restartButton.addEventListener('click', (event) => {
       bar.animate(0);
       poemLines.forEach((line) => {
@@ -57,6 +58,7 @@ const restartReading = () => {
       const firstLine = document.querySelector('.poem-reading-line-hidden');
       firstLine.classList.remove('poem-reading-line-hidden');
       firstLine.classList.add('poem-reading-line');
+      // tapInstruction.classList.remove('hidden');
       document.querySelector('.poem-reading-line').scrollIntoView({'behavior': 'smooth'})
     });
   }
@@ -65,21 +67,27 @@ const restartReading = () => {
 const tapToRead = () => {
   const poemContent = document.querySelector('.poem-reading-content');
   if (poemContent) {
+    const tapInstruction = document.querySelector('.tap-instruction');
     poemContent.addEventListener('touchstart', (event) => {
       if (document.querySelector('.start-container.hidden')) {
         if (document.querySelector('.poem-reading-line-hidden')) {
-          const shownLine = document.querySelector('.poem-reading-line');
-          const hiddenLine = document.querySelector('.poem-reading-line-hidden');
-          const readingProgression = document.querySelector('#lesson_reading_progression');
-          shownLine.classList.remove('poem-reading-line');
-          shownLine.classList.add('poem-reading-line-viewed');
-          hiddenLine.classList.remove('poem-reading-line-hidden');
-          hiddenLine.classList.add('poem-reading-line');
-          shownLine.scrollIntoView({'behavior': 'smooth'});
-          readingProgression.value = readingProgressBar()*100;
-          bar.animate(readingProgressBar());
-          if (readingProgression.value === '100') {
-            setTimeout(successModal, 1500)
+          if(document.querySelector('.tap-instruction.hidden')) {
+            const shownLine = document.querySelector('.poem-reading-line');
+            const hiddenLine = document.querySelector('.poem-reading-line-hidden');
+            const readingProgression = document.querySelector('#lesson_reading_progression');
+            shownLine.classList.remove('poem-reading-line');
+            shownLine.classList.add('poem-reading-line-viewed');
+            hiddenLine.classList.remove('poem-reading-line-hidden');
+            hiddenLine.classList.add('poem-reading-line');
+            shownLine.scrollIntoView({'behavior': 'smooth'});
+            readingProgression.value = readingProgressBar()*100;
+            bar.animate(readingProgressBar());
+            if (readingProgression.value === '100') {
+              setTimeout(successModal, 1500)
+            }
+          }
+          else {
+            tapInstruction.classList.add('hidden');
           }
         }
       }
