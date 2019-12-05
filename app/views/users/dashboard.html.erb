@@ -12,37 +12,54 @@
     <br>
     <p> Tu n'as pas pas de leçon en cours. </p>
     <%= link_to poems_path do %>
-    <button type="button" class="btn btn-primary btn-lg center btn-start-lesson">+ Commencer une leçon</button>
+      <button type="button" class="btn btn-primary btn-lg center btn-start-lesson">+ Commencer une leçon</button>
     <% end %>
   </div>
-    <% else %>
-      <div id="lessons-card" class="hs animated slideInRight">
-        <% @lessons.order('created_at DESC').each do |lesson| %>
-            <div class="card-poems bg-white">
-          <%= link_to lesson_path(lesson) do %>
-              <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)">
+<% else %>
+  <div id="lessons-card" class="hs animated slideInRight">
+    <% @lessons.order('created_at DESC').each do |lesson| %>
+      <div class="card-poems">
+        <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)"></div>
+        <div class="card-description">
 
-              </div>
-              <div class="card-description d-flex">
-                  <div class="author-poem">
-                    <%= lesson.poem.author_name %> <br>
-                  </div>
-                <div class="title-poem">
-                  <%= lesson.poem.title %> <br>
-                  <div class="creation_date">
-                    <span class="badge badge-pill badge-primary">Commencé il y a <%= time_ago_in_words(lesson.created_at)%></span>
-                  </div>
-                </div>
-                <div class="progressions">
-                  <% recite_progression = lesson.recites.last.nil? ? 0 : lesson.recites.last.progression %>
-                  <div class="reading-progression" data-reading-progress=" <%= (lesson.reading_progression + lesson.listening_progression + recite_progression)/3%>"></div>
-                </div>
-              </div>
-          <% end %>
+          <div class="author-poem">
+            <p><%= lesson.poem.author_name %></p>
+          </div>
+
+          <div class="body-poem">
+            <div class="title-poem">
+              <p><%= lesson.poem.title.truncate 45 %></p>
             </div>
-        <% end %>
+            <div class="info-poem">
+              <p>
+                <i class="fas fa-clock"></i><span>Il y a <%= time_ago_in_words(lesson.created_at)%></span>
+              </p>
+              <p><i class="fas fa-align-justify"></i><%= pluralize lesson.poem.content.split(/\n/).count, 'ligne' %></p>
+              <p class="poem-difficulty-list"><%# (poem.difficulty.to_i).times do %>
+                <i class="fas fa-user-graduate on"></i>
+                <% if lesson.poem.difficulty.to_i <= 1 %>
+                  <span class="easy-difficulty">facile</span>
+                <% elsif lesson.poem.difficulty.to_i <= 3 %>
+                  <span class="medium-difficulty">moyen</span>
+                <% else %>
+                  <span class="hard-difficulty">difficile</span>
+                <% end %>
+              </p>
+            </div>
+
+          </div>
+          <div class="progression-status">
+            <div class="progressions">
+              <% recite_progression = lesson.recites.last.nil? ? 0 : lesson.recites.last.progression %>
+              <div class="reading-progression" data-reading-progress="<%= (lesson.reading_progression + lesson.listening_progression + recite_progression)/3%>">
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= link_to "", lesson_path(lesson) %>
       </div>
-      <% end %>
+    <% end %>
   </div>
-</div>
+<% end %>
+
 

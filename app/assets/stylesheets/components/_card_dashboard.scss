@@ -4,18 +4,23 @@
 }
 
 .card-poems {
-  // padding-right: 10px;
-  margin-top: 9px;
+  position: relative;
   border-radius: 10px;
-  width: 305px;
-  box-shadow: 0px 10px 0px 0px #91DCF8;
+  width: 363px;
+  box-shadow: 0px 7px 0px 0px #91DCF8;
   border: 2.7px solid #91DCF8;
-  height:417px;
-
+  height:483px;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
 
   a {
-  text-decoration: none;
-  // padding-left: 0px;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -31,6 +36,9 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-color:white;
+  border-top-right-radius: 10px;
+  border-top-left-radius:10px;
   // border-left: 6px solid #74D8BD;
 }
 
@@ -44,13 +52,17 @@
 
 .card-description {
   position:relative;
-  justify-content: space-between;
-  align-items: center;
-  background: hsl(0,0%,97%);
-  // border-left: 6px solid #74D8BD;
-  height: 140px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 0.4em;
+  .body-poem {
+    padding-top: 2em;
+    padding-left: 1.1em;
+    display:flex;
+    flex-direction : column;
+    justify-content: space-between;
+  }
 }
 
 .name-author {
@@ -62,15 +74,15 @@
 // font-size: 20px;
 }
 
+.progression-status {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .progressions {
-  // padding-right: 20px;
-  // height: 100px;
-  // width: 100px;
-  // padding-top: 10px;
-  height: 100px;
-  width: 100px;
-  margin-right: 14px;
-  // padding-top: 10px;
+  padding-bottom: 1em;
+  flex-basis: 79%;
 }
 
 .author-poem {
@@ -84,6 +96,10 @@
   font-weight: bold;
   color: rgba(0,0,0,0.4);
   box-shadow: 0px 3px 0px 0 #91DCF8;
+
+  p {
+    margin: 0;
+  }
 }
 
 .title-poem {
@@ -94,7 +110,7 @@
   font-size: 20px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.4);
-  padding-left: 2rem;
+  padding-left: 0.3rem;
 }
 
 // .app {
@@ -124,10 +140,10 @@
   overflow-x: scroll;
   grid-gap: 15px;
   position: relative;
-  top: 253px;
+  top: 233px;
   // top: 222px;
   border-radius: 8px;
-  height: 475px;
+  height: 507px;
   // padding-bottom: calc(.75 * var(--gutter));
   // margin-bottom: calc(-.25 * var(--gutter));
 }
@@ -179,9 +195,9 @@
 
   .cyrano {
     position: absolute;
-    left: 42px;
-    top: 65px;
-    width: 168px;
+    left: 38px;
+    top: 47px;
+    width: 175px;
   }
   .bubble {
     position: absolute;
@@ -192,10 +208,10 @@
 
   .greeting {
     font-size: 2.3rem;
-    color: #555555;
-    position:absolute;
-    top: 98px;
-    right: 62px;
+    /* color: #555555; */
+    position: absolute;
+    top: 83px;
+    right: 61px;
 
     p {
       margin: 0
@@ -250,11 +266,22 @@
 }
 
 .creation_date {
-  font-size: 15px;
-  position: relative;
-  left: -6px;
+  font-size: 20px;
+  // position: absolute;
+  // left: 16px;
+  // bottom: 20px;
 
   .badge-primary {
     background-color: #FC8D5B;
+  }
+}
+
+
+.info-poem {
+  font-size: 15.4px;
+  padding-bottom: 1.6rem;
+  // padding-left: 2rem;
+  p {
+    margin: 0;
   }
 }

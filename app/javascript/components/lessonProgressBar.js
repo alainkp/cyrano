@@ -11,7 +11,6 @@ const lessonProgressBar = () => {
   const lessonProgressBar = document.querySelectorAll('.reading-progression');
   lessonProgressBar.forEach((card) => {
     const readingProgress = card.dataset.readingProgress;
-    // console.log(readingProgress);
     const bar = new ProgressBar.Circle(card, {
       strokeWidth: 9,
       color: 'url(#gradientCircle)',
@@ -30,18 +29,19 @@ const lessonProgressBar = () => {
       step: (state, bar) => {
         // bar.path.setAttribute('stroke', state.color);
         const value = readingProgress;
-        // if (value === 0) {
-        //   bar.setText('');
-        // } else {
+        // console.log(readingProgress);
+        if (value === '100') {
+          bar.setText('Terminé');
+        } else {
           bar.setText(`${value}%`);
-        // }
+        }
 
         bar.text.style.color = '#FC8D5B';
       }
     });
 
     bar.text.style.fontFamily = '"museo-sans-rounded", sans-serif';
-    bar.text.style.fontSize = '1rem';
+    bar.text.style.fontSize = '18px';
     // console.log(Number.parseInt(readingProgress,10)/100);
     bar.svg.insertAdjacentHTML('afterBegin', linearGradientCircle);
     bar.animate(Number.parseInt(readingProgress,10)/100);  // Number from 0.0 to 1.0
