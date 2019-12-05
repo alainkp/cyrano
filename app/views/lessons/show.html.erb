@@ -6,7 +6,7 @@
     <div class="lesson-body">
       <h1 class="border-bottom pb-1"><%= @lesson.poem.title %></h1>
       <p><i class="fas fa-feather-alt"></i><%= @lesson.poem.author_name %></p>
-      <p><i class="fas fa-align-justify"></i><%= pluralize @lesson.poem.content.split(/\n/).count, 'ligne' %></p>
+      <p><i class="fas fa-align-justify"></i><%= pluralize @lesson.poem.content.split(/\n/).count, 'lignes' %></p>
       <p class="poem-difficulty-list"><%# (@poem.difficulty.to_i).times do %>
         <i class="fas fa-user-graduate on"></i>
         <% if @lesson.poem.difficulty.to_i <= 1 %>
