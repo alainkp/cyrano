@@ -19,7 +19,13 @@
   <div id="lessons-card" class="hs animated slideInRight">
     <% @lessons.order('created_at DESC').each do |lesson| %>
       <div class="card-poems">
-        <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)"></div>
+        <% if lesson.poem.title.include?('fourmi') %>
+          <div class="card-image" style="background-image :url(<%= image_path 'ant.svg' %>)"></div>
+        <% elsif lesson.poem.title.include?('renard') %>
+          <div class="card-image" style="background-image :url(<%= image_path 'rena.svg' %>)"></div>
+        <% else %>
+          <div class="card-image" style="background-image :url(<%= image_path(@index_image.sample) %>)"></div>
+        <% end %>
         <div class="card-description">
 
           <div class="author-poem">
