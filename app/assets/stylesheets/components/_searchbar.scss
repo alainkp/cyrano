@@ -3,21 +3,37 @@
 }
 .search-form-control .btn {
   position: absolute;
-  top: 8px;
+  top: 21px;
   bottom: 8px;
   right: 8px;
+  // color: white;
 }
 .search-form-control .form-control {
   height: 3rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
-  border-bottom: 2px solid #74D8BD;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid #FFB491;
+  border-radius: 25px;
+  // background: linear-gradient(2deg, #FF996A, #FFB491);
+  padding-left: 23px;
+  transition: all 0.2s;
+  // color: white;
 }
+
+.form-control::placeholder {
+  // color: #FFFFFF95;
+}
+
 .search-form-control .form-control:focus {
-  border: 1px solid #74D8BD;
+  border: 3px solid #FF996A;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+.form-control:focus::placeholder {
+  color: white;
+}
+
 .search-form-control.form-group{
-  margin: 0px;
+  padding-top: 14px;
+  background: white;
 }
