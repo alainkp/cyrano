@@ -3,7 +3,13 @@
   <% @poems.each do |poem| %>
     <h2><%= link_to poem_path(poem) do %></h2>
       <div class="card-product">
-        <%= image_tag(@index_image.sample) %>
+        <% if poem.title.include?('fourmi') %>
+          <%= image_tag 'ant.svg' %>
+        <% elsif poem.title.include?('renard') %>
+          <%= image_tag 'rena.svg' %>
+        <% else %>
+          <%= image_tag(@index_image.sample) %>
+        <% end %>
         <div class="card-product-infos">
         <h2><%= poem.title %></h2>
           <p><%= poem.author_name %>
