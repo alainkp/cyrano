@@ -1,6 +1,6 @@
 <%= render "searchbar" %>
 <div class ="card-container">
-  <% @poems.each do |poem| %>
+  <% @poems.order('title ASC').each do |poem| %>
     <h2><%= link_to poem_path(poem) do %></h2>
       <div class="card-product">
         <% if poem.title.include?('fourmi') %>
