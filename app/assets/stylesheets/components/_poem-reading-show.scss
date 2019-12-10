@@ -51,6 +51,7 @@
 }
 
 .start-container {
+  height: 80vh;
 
   .start-button-bg {
     position: relative;
@@ -137,3 +138,9 @@
   width: 50%;
   margin: 0 auto;
 }
+
+// @media(max-width: 350px) {
+  .poem-reading-container {
+    height: 80vh;
+  }
+// }
