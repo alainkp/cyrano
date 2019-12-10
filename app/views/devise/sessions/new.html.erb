@@ -1,15 +1,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div>
       <div class="form-inputs">
         <div>
-          <h2>Cyrano</h2>
-          <p><em>What's my line ?</em></p>
-        </div>
           <h2>Log in</h2>
-          <p><em>indique ton email et ton mot de passe !</em></p>
-      </div>
+        </div>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
