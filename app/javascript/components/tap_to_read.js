@@ -68,7 +68,11 @@ const tapToRead = () => {
   const poemContent = document.querySelector('.poem-reading-content');
   if (poemContent) {
     const tapInstruction = document.querySelector('.tap-instruction');
-    poemContent.addEventListener('touchstart', (event) => {
+    let tapEvent = 'touchstart';
+    if (!navigator.userAgent.includes('Mobile')) {
+      tapEvent = 'click';
+    }
+    poemContent.addEventListener(tapEvent, (event) => {
       if (document.querySelector('.start-container.hidden')) {
         if (document.querySelector('.poem-reading-line-hidden')) {
           if(document.querySelector('.tap-instruction.hidden')) {
