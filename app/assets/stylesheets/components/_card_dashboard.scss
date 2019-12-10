@@ -1,6 +1,6 @@
-.dashboard-container {
-  // padding-left: 0px;
-  // padding-right: 0px;
+.dashboard-content {
+  height: 100vh;
+  overflow: auto;
 }
 
 .card-poems {
@@ -287,5 +287,32 @@
   // padding-left: 2rem;
   p {
     margin: 0;
+  }
+}
+
+@media(max-width: 350px) {
+  .card-image {
+    padding: 110px 0;
+  }
+
+  .card-poems {
+    height: fit-content;
+  }
+
+  .dashboard-image .cyrano {
+    width: 140px;
+  }
+
+  .hs {
+    top: 203px;
+  }
+
+  .dashboard-image .greeting {
+    top: 64px;
+    right: 31px;
+  }
+
+  .listening-image img {
+    width: 200px;
   }
 }

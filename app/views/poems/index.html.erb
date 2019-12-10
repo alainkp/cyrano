@@ -28,7 +28,7 @@
           <% if current_user.completed?(poem) %>
               <p class="float-right card-index__complete"><strong>Par coeur !</strong><i class="fas fa-award"></i></p>
           <% elsif current_user.started?(poem) %>
-              <p class="float-right card-index__in-progress"><strong>Leçon en cours ...</strong><i class="fas fa-book-reader"></i></p>
+              <p class="float-right card-index__in-progress"><strong>En cours...</strong><i class="fas fa-book-reader"></i></p>
           <% else %>
             <p class="float-right"></p>
           <% end %>
