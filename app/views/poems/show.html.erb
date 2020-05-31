@@ -19,10 +19,6 @@
               <% else %>
                 <span class="hard-difficulty">difficile</span>
               <% end %>
-            <%# end %>
-            <%# (5 - @poem.difficulty.to_i).times do %>
-              <!-- <i class="fas fa-user-graduate off"></i> -->
-             <%# end %>
             </p>
           </div>
           <% lesson = @poem.lessons.find{ |lesson| lesson.user == current_user } %>
